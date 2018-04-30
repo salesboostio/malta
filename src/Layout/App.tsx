@@ -1,5 +1,5 @@
 import * as React from "react";
-import classNames from "classnames";
+import * as classNames from "classnames";
 import styled from "styled-components";
 import {
   $primaryBackground
@@ -17,7 +17,7 @@ const Layout = styled.div`
   display: block;
 `;
 
-class App extends React.Component<IProps, any> {
+export class App extends React.Component<IProps, any> {
   constructor(props: IProps) {
     super(props);
   }
@@ -36,5 +36,3 @@ class App extends React.Component<IProps, any> {
     );
   }
 }
-
-export default App;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import classNames from "classnames";
+import * as classNames from "classnames";
 
 export interface ColSize {
   span?: number;
@@ -24,7 +24,7 @@ export interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
   prefixCls?: string;
 }
 
-export default class Col extends React.Component<ColProps, {}> {
+export class Col extends React.Component<ColProps, {}> {
   render() {
     const props: any = this.props;
     const { span, order, offset, push, pull, className, children, prefixCls = "col", ...others } = props;

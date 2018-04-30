@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Say my name, say my name... 1`] = `
+exports[`Button 1`] = `
 <button
   className="sb-button sc-bdVaJa kKJYgi"
 >
