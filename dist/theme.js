@@ -38,6 +38,7 @@ exports.fontSizes = {
     h3: 18,
     h4: 16,
     h5: 14,
+    h6: 13,
 };
 exports.fontWeights = {
     medium: 500,

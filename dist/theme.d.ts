@@ -35,6 +35,7 @@ export declare const fontSizes: {
     h3: number;
     h4: number;
     h5: number;
+    h6: number;
 };
 export declare const fontWeights: {
     medium: number;
@@ -77,6 +78,7 @@ declare const theme: {
         h3: number;
         h4: number;
         h5: number;
+        h6: number;
     };
     fontWeights: {
         medium: number;
