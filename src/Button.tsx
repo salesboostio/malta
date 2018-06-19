@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { fontSizes } from "./theme";
 const {
   borderColor,
   borderRadius,
@@ -10,6 +11,7 @@ const {
   space,
   width,
 } = require("styled-system");
+import { generateQuery } from "./tools/mediaQuery";
 
 const StyledButton = styled.button`
   align-items: center;
@@ -24,6 +26,11 @@ const StyledButton = styled.button`
   ${space}
   ${width}
   ${height}
+
+  ${generateQuery("max-width", "sm", `
+    font-size: ${fontSizes.h5}px;
+    height: 52px;
+  `)};
 `;
 
 export interface IProps {
@@ -84,6 +91,7 @@ export class Button extends React.Component<IProps, any> {
     // space
     m: 0,
     mb: 2,
+    px: 3,
     // width
     width: "auto",
   };
