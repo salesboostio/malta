@@ -10,7 +10,7 @@ import {
   navBarHeight,
   space
 } from "./theme";
-import { hiddenDown, hiddenUp } from "./tools/mediaQuery";
+import { generateQuery, hiddenDown, hiddenUp } from "./tools/mediaQuery";
 
 
 const Wrapper = styled.div`
@@ -30,6 +30,11 @@ const Container = styled.div`
   margin-right: auto;
   padding-left: ${space[3]}px;
   padding-right: ${space[3]}px;
+
+  ${generateQuery("max-width", "xs", `
+    padding-left: ${space[2]}px;
+    padding-right: ${space[2]}px;
+  `)};
 `;
 
 const Right = styled.div`
@@ -65,7 +70,8 @@ export class Navbar extends React.Component<IProps, any> {
       <Wrapper>
         <Container>
           <a href="/">
-            <Img src={logoUrl} width="125px" height="34px" />
+            <Img hiddendown="xs" src={logoUrl} width="125px" height="34px" />
+            <Img hiddenup="xs" src={logoUrl} width="96px" height="26px" />
           </a>
           <Right>
             <Title>{title}</Title>

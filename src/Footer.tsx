@@ -12,10 +12,9 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   height: ${footerHeight};
-  padding-left: ${3}px;
+  padding-left: ${space[3]}px;
   margin-left: auto;
   margin-right: auto;
-  max-width: ${containerWidth};
 
   ${generateQuery("max-width", "xs", "padding-left: 0;")};
 `;
