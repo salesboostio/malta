@@ -18,6 +18,7 @@ var React = require("react");
 var styled_components_1 = require("styled-components");
 var theme_1 = require("./theme");
 var _a = require("styled-system"), height = _a.height, width = _a.width;
+var mediaQuery_1 = require("./tools/mediaQuery");
 /*
   Total Step Width = 80% (Default Step = 4)
   StepWidth = (TotalStepWidth / StepCount)
@@ -35,10 +36,14 @@ var LeftLine = Line.extend(templateObject_2 || (templateObject_2 = __makeTemplat
 var RightLine = Line.extend(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  right: -50%;\n"], ["\n  right: -50%;\n"])));
 var DashedLine = Line.extend(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  border-top: dashed 1px ", ";\n  width: 70%;\n  left: 65%;\n"], ["\n  border-top: dashed 1px ", ";\n  width: 70%;\n  left: 65%;\n"])), theme_1.colors.black._20);
 var StyledStep = styled_components_1.default.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  position: relative;\n  text-align: center;\n"], ["\n  position: relative;\n  text-align: center;\n"])));
-var StepWrap = styled_components_1.default.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  position: relative;\n  display: inline-block;\n  width: 20%;\n  height: 60px;\n  vertical-align: top;\n\n  &.step-3 {\n    width: 26.66%;\n    & ", ",\n    & ", " {\n      width: 76%;\n    }\n    & ", " {\n      left: -37.5%;\n    }\n    & ", " {\n      right: -37.5%;\n    }\n    & ", " {\n      width: 76%;\n      left: 61%;\n    }\n  }\n\n  &.step-4 {\n    width: 20%;\n    & ", ",\n    & ", " {\n      width: 85%;\n    }\n    & ", " {\n      left: -50%;\n    }\n    & ", " {\n      right: -50%;\n    }\n    & ", " {\n      width: 70%;\n      left: 65%;\n    }\n  }\n\n  &.step-5 {\n    width: 16%;\n    & ", ",\n    & ", " {\n      width: 89%;\n    }\n    & ", " {\n      left: -62.5%;\n    }\n    & ", " {\n      right: -62.5%;\n    }\n    & ", " {\n      width: 56%;\n      left: 72%;\n    }\n  }\n"], ["\n  position: relative;\n  display: inline-block;\n  width: 20%;\n  height: 60px;\n  vertical-align: top;\n\n  &.step-3 {\n    width: 26.66%;\n    & ", ",\n    & ", " {\n      width: 76%;\n    }\n    & ", " {\n      left: -37.5%;\n    }\n    & ", " {\n      right: -37.5%;\n    }\n    & ", " {\n      width: 76%;\n      left: 61%;\n    }\n  }\n\n  &.step-4 {\n    width: 20%;\n    & ", ",\n    & ", " {\n      width: 85%;\n    }\n    & ", " {\n      left: -50%;\n    }\n    & ", " {\n      right: -50%;\n    }\n    & ", " {\n      width: 70%;\n      left: 65%;\n    }\n  }\n\n  &.step-5 {\n    width: 16%;\n    & ", ",\n    & ", " {\n      width: 89%;\n    }\n    & ", " {\n      left: -62.5%;\n    }\n    & ", " {\n      right: -62.5%;\n    }\n    & ", " {\n      width: 56%;\n      left: 72%;\n    }\n  }\n"])), LeftLine, RightLine, LeftLine, RightLine, DashedLine, LeftLine, RightLine, LeftLine, RightLine, DashedLine, LeftLine, RightLine, LeftLine, RightLine, DashedLine);
+var StepWrap = styled_components_1.default.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  position: relative;\n  display: inline-block;\n  width: 20%;\n  height: 60px;\n  vertical-align: top;\n\n  ", ";\n\n  &.step-3 {\n    width: 26.66%;\n    & ", ",\n    & ", " {\n      width: 76%;\n    }\n    & ", " {\n      left: -37.5%;\n    }\n    & ", " {\n      right: -37.5%;\n    }\n    & ", " {\n      width: 76%;\n      left: 61%;\n    }\n  }\n\n  &.step-4 {\n    width: 20%;\n    & ", ",\n    & ", " {\n      width: 85%;\n    }\n    & ", " {\n      left: -50%;\n    }\n    & ", " {\n      right: -50%;\n    }\n    & ", " {\n      width: 70%;\n      left: 65%;\n    }\n  }\n\n  &.step-5 {\n    width: 16%;\n    & ", ",\n    & ", " {\n      width: 89%;\n    }\n    & ", " {\n      left: -62.5%;\n    }\n    & ", " {\n      right: -62.5%;\n    }\n    & ", " {\n      width: 56%;\n      left: 72%;\n    }\n  }\n"], ["\n  position: relative;\n  display: inline-block;\n  width: 20%;\n  height: 60px;\n  vertical-align: top;\n\n  ",
+    ";\n\n  &.step-3 {\n    width: 26.66%;\n    & ", ",\n    & ", " {\n      width: 76%;\n    }\n    & ", " {\n      left: -37.5%;\n    }\n    & ", " {\n      right: -37.5%;\n    }\n    & ", " {\n      width: 76%;\n      left: 61%;\n    }\n  }\n\n  &.step-4 {\n    width: 20%;\n    & ", ",\n    & ", " {\n      width: 85%;\n    }\n    & ", " {\n      left: -50%;\n    }\n    & ", " {\n      right: -50%;\n    }\n    & ", " {\n      width: 70%;\n      left: 65%;\n    }\n  }\n\n  &.step-5 {\n    width: 16%;\n    & ", ",\n    & ", " {\n      width: 89%;\n    }\n    & ", " {\n      left: -62.5%;\n    }\n    & ", " {\n      right: -62.5%;\n    }\n    & ", " {\n      width: 56%;\n      left: 72%;\n    }\n  }\n"])), mediaQuery_1.generateQuery("max-width", "sm", "\n    height: auto;\n  "), LeftLine, RightLine, LeftLine, RightLine, DashedLine, LeftLine, RightLine, LeftLine, RightLine, DashedLine, LeftLine, RightLine, LeftLine, RightLine, DashedLine);
 var StepItem = styled_components_1.default.a(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  text-decoration: none;\n  color: ", ";\n  font-weight: ", ";\n  cursor: pointer;\n\n  & svg {\n    fill: ", ";\n  }\n\n  &.active {\n    color: ", ";\n    font-weight: ", ";\n  }\n  &:hover {\n    color: ", ";\n  }\n"], ["\n  text-decoration: none;\n  color: ", ";\n  font-weight: ", ";\n  cursor: pointer;\n\n  & svg {\n    fill: ", ";\n  }\n\n  &.active {\n    color: ", ";\n    font-weight: ", ";\n  }\n  &:hover {\n    color: ", ";\n  }\n"])), theme_1.colors.black.hint, theme_1.fontWeights.regular, theme_1.colors.blue.deep, theme_1.colors.blue.deep, theme_1.fontWeights.medium, theme_1.colors.blue.deep);
 var StepSeq = styled_components_1.default.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  display: block;\n  font-size: ", "px;\n  line-height: 2;\n  height: 40px;\n"], ["\n  display: block;\n  font-size: ", "px;\n  line-height: 2;\n  height: 40px;\n"])), theme_1.fontSizes.h3 * 1.33);
-var StepTitle = styled_components_1.default.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  font-size: ", "px;\n  margin: 0 ", "px;\n\n  @media (max-width: 400px) {\n    display: none;\n  }\n"], ["\n  font-size: ", "px;\n  margin: 0 ", "px;\n\n  @media (max-width: 400px) {\n    display: none;\n  }\n"])), theme_1.fontSizes.h3, theme_1.space[1]);
+var StepTitle = styled_components_1.default.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  font-size: ", "px;\n  margin: 0 ", "px;\n\n  ", ";\n"], ["\n  font-size: ", "px;\n  margin: 0 ", "px;\n\n  ",
+    ";\n"])), theme_1.fontSizes.h3, theme_1.space[1], mediaQuery_1.generateQuery("max-width", "sm", "\n    display: none;\n  "));
+var MobileStepTitle = styled_components_1.default.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", "px;\n  font-weight: ", ";\n  height: 40px;\n  line-height: 40px;\n\n  ", ";\n"], ["\n  color: ", ";\n  font-size: ", "px;\n  font-weight: ", ";\n  height: 40px;\n  line-height: 40px;\n\n  ",
+    ";\n"])), theme_1.colors.blue.deep, theme_1.fontSizes.h4, theme_1.fontWeights.medium, mediaQuery_1.generateQuery("min-width", "sm", "\n    display: none;\n  "));
 var Step = /** @class */ (function (_super) {
     __extends(Step, _super);
     function Step(props) {
@@ -70,7 +75,9 @@ var Step = /** @class */ (function (_super) {
     Step.prototype.render = function () {
         var _a = this.props, items = _a.items, useRouter = _a.useRouter;
         var current = this.state.current;
-        return (React.createElement(StyledStep, null, this.renderStep(items, useRouter)));
+        return (React.createElement(StyledStep, null,
+            this.renderStep(items, useRouter),
+            React.createElement(MobileStepTitle, null, items[current].title)));
     };
     Step.defaultProps = {
         items: [],
@@ -82,4 +89,4 @@ var Step = /** @class */ (function (_super) {
     return Step;
 }(React.Component));
 exports.Step = Step;
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10;

@@ -5,6 +5,7 @@ const {
   height,
   width,
 } = require("styled-system");
+import { generateQuery } from "./tools/mediaQuery";
 
 /*
   Total Step Width = 80% (Default Step = 4)
@@ -51,6 +52,10 @@ const StepWrap = styled.div`
   width: 20%;
   height: 60px;
   vertical-align: top;
+
+  ${generateQuery("max-width", "sm", `
+    height: auto;
+  `)};
 
   &.step-3 {
     width: 26.66%;
@@ -137,9 +142,21 @@ const StepTitle = styled.div`
   font-size: ${fontSizes.h3}px;
   margin: 0 ${space[1]}px;
 
-  @media (max-width: 400px) {
+  ${generateQuery("max-width", "sm", `
     display: none;
-  }
+  `)};
+`;
+
+const MobileStepTitle = styled.div`
+  color: ${colors.blue.deep};
+  font-size: ${fontSizes.h4}px;
+  font-weight: ${fontWeights.medium};
+  height: 40px;
+  line-height: 40px;
+
+  ${generateQuery("min-width", "sm", `
+    display: none;
+  `)};
 `;
 
 export interface IItem {
@@ -205,6 +222,7 @@ export class Step extends React.Component<IProps, any> {
     return (
       <StyledStep>
         {this.renderStep(items, useRouter)}
+        <MobileStepTitle>{items[current].title}</MobileStepTitle>
       </StyledStep>
     );
   }
