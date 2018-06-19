@@ -16,7 +16,7 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  ${generateQuery("max-width", "xs", "padding-left: 0;")};
+  ${generateQuery("max-width", "sm", "padding-left: 0;")};
 `;
 
 const Copyright = styled.div`
@@ -24,7 +24,7 @@ const Copyright = styled.div`
   font-size: ${fontSizes.h5}px;
   font-weight: ${fontWeights.demiLight};
 
-  ${generateQuery("max-width", "xs", "margin: 0 auto;")};
+  ${generateQuery("max-width", "sm", "margin: 0 auto;")};
 `;
 
 export class Footer extends React.Component<any, any> {

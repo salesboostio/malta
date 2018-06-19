@@ -31,7 +31,7 @@ const Container = styled.div`
   padding-left: ${space[3]}px;
   padding-right: ${space[3]}px;
 
-  ${generateQuery("max-width", "xs", `
+  ${generateQuery("max-width", "sm", `
     padding-left: ${space[2]}px;
     padding-right: ${space[2]}px;
   `)};
@@ -41,7 +41,7 @@ const Right = styled.div`
   flex: 1;
   text-align: right;
 
-  ${hiddenDown("xs")};
+  ${hiddenDown("sm")};
 `;
 
 const Title = styled.div`
@@ -70,8 +70,8 @@ export class Navbar extends React.Component<IProps, any> {
       <Wrapper>
         <Container>
           <a href="/">
-            <Img hiddendown="xs" src={logoUrl} width="125px" height="34px" />
-            <Img hiddenup="xs" src={logoUrl} width="96px" height="26px" />
+            <Img hiddendown="sm" src={logoUrl} width="125px" height="34px" />
+            <Img hiddenup="sm" src={logoUrl} width="96px" height="26px" />
           </a>
           <Right>
             <Title>{title}</Title>
