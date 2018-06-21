@@ -9,11 +9,13 @@ export const breakpointNames = ["xs", "sm", "md", "lg", "xl"];
 export const colors = {
   white: {
     standard: "#FFFFFF",
+    _75: "rgba(255, 255, 255, 0.75)",
     _50: "rgba(255, 255, 255, 0.5)",
   },
   blue: {
     royal: "#454EDF",
     deep: "#161FBA",
+    dark: "#030c90",
   },
   black: {
     dark: "rgba(22, 27, 72, 0.9)",

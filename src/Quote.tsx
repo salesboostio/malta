@@ -25,7 +25,6 @@ const BlockQuote = styled.blockquote`
   &:before {
     content: "“";
     display: block;
-    font: italic 400%/1 Cochin,Georgia,"Times New Roman", serif;
     font-size: 40px;
     height: 0;
     left: -20px;
@@ -38,7 +37,6 @@ const BlockQuote = styled.blockquote`
   &:after {
     content: "”";
     display: block;
-    font: italic 400%/1 Cochin,Georgia,"Times New Roman", serif;
     font-size: 40px;
     height: 0;
     right: -20px;

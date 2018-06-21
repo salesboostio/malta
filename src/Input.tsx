@@ -19,7 +19,6 @@ const Label = styled.label`
 
 const ErrorLabel = Label.extend`
   color: ${colors.red};
-  margin-left: ${spaces[1]}px;
   margin-top: ${spaces[1]}px;
 `;
 

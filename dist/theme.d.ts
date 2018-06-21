@@ -6,11 +6,13 @@ export declare const breakpointNames: string[];
 export declare const colors: {
     white: {
         standard: string;
+        _75: string;
         _50: string;
     };
     blue: {
         royal: string;
         deep: string;
+        dark: string;
     };
     black: {
         dark: string;
@@ -49,11 +51,13 @@ declare const theme: {
     colors: {
         white: {
             standard: string;
+            _75: string;
             _50: string;
         };
         blue: {
             royal: string;
             deep: string;
+            dark: string;
         };
         black: {
             dark: string;

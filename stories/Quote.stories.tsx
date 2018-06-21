@@ -4,7 +4,7 @@ import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 import { App, Quote } from "../src";
 
-storiesOf("Components/Quot4e", module)
+storiesOf("Components/Quote", module)
   .add("default", () => {
     return (
       <App>
