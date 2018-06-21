@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   height: ${(props: IProps) => props.fullScreen ? "100vh" : "inherit"};
   left: 0;
   position: ${(props: IProps) => props.fullScreen ? "absolute" : "relative"};
-  right: 0;
+  top: 0;
   width: ${(props: IProps) => props.fullScreen ? "100vw" : "inherit"};
 `;
 
@@ -55,7 +55,7 @@ const StyledLoader = styled.div`
   ${width}
 
   font-size: 10px;
-  margin: 0 auto 64px auto;
+  margin: 0 auto 54px auto;
   position: relative;
   text-indent: -9999em;
   -webkit-transform: translateZ(0);
@@ -122,7 +122,8 @@ export class Loader extends React.Component<IProps, any> {
       <Text
         align="center"
         color="black.dark"
-        fontSize={["h5", "h5", "h3"]}>
+        fontSize={["h5", "h5", "h4"]}
+        fontWeight="demiLight">
         {labelText}
       </Text>
     );
