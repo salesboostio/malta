@@ -14,7 +14,7 @@ import { generateQuery, hiddenDown, hiddenUp } from "./tools/mediaQuery";
 
 
 const Wrapper = styled.div`
-  background-color: ${colors.white._50};
+  background-color: ${colors.white._75};
   height: ${navBarHeight};
   left: 0;
   position: fixed;
