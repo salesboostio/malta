@@ -4,10 +4,9 @@ const { space } = require("styled-system");
 import { colors } from "./theme";
 
 const StyledLine = styled.hr`
-${space}
+  ${space}
   border: none;
   border-bottom: solid 1px ${(props: IProps) => props.color};
-  box-shadow: 0 2px 6px 2px ${(props: IProps) => props.color};
 `;
 
 export interface IProps {
@@ -36,7 +35,7 @@ export interface IProps {
 export class Line extends React.Component<IProps, any> {
   public static defaultProps: IProps = {
     // color
-    color: colors.black._3,
+    color: "#ededf1",
     // space
     m: 1,
     p: 0,

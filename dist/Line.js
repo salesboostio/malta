@@ -25,8 +25,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
 var space = require("styled-system").space;
-var theme_1 = require("./theme");
-var StyledLine = styled_components_1.default.hr(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n", "\n  border: none;\n  border-bottom: solid 1px ", ";\n  box-shadow: 0 2px 6px 2px ", ";\n"], ["\n", "\n  border: none;\n  border-bottom: solid 1px ", ";\n  box-shadow: 0 2px 6px 2px ", ";\n"])), space, function (props) { return props.color; }, function (props) { return props.color; });
+var StyledLine = styled_components_1.default.hr(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", "\n  border: none;\n  border-bottom: solid 1px ", ";\n"], ["\n  ", "\n  border: none;\n  border-bottom: solid 1px ", ";\n"])), space, function (props) { return props.color; });
 var Line = /** @class */ (function (_super) {
     __extends(Line, _super);
     function Line() {
@@ -37,7 +36,7 @@ var Line = /** @class */ (function (_super) {
     };
     Line.defaultProps = {
         // color
-        color: theme_1.colors.black._3,
+        color: "#ededf1",
         // space
         m: 1,
         p: 0,

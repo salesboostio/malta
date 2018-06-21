@@ -126,9 +126,6 @@ const StepItem = styled.a`
     color: ${colors.blue.deep};
     font-weight: ${fontWeights.medium};
   }
-  &:hover {
-    color: ${colors.blue.deep};
-  }
 `;
 
 const StepSeq = styled.div`

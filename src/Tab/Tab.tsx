@@ -37,7 +37,8 @@ const StyledTab = styled.li`
     border-top: solid 2px ${colors.blue.royal};
     border-bottom: none;
     color: ${colors.blue.deep};
-    font-weight: ${fontWeights.regular}
+    font-weight: ${fontWeights.regular};
+    padding-top: 31px;
   `}
 `;
 

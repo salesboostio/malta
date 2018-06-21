@@ -25,15 +25,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
 var _a = require("styled-system"), color = _a.color, fontSize = _a.fontSize, fontWeight = _a.fontWeight, lineHeight = _a.lineHeight, space = _a.space, textAlign = _a.textAlign, width = _a.width;
-var StyledText = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  white-space: pre-line;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  white-space: pre-line;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), color, fontSize, fontWeight, lineHeight, space, textAlign, width);
+var StyledText = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  white-space: pre-line;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", ";\n"], ["\n  white-space: pre-line;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ",
+    ";\n"])), color, fontSize, fontWeight, lineHeight, space, textAlign, width, function (props) { return props.letterSpacing && "\n    letter-spacing: " + props.letterSpacing + ";\n  "; });
 var Text = /** @class */ (function (_super) {
     __extends(Text, _super);
     function Text() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Text.prototype.render = function () {
-        var letterSpacing = this.props.letterSpacing;
-        return (React.createElement(StyledText, __assign({}, this.props, { style: { letterSpacing: letterSpacing } }), this.props.children));
+        return (React.createElement(StyledText, __assign({}, this.props), this.props.children));
     };
     Text.defaultProps = {
         // color

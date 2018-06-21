@@ -81,7 +81,6 @@ storiesOf("Components/Text", module)
             <Text letterSpacing="-1px">이것은 letterSpacing이 -1px인 텍스트입니다.</Text>
             <Text letterSpacing="1px">이것은 letterSpacing이 1px인 텍스트입니다.</Text>
             <Text letterSpacing="2px">이것은 letterSpacing이 2px인 텍스트입니다.</Text>
-            <Text letterSpacing={3}>이것은 letterSpacing이 3px인 텍스트입니다.</Text>
           </div>
         </App>
       );

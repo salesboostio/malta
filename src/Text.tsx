@@ -19,6 +19,10 @@ const StyledText = styled.div`
   ${space}
   ${textAlign}
   ${width}
+
+  ${(props: IProps) => props.letterSpacing && `
+    letter-spacing: ${props.letterSpacing};
+  `};
 `;
 
 export interface IProps {
@@ -51,7 +55,7 @@ export interface IProps {
   // width
   width?: Array<number | string> | number | string;
   // options
-  letterSpacing?: number | string;
+  letterSpacing?: string;
 }
 
 export class Text extends React.Component<IProps, any> {
@@ -75,9 +79,8 @@ export class Text extends React.Component<IProps, any> {
   };
 
   public render() {
-    const { letterSpacing } = this.props;
     return (
-      <StyledText {...this.props} style={{ letterSpacing: letterSpacing }}>
+      <StyledText {...this.props}>
         {this.props.children}
       </StyledText>
     );
