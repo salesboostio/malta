@@ -32,7 +32,8 @@ var Text = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Text.prototype.render = function () {
-        return (React.createElement(StyledText, __assign({}, this.props), this.props.children));
+        var letterSpacing = this.props.letterSpacing;
+        return (React.createElement(StyledText, __assign({}, this.props, { style: { letterSpacing: letterSpacing } }), this.props.children));
     };
     Text.defaultProps = {
         // color

@@ -22,6 +22,7 @@ export interface IProps {
     py?: Array<number | string> | number | string;
     align?: Array<string> | string;
     width?: Array<number | string> | number | string;
+    letterSpacing?: number | string;
 }
 export declare class Text extends React.Component<IProps, any> {
     static defaultProps: IProps;
