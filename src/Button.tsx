@@ -1,6 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
-import { fontSizes } from "./theme";
+import {
+  colors,
+  fontSizes
+} from "./theme";
 const {
   borderColor,
   borderRadius,
@@ -31,6 +34,14 @@ const StyledButton = styled.button`
     font-size: ${fontSizes.h5}px;
     height: 52px;
   `)};
+
+  &:hover {
+    background-color: ${colors.blue.deep};
+  }
+
+  &:focus {
+    background-color: ${colors.blue.dark};
+  }
 `;
 
 export interface IProps {
