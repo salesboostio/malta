@@ -4,7 +4,7 @@ export interface IProps {
   hide?: Array<Boolean>;
 }
 
-export function generateQuery (query: string, breakpoint: string, style: string) {
+export function generateQuery(query: string, breakpoint: string, style: string) {
   const mediaQuery = "@media (" + getBreakpointRange(query, breakpoint) + ") { \
     " + style + " \
   }";
@@ -16,7 +16,7 @@ export function generateQuery (query: string, breakpoint: string, style: string)
  * [INPUT] breakpoint: string => ("xs", "sm", "md", "lg", "xl")
  * [OUTPUT] mediqQuery: string => @media (...)
  */
-export function hiddenDown (breakpoint: string) {
+export function hiddenDown(breakpoint: string) {
   const mediaQuery = "@media (" + getBreakpointRange("max-width", breakpoint) + ") { \
     display: none; \
   }";
@@ -28,7 +28,7 @@ export function hiddenDown (breakpoint: string) {
  * [INPUT] breakpoint: string => ("xs", "sm", "md", "lg", "xl")
  * [OUTPUT] mediqQuery: string => @media (...)
  */
-export function hiddenUp (breakpoint: string) {
+export function hiddenUp(breakpoint: string) {
   const mediaQuery = "@media (" + getBreakpointRange("min-width", breakpoint) + ") { \
     display: none; \
   }";
@@ -36,8 +36,12 @@ export function hiddenUp (breakpoint: string) {
   return mediaQuery;
 }
 
+export function responsiveStyle(breakpoints: Array<number | string>) {
+
+}
+
 function getBreakpointRange(query: string = "min-width", breakpoint: string) {
-  if ( query === "min-width" || query === "max-width" ) {
+  if (query === "min-width" || query === "max-width") {
     const breakpointIndex = breakpointNames.indexOf(breakpoint);
     const breakpointValue =
       query === "max-width" ?

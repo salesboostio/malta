@@ -30,6 +30,9 @@ function hiddenUp(breakpoint) {
     return mediaQuery;
 }
 exports.hiddenUp = hiddenUp;
+function responsiveStyle(breakpoints) {
+}
+exports.responsiveStyle = responsiveStyle;
 function getBreakpointRange(query, breakpoint) {
     if (query === void 0) { query = "min-width"; }
     if (query === "min-width" || query === "max-width") {
