@@ -25,9 +25,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
 var _a = require("styled-system"), color = _a.color, fontSize = _a.fontSize, fontWeight = _a.fontWeight, lineHeight = _a.lineHeight, space = _a.space, textAlign = _a.textAlign, width = _a.width;
-var StyledText = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  white-space: pre-line;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", ";\n\n  ", ";\n  \n  ", ";\n"], ["\n  white-space: pre-line;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ",
+var StyledText = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  white-space: pre-line;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", ";\n\n  ", ";\n\n  ", ";\n"], ["\n  white-space: pre-line;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ",
     ";\n\n  ",
-    ";\n  \n  ",
+    ";\n\n  ",
     ";\n"])), color, fontSize, fontWeight, lineHeight, space, textAlign, width, function (props) { return props.display && "\n    display: " + props.display + ";\n  "; }, function (props) { return props.hover && "\n  &:hover {\n    color: " + props.hover + ";\n  }\n  "; }, function (props) { return props.letterSpacing && "\n    letter-spacing: " + props.letterSpacing + ";\n  "; });
 var Text = /** @class */ (function (_super) {
     __extends(Text, _super);

@@ -29,7 +29,7 @@ const StyledText = styled.div`
     color: ${props.hover};
   }
   `};
-  
+
   ${(props: IProps) => props.letterSpacing && `
     letter-spacing: ${props.letterSpacing};
   `};
