@@ -26,10 +26,8 @@ var React = require("react");
 var styled_components_1 = require("styled-components");
 var theme_1 = require("./theme");
 var _a = require("styled-system"), color = _a.color, fontSize = _a.fontSize, fontWeight = _a.fontWeight, lineHeight = _a.lineHeight, space = _a.space;
-var size = 24;
-var lineThickness = 3;
-var StyledCheckbox = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n  float: left;\n  margin-right: 12px;\n  width: ", "px;\n  height: ", "px;\n  border-radius: 2px;\n  background-color: ", ";\n  border: solid 1px ", ";\n\n  & svg {\n    position: absolute;\n    & polyline {\n      fill: none;\n      stroke: ", ";\n      stroke-width: ", ";\n      stroke-linecap: round;\n      stroke-linejoin: round;\n      stroke-dasharray: ", "px;\n      stroke-dashoffset: ", "px;\n      transition: all .3s ease;\n    }\n  }\n"], ["\n  position: relative;\n  float: left;\n  margin-right: 12px;\n  width: ", "px;\n  height: ", "px;\n  border-radius: 2px;\n  background-color: ", ";\n  border: solid 1px ", ";\n\n  & svg {\n    position: absolute;\n    & polyline {\n      fill: none;\n      stroke: ", ";\n      stroke-width: ", ";\n      stroke-linecap: round;\n      stroke-linejoin: round;\n      stroke-dasharray: ", "px;\n      stroke-dashoffset: ", "px;\n      transition: all .3s ease;\n    }\n  }\n"])), size, size, theme_1.colors.white.standard, theme_1.colors.black._20, theme_1.colors.white.standard, lineThickness, size, size);
-var Label = styled_components_1.default.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: table-cell;\n  height: ", "px;\n  pointer-events: none;\n  vertical-align: middle;\n"], ["\n  display: table-cell;\n  height: ", "px;\n  pointer-events: none;\n  vertical-align: middle;\n"])), size + 2);
+var StyledCheckbox = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n  float: left;\n  margin-right: 12px;\n  width: ", "px;\n  height: ", "px;\n  border-radius: 2px;\n  background-color: ", ";\n  border: solid 1px ", ";\n\n  & svg {\n    position: absolute;\n    & polyline {\n      fill: none;\n      stroke: ", ";\n      stroke-width: ", ";\n      stroke-linecap: round;\n      stroke-linejoin: round;\n      stroke-dasharray: ", "px;\n      stroke-dashoffset: ", "px;\n      transition: all .3s ease;\n    }\n  }\n"], ["\n  position: relative;\n  float: left;\n  margin-right: 12px;\n  width: ", "px;\n  height: ", "px;\n  border-radius: 2px;\n  background-color: ", ";\n  border: solid 1px ", ";\n\n  & svg {\n    position: absolute;\n    & polyline {\n      fill: none;\n      stroke: ", ";\n      stroke-width: ", ";\n      stroke-linecap: round;\n      stroke-linejoin: round;\n      stroke-dasharray: ", "px;\n      stroke-dashoffset: ", "px;\n      transition: all .3s ease;\n    }\n  }\n"])), function (props) { return props.size; }, function (props) { return props.size; }, theme_1.colors.white.standard, theme_1.colors.black._20, theme_1.colors.white.standard, function (props) { return props.lineThickness; }, function (props) { return props.size; }, function (props) { return props.size; });
+var Label = styled_components_1.default.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: table-cell;\n  height: ", "px;\n  pointer-events: none;\n  vertical-align: middle;\n"], ["\n  display: table-cell;\n  height: ", "px;\n  pointer-events: none;\n  vertical-align: middle;\n"])), function (props) { return Number(props.size) + 2; });
 var Input = styled_components_1.default.input(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: absolute;\n  z-index: -1;\n  width: 0;\n  height: 0;\n  opacity: 0;\n"], ["\n  position: absolute;\n  z-index: -1;\n  width: 0;\n  height: 0;\n  opacity: 0;\n"])));
 var Wrapper = styled_components_1.default.label(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n\n  user-select: none;\n  display: inline-block;\n  cursor: pointer;\n  margin-bottom: 0;\n\n  & ", " {\n    ", ";\n    ", ";\n  }\n  & ", " {\n    ", ";\n    ", ";\n    ", ";\n    ", ";\n  }\n\n  &:hover {\n    & ", " {\n      ", ";\n    }\n    & ", " {\n      ", ";\n      ", ";\n    }\n  }\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n\n  user-select: none;\n  display: inline-block;\n  cursor: pointer;\n  margin-bottom: 0;\n\n  & ", " {\n    ",
     ";\n    ",
@@ -46,21 +44,19 @@ var Checkbox = /** @class */ (function (_super) {
     function Checkbox() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Checkbox.prototype.renderCheckLinePoints = function () {
+    Checkbox.prototype.renderCheckLinePoints = function (size) {
         return (size * 0.2) + " " + (size * 0.45) + " "
             + (size * 0.45) + " " + (size * 0.72) + " "
             + (size * 0.8) + " " + (size * 0.25);
     };
     Checkbox.prototype.render = function () {
-        var _a = this.props, checked = _a.checked, disabled = _a.disabled, id = _a.id, name = _a.name, onChange = _a.onChange;
+        var _a = this.props, checked = _a.checked, disabled = _a.disabled, lineThickness = _a.lineThickness, id = _a.id, name = _a.name, onChange = _a.onChange, size = _a.size;
         return (React.createElement(Wrapper, __assign({}, { checked: checked, disabled: disabled }),
             React.createElement(Input, { type: "checkbox", id: id, name: name, checked: checked, disabled: disabled, onChange: onChange }),
-            React.createElement(StyledCheckbox, null,
+            React.createElement(StyledCheckbox, { lineThickness: lineThickness, size: size },
                 React.createElement("svg", { width: size + "px", height: size + "px", viewBox: "0 0 " + size + " " + size },
-                    React.createElement("polyline", { points: this.renderCheckLinePoints() }))),
-            React.createElement(Label, null,
-                this.props.name ? "(" + this.props.name + ") " : "",
-                this.props.children)));
+                    React.createElement("polyline", { points: this.renderCheckLinePoints(Number(size)) }))),
+            React.createElement(Label, { size: size }, this.props.children)));
     };
     Checkbox.defaultProps = {
         checked: false,
@@ -73,7 +69,10 @@ var Checkbox = /** @class */ (function (_super) {
         // lineHeight
         lineHeight: "1.44",
         // event
-        onChange: function () { }
+        onChange: function () { },
+        // options
+        lineThickness: 3,
+        size: 24
     };
     return Checkbox;
 }(React.Component));

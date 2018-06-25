@@ -20,9 +20,11 @@ export interface IProps {
     pr?: number | string;
     pb?: number | string;
     pl?: number | string;
+    lineThickness?: number | string;
+    size?: number | string;
 }
 export declare class Checkbox extends React.Component<IProps, any> {
-    private renderCheckLinePoints();
+    private renderCheckLinePoints(size);
     static defaultProps: IProps;
     render(): JSX.Element;
 }

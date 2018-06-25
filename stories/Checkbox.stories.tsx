@@ -110,6 +110,21 @@ storiesOf("Components/Checkbox", module)
       );
     })
   )
+  .add("with size",
+    withInfo({
+      header: false,
+      inline: true,
+      propTables: false,
+    })(() => {
+      return (
+        <App>
+          <Checkbox checked lineThickness={2} size={14}>
+            이것은 체크박스입니다.
+          </Checkbox>
+        </App>
+      );
+    })
+  )
   .add("with space (margin, padding)",
     withInfo({
       header: false,

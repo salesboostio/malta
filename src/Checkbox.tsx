@@ -10,14 +10,12 @@ const {
   space,
 } = require("styled-system");
 
-const size = 24;
-const lineThickness = 3;
 const StyledCheckbox = styled.div`
   position: relative;
   float: left;
   margin-right: 12px;
-  width: ${size}px;
-  height: ${size}px;
+  width: ${(props: IProps) => props.size}px;
+  height: ${(props: IProps) => props.size}px;
   border-radius: 2px;
   background-color: ${colors.white.standard};
   border: solid 1px ${colors.black._20};
@@ -27,11 +25,11 @@ const StyledCheckbox = styled.div`
     & polyline {
       fill: none;
       stroke: ${colors.white.standard};
-      stroke-width: ${lineThickness};
+      stroke-width: ${(props: IProps) => props.lineThickness};
       stroke-linecap: round;
       stroke-linejoin: round;
-      stroke-dasharray: ${size}px;
-      stroke-dashoffset: ${size}px;
+      stroke-dasharray: ${(props: IProps) => props.size}px;
+      stroke-dashoffset: ${(props: IProps) => props.size}px;
       transition: all .3s ease;
     }
   }
@@ -39,7 +37,7 @@ const StyledCheckbox = styled.div`
 
 const Label = styled.span`
   display: table-cell;
-  height: ${size + 2}px;
+  height: ${(props: IProps) => Number(props.size) + 2}px;
   pointer-events: none;
   vertical-align: middle;
 `;
@@ -140,10 +138,13 @@ export interface IProps {
   pr?: number | string;
   pb?: number | string;
   pl?: number | string;
+  // options
+  lineThickness?: number | string;
+  size?: number | string;
 }
 
 export class Checkbox extends React.Component<IProps, any> {
-  private renderCheckLinePoints() {
+  private renderCheckLinePoints(size: number) {
     return ( size * 0.2 ) + " " + ( size * 0.45 ) + " "
     + ( size * 0.45 ) + " " + ( size * 0.72 ) + " "
     + ( size * 0.8 ) + " " + ( size * 0.25 );
@@ -161,11 +162,14 @@ export class Checkbox extends React.Component<IProps, any> {
     lineHeight: "1.44",
 
     // event
-    onChange: () => {}
+    onChange: () => {},
+    // options
+    lineThickness: 3,
+    size: 24
   };
 
   public render() {
-    const { checked, disabled, id, name, onChange } = this.props;
+    const { checked, disabled, lineThickness, id, name, onChange, size } = this.props;
 
     return (
       <Wrapper {...{checked, disabled}}>
@@ -175,12 +179,12 @@ export class Checkbox extends React.Component<IProps, any> {
           checked={checked}
           disabled={disabled}
           onChange={onChange}/>
-        <StyledCheckbox>
+        <StyledCheckbox lineThickness={lineThickness} size={size}>
           <svg width={size + "px"} height={size + "px"} viewBox={"0 0 " + size + " " + size}>
-            <polyline points={this.renderCheckLinePoints()}></polyline>
+            <polyline points={this.renderCheckLinePoints(Number(size))}></polyline>
           </svg>
         </StyledCheckbox>
-        <Label>{this.props.name ? "(" + this.props.name + ") " : ""}{this.props.children}</Label>
+        <Label size={size}>{this.props.children}</Label>
       </Wrapper>
     );
   }
