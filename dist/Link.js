@@ -32,7 +32,8 @@ var Link = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Link.prototype.render = function () {
-        return (React.createElement(A, __assign({}, this.props), this.props.children));
+        var onClick = this.props.onClick;
+        return (React.createElement(A, __assign({ onClick: onClick }, this.props), this.props.children));
     };
     Link.defaultProps = {
         href: "#",
@@ -46,6 +47,7 @@ var Link = /** @class */ (function (_super) {
         // space
         m: 0,
         p: 0,
+        onClick: function () { }
     };
     return Link;
 }(React.Component));

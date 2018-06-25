@@ -13,7 +13,7 @@ const {
 const StyledCheckbox = styled.div`
   position: relative;
   float: left;
-  margin-right: 12px;
+  margin-right: 8px;
   width: ${(props: IProps) => props.size}px;
   height: ${(props: IProps) => props.size}px;
   border-radius: 2px;

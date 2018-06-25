@@ -21,6 +21,7 @@ export interface IProps {
     pl?: number | string;
     px?: number | string;
     py?: number | string;
+    onClick?: any;
 }
 export declare class Link extends React.Component<IProps, any> {
     static defaultProps: IProps;
