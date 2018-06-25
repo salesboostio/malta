@@ -1,12 +1,19 @@
 /// <reference types="react" />
 import * as React from "react";
 export interface IProps {
+    onClick?: React.MouseEventHandler<HTMLElement>;
+    type?: string;
+    borderColor?: string;
+    borderRadius?: number | string;
+    border?: string;
+    borderTop?: string;
+    borderRight?: string;
+    borderBottom?: string;
+    borderLeft?: string;
     color?: string;
     bg?: string;
-    display?: string;
     fontSize?: Array<number | string> | number | string;
-    fontWeight?: Array<number | string> | number | string;
-    lineHeight?: Array<number | string> | number | string;
+    height?: Array<number | string> | number | string;
     m?: Array<number | string> | number | string;
     mt?: Array<number | string> | number | string;
     mr?: Array<number | string> | number | string;
@@ -21,12 +28,9 @@ export interface IProps {
     pl?: Array<number | string> | number | string;
     px?: Array<number | string> | number | string;
     py?: Array<number | string> | number | string;
-    align?: Array<string> | string;
     width?: Array<number | string> | number | string;
-    hover?: string;
-    letterSpacing?: string;
 }
-export declare class Text extends React.Component<IProps, any> {
+export declare class Label extends React.Component<IProps, any> {
     static defaultProps: IProps;
     render(): JSX.Element;
 }

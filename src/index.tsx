@@ -9,6 +9,7 @@ export { Footer } from "./Footer";
 export { Img } from "./Img";
 export { Input } from "./Input";
 export { Jumbotron } from "./Jumbotron";
+export { Label } from "./Label";
 export { Line } from "./Line";
 export { Link } from "./Link";
 export { Loader } from "./Loader";

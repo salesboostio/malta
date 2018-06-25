@@ -116,7 +116,6 @@ const StepItem = styled.a`
   text-decoration: none;
   color: ${colors.black.hint};
   font-weight: ${fontWeights.regular};
-  cursor: pointer;
 
   & svg {
     fill: ${colors.blue.deep};

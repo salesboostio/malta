@@ -1,52 +1,58 @@
 import * as React from "react";
 import styled from "styled-components";
+import {
+  colors,
+  fontSizes
+} from "./theme";
 const {
+  borderColor,
+  borderRadius,
+  borders,
   color,
   fontSize,
-  fontWeight,
-  lineHeight,
+  height,
   space,
-  textAlign,
   width,
 } = require("styled-system");
+import { generateQuery } from "./tools/mediaQuery";
 
-const StyledText = styled.div`
-  white-space: pre-line;
+const StyledLabel = styled.span`
+  display: inline-block;
+  text-align: center;
+  ${borderColor}
+  ${borderRadius}
+  ${borders}
   ${color}
   ${fontSize}
-  ${fontWeight}
-  ${lineHeight}
   ${space}
-  ${textAlign}
   ${width}
+  ${height}
 
-  ${(props: IProps) => props.display && `
-    display: ${props.display};
-  `};
-
-  ${(props: IProps) => props.hover && `
-  &:hover {
-    color: ${props.hover};
-  }
-  `};
-  
-  ${(props: IProps) => props.letterSpacing && `
-    letter-spacing: ${props.letterSpacing};
+  ${(props: IProps) => props.height && `
+    line-height: ${props.height};
   `};
 `;
 
 export interface IProps {
+  onClick?: React.MouseEventHandler<HTMLElement>;
+  type?: string;
+  // borderColor
+  borderColor?: string;
+  // borderRadius
+  borderRadius?: number | string;
+  // borders
+  border?: string;
+  borderTop?: string;
+  borderRight?: string;
+  borderBottom?: string;
+  borderLeft?: string;
   // color
   color?: string;
   bg?: string;
-  // display
-  display?: string;
   // fontSize
   fontSize?: Array<number | string> | number | string;
-  // fontWeight
-  fontWeight?: Array<number | string> | number | string;
-  // lineHeight
-  lineHeight?: Array<number | string> | number | string;
+  // height
+  height?: Array<number | string> | number | string;
   // space
   m?: Array<number | string> | number | string;
   mt?: Array<number | string> | number | string;
@@ -62,40 +68,36 @@ export interface IProps {
   pl?: Array<number | string> | number | string;
   px?: Array<number | string> | number | string;
   py?: Array<number | string> | number | string;
-  // textAlign
-  align?: Array<string> | string;
   // width
   width?: Array<number | string> | number | string;
-  // options
-  hover?: string;
-  letterSpacing?: string;
 }
 
-export class Text extends React.Component<IProps, any> {
+export class Label extends React.Component<IProps, any> {
   public static defaultProps: IProps = {
+    onClick: () => {},
+    // borderColor
+    borderColor: "transparent",
+    // borders
+    border: "none",
     // color
-    color: "black.dark",
-    bg: "transparent",
+    color: "white.standard",
+    bg: "blue.royal",
     // fontSize
-    fontSize: "h3",
-    // fontWeight
-    fontWeight: "regular",
-    // lineHeight
-    lineHeight: "1.44",
+    fontSize: "h5",
+    // height
+    height: "auto",
     // space
     m: 0,
-    p: 0,
-    // textAlign
-    align: "left",
+    px: "4px",
     // width
-    width: 1,
+    width: "auto",
   };
 
   public render() {
     return (
-      <StyledText {...this.props}>
-        {this.props.children}
-      </StyledText>
+      <StyledLabel
+        {...this.props}
+      />
     );
   }
 }

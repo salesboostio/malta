@@ -20,14 +20,14 @@ const TooltipText = styled.span`
   ${textAlign}
   ${width}
 
-  visibility: hidden;
   border-radius: 2px;
   position: absolute;
   white-space: pre-line;
-  z-index: 1;
+  visibility: hidden;
   opacity: 0;
   transform: translate3d(0,-10px,0);
   transition: all .15s ease-in-out;
+  z-index: 1;
 
   &::after {
     content: "";
@@ -38,10 +38,10 @@ const TooltipText = styled.span`
 
   &.top {
     bottom: 150%;
-    left: 0;
+    left: -24px;
     &::after {
       top: 100%;
-      left: 7%;
+      left: 24px;
       border-left-color: transparent !important;
       border-right-color: transparent !important;
       border-bottom-color: transparent !important;
@@ -50,11 +50,11 @@ const TooltipText = styled.span`
   }
 
   &.left {
-    top: 0%;
+    top: -10px;
     right: 110%;
 
     &::after {
-      top: 2%;
+      top: 10px;
       left: 100%;
       border-top-color: transparent !important;
       border-right-color: transparent !important;
@@ -64,11 +64,11 @@ const TooltipText = styled.span`
   }
 
   &.right {
-    top: 0%;
+    top: -10px;
     left: 110%;
 
     &::after {
-      top: 2%;
+      top: 10px;
       right: 100%;
       border-top-color: transparent !important;
       border-left-color: transparent !important;
@@ -79,10 +79,10 @@ const TooltipText = styled.span`
 
   &.bottom {
     top: 150%;
-    left: 0;
+    left: -24px;
     &::after {
       bottom: 100%;
-      left: 7%;
+      left: 24px;
       border-top-color: transparent !important;
       border-left-color: transparent !important;
       border-right-color: transparent !important;
@@ -92,8 +92,9 @@ const TooltipText = styled.span`
 `;
 
 const StyledTooltip = styled.div`
-  position: relative;
+  cursor: pointer;
   display: inline-block;
+  position: relative;
 
   &:hover {
     & ${TooltipText} {

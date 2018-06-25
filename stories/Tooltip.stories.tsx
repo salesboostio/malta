@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
-import { App, Box, Tooltip } from "../src";
+import { App, Box, Text, Tooltip } from "../src";
 
 const tooltipText = "사람이 아닌 프로그램이 계정에 접근하여 픽셀을 자동 설치하기 때문에 모든 정보는 안전하게 보호됩니다.\n픽셀 설치 후에는 계정 정보가 일체 파기되어 보관되지 않습니다.";
 
