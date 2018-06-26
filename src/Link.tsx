@@ -19,6 +19,7 @@ const A = styled.a`
 
 export interface IProps {
   href: string;
+  target?: string;
   // color
   color?: string;
   bg?: string;
@@ -41,6 +42,8 @@ export interface IProps {
   pl?: number | string;
   px?: number | string;
   py?: number | string;
+  // options
+  onClick?: any;
 }
 
 export class Link extends React.Component<IProps, any> {
@@ -56,11 +59,13 @@ export class Link extends React.Component<IProps, any> {
     // space
     m: 0,
     p: 0,
+    onClick: () => {}
   };
 
   public render() {
+    const { onClick } = this.props;
     return (
-      <A {...this.props}>
+      <A onClick={onClick} {...this.props}>
         {this.props.children}
       </A>
     );

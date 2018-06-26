@@ -2,6 +2,7 @@
 import * as React from "react";
 export interface IProps {
     href: string;
+    target?: string;
     color?: string;
     bg?: string;
     fontSize?: number | string;
@@ -20,6 +21,7 @@ export interface IProps {
     pl?: number | string;
     px?: number | string;
     py?: number | string;
+    onClick?: any;
 }
 export declare class Link extends React.Component<IProps, any> {
     static defaultProps: IProps;

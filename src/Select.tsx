@@ -34,7 +34,7 @@ const styles = {
     const { isDisabled } = props;
     return {
       ...styles,
-      backgroundColor: isDisabled ? colors.black._5 : colors.white,
+      backgroundColor: isDisabled ? colors.black._5 : colors.white.standard,
       borderWidth: 1,
       borderRadius: 2,
       borderColor: colors.black._20,
@@ -75,7 +75,7 @@ const styles = {
     return {
       ...styles,
       alignItems: "center",
-      backgroundColor: isFocused ? colors.black._5 : colors.white,
+      backgroundColor: isFocused ? colors.black._5 : colors.white.standard,
       color: colors.black.dark,
       display: "flex",
       fontSize: fontSizes.h3,

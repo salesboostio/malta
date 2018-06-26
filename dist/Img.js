@@ -24,8 +24,9 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
+var mediaQuery_1 = require("./tools/mediaQuery");
 var _a = require("styled-system"), height = _a.height, space = _a.space, width = _a.width;
-var StyledImg = styled_components_1.default.img(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n"])), height, space, width);
+var StyledImg = styled_components_1.default.img(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n\n  ", ";\n  ", ";\n"], ["\n  ", "\n  ", "\n  ", "\n\n  ", ";\n  ", ";\n"])), height, space, width, function (props) { return props.hiddendown && mediaQuery_1.hiddenDown(props.hiddendown); }, function (props) { return props.hiddenup && mediaQuery_1.hiddenUp(props.hiddenup); });
 var Img = /** @class */ (function (_super) {
     __extends(Img, _super);
     function Img() {

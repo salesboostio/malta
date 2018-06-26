@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { Img } from "./Img";
 import {
+  breakpoints,
   colors,
   containerWidth,
   fontSizes,
@@ -9,14 +10,16 @@ import {
   navBarHeight,
   space
 } from "./theme";
+import { generateQuery, hiddenDown, hiddenUp } from "./tools/mediaQuery";
 
 
 const Wrapper = styled.div`
-  background-color: ${colors.white};
+  background-color: ${colors.white._75};
   height: ${navBarHeight};
   left: 0;
   position: fixed;
   right: 0;
+  z-index: 1000;
 `;
 
 const Container = styled.div`
@@ -25,14 +28,20 @@ const Container = styled.div`
   height: ${navBarHeight};
   margin-left: auto;
   margin-right: auto;
-  max-width: ${containerWidth};
   padding-left: ${space[3]}px;
   padding-right: ${space[3]}px;
+
+  ${generateQuery("max-width", "sm", `
+    padding-left: ${space[2]}px;
+    padding-right: ${space[2]}px;
+  `)};
 `;
 
 const Right = styled.div`
   flex: 1;
   text-align: right;
+
+  ${hiddenDown("sm")};
 `;
 
 const Title = styled.div`
@@ -43,8 +52,8 @@ const Title = styled.div`
 
 const Description = styled.div`
   font-size: ${fontSizes.h5}px;
-  font-weight: ${fontWeights.demiLight};
-  color: ${colors.black.standard};
+  font-weight: ${fontWeights.regular};
+  color: ${colors.black.sub};
   margin-top: 4px;
 `;
 
@@ -60,7 +69,10 @@ export class Navbar extends React.Component<IProps, any> {
     return (
       <Wrapper>
         <Container>
-          <Img src={logoUrl} width="125px" height="34px" />
+          <a href="/">
+            <Img hiddendown="sm" src={logoUrl} width="125px" height="34px" />
+            <Img hiddenup="sm" src={logoUrl} width="96px" height="26px" />
+          </a>
           <Right>
             <Title>{title}</Title>
             <Description>{description}</Description>

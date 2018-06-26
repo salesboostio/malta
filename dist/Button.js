@@ -24,8 +24,11 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
+var theme_1 = require("./theme");
 var _a = require("styled-system"), borderColor = _a.borderColor, borderRadius = _a.borderRadius, borders = _a.borders, color = _a.color, fontSize = _a.fontSize, height = _a.height, space = _a.space, width = _a.width;
-var StyledButton = styled_components_1.default.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  align-items: center;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), borderColor, borderRadius, borders, color, fontSize, space, width, height);
+var mediaQuery_1 = require("./tools/mediaQuery");
+var StyledButton = styled_components_1.default.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  align-items: center;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", ";\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  &:focus {\n    background-color: ", ";\n  }\n"], ["\n  align-items: center;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ",
+    ";\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  &:focus {\n    background-color: ", ";\n  }\n"])), borderColor, borderRadius, borders, color, fontSize, space, width, height, mediaQuery_1.generateQuery("max-width", "sm", "\n    font-size: " + theme_1.fontSizes.h5 + "px;\n    height: 52px;\n  "), theme_1.colors.blue.deep, theme_1.colors.blue.dark);
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button() {
@@ -43,7 +46,7 @@ var Button = /** @class */ (function (_super) {
         // borders
         border: "none",
         // color
-        color: "white",
+        color: "white.standard",
         bg: "blue.royal",
         // fontSize
         fontSize: "h3",
@@ -52,6 +55,7 @@ var Button = /** @class */ (function (_super) {
         // space
         m: 0,
         mb: 2,
+        px: 3,
         // width
         width: "auto",
     };

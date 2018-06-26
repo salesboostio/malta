@@ -31,7 +31,7 @@ var Label = styled_components_1.default.label(templateObject_2 || (templateObjec
 var styles = {
     control: function (styles, props) {
         var isDisabled = props.isDisabled;
-        return __assign({}, styles, { backgroundColor: isDisabled ? theme_1.colors.black._5 : theme_1.colors.white, borderWidth: 1, borderRadius: 2, borderColor: theme_1.colors.black._20, boxShadow: "0 2px 6px 2px " + theme_1.colors.black._3, height: "60px" });
+        return __assign({}, styles, { backgroundColor: isDisabled ? theme_1.colors.black._5 : theme_1.colors.white.standard, borderWidth: 1, borderRadius: 2, borderColor: theme_1.colors.black._20, boxShadow: "0 2px 6px 2px " + theme_1.colors.black._3, height: "60px" });
     },
     valueContainer: function (styles) {
         return __assign({}, styles, { color: theme_1.colors.black.dark, fontSize: theme_1.fontSizes.h3, fontWeight: theme_1.fontWeights.regular, padding: "0 " + theme_1.space[2] + "px" });
@@ -49,7 +49,7 @@ var styles = {
     },
     option: function (styles, props) {
         var isFocused = props.isFocused;
-        return __assign({}, styles, { alignItems: "center", backgroundColor: isFocused ? theme_1.colors.black._5 : theme_1.colors.white, color: theme_1.colors.black.dark, display: "flex", fontSize: theme_1.fontSizes.h3, fontWeight: theme_1.fontWeights.regular, height: "60px", padding: "0 " + theme_1.space[2] + "px", ":active": {
+        return __assign({}, styles, { alignItems: "center", backgroundColor: isFocused ? theme_1.colors.black._5 : theme_1.colors.white.standard, color: theme_1.colors.black.dark, display: "flex", fontSize: theme_1.fontSizes.h3, fontWeight: theme_1.fontWeights.regular, height: "60px", padding: "0 " + theme_1.space[2] + "px", ":active": {
                 backgroundColor: theme_1.colors.black._5,
             } });
     },

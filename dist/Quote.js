@@ -25,7 +25,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
 var _a = require("styled-system"), color = _a.color, fontSize = _a.fontSize, fontWeight = _a.fontWeight, lineHeight = _a.lineHeight, space = _a.space, textAlign = _a.textAlign;
-var BlockQuote = styled_components_1.default.blockquote(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: inline-block;\n  white-space: pre-line;\n  position: relative;\n  margin: 0 0 0 20px;\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  &:before {\n    content: \"\u201C\";\n    display: block;\n    font: italic 400%/1 Cochin,Georgia,\"Times New Roman\", serif;\n    font-size: 40px;\n    height: 0;\n    left: -20px;\n    position: absolute;\n    top: -10px;\n    ", "\n    ", "\n  }\n\n  &:after {\n    content: \"\u201D\";\n    display: block;\n    font: italic 400%/1 Cochin,Georgia,\"Times New Roman\", serif;\n    font-size: 40px;\n    height: 0;\n    right: -20px;\n    position: absolute;\n    top: -10px;\n    ", "\n    ", "\n  }\n"], ["\n  display: inline-block;\n  white-space: pre-line;\n  position: relative;\n  margin: 0 0 0 20px;\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  &:before {\n    content: \"\u201C\";\n    display: block;\n    font: italic 400%/1 Cochin,Georgia,\"Times New Roman\", serif;\n    font-size: 40px;\n    height: 0;\n    left: -20px;\n    position: absolute;\n    top: -10px;\n    ", "\n    ", "\n  }\n\n  &:after {\n    content: \"\u201D\";\n    display: block;\n    font: italic 400%/1 Cochin,Georgia,\"Times New Roman\", serif;\n    font-size: 40px;\n    height: 0;\n    right: -20px;\n    position: absolute;\n    top: -10px;\n    ", "\n    ", "\n  }\n"])), color, fontSize, fontWeight, lineHeight, space, color, fontWeight, color, fontWeight);
+var BlockQuote = styled_components_1.default.blockquote(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: ", ";\n  white-space: pre-line;\n  position: relative;\n  margin: 0 0 0 20px;\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  &:before {\n    content: \"\u201C\";\n    display: block;\n    font-size: 40px;\n    height: 0;\n    left: -20px;\n    position: absolute;\n    top: -10px;\n    ", "\n    ", "\n  }\n\n  &:after {\n    content: \"\u201D\";\n    display: block;\n    font-size: 40px;\n    height: 0;\n    right: -20px;\n    position: absolute;\n    top: -10px;\n    ", "\n    ", "\n  }\n"], ["\n  display: ", ";\n  white-space: pre-line;\n  position: relative;\n  margin: 0 0 0 20px;\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  &:before {\n    content: \"\u201C\";\n    display: block;\n    font-size: 40px;\n    height: 0;\n    left: -20px;\n    position: absolute;\n    top: -10px;\n    ", "\n    ", "\n  }\n\n  &:after {\n    content: \"\u201D\";\n    display: block;\n    font-size: 40px;\n    height: 0;\n    right: -20px;\n    position: absolute;\n    top: -10px;\n    ", "\n    ", "\n  }\n"])), function (props) { return props.display; }, color, fontSize, fontWeight, lineHeight, space, textAlign, color, fontWeight, color, fontWeight);
 var Quote = /** @class */ (function (_super) {
     __extends(Quote, _super);
     function Quote() {
@@ -38,6 +38,8 @@ var Quote = /** @class */ (function (_super) {
         // color
         color: "black.dark",
         bg: "transparent",
+        // display
+        display: "inline-block",
         // fontSize
         fontSize: "h3",
         // fontWeight
