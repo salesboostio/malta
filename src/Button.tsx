@@ -88,7 +88,7 @@ export interface IProps {
 
 export class Button extends React.Component<IProps, any> {
   public static defaultProps: IProps = {
-    onClick: () => { },
+    onClick: () => {},
     // borderColor
     borderColor: "transparent",
     // borderRadius

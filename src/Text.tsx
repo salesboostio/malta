@@ -67,6 +67,7 @@ export interface IProps {
   // width
   width?: Array<number | string> | number | string;
   // options
+  onClick?: React.MouseEventHandler<HTMLElement>;
   hover?: string;
   letterSpacing?: string;
   style?: Object;
@@ -74,6 +75,7 @@ export interface IProps {
 
 export class Text extends React.Component<IProps, any> {
   public static defaultProps: IProps = {
+    onClick: () => {},
     // color
     color: "black.dark",
     bg: "transparent",

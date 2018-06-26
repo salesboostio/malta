@@ -23,6 +23,7 @@ export interface IProps {
     py?: Array<number | string> | number | string;
     align?: Array<string> | string;
     width?: Array<number | string> | number | string;
+    onClick?: React.MouseEventHandler<HTMLElement>;
     hover?: string;
     letterSpacing?: string;
     style?: Object;

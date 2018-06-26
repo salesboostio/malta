@@ -38,6 +38,7 @@ var Text = /** @class */ (function (_super) {
         return (React.createElement(StyledText, __assign({}, this.props), this.props.children));
     };
     Text.defaultProps = {
+        onClick: function () { },
         // color
         color: "black.dark",
         bg: "transparent",
