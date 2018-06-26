@@ -37,7 +37,7 @@ export class Line extends React.Component<IProps, any> {
     // color
     color: "#ededf1",
     // space
-    m: 1,
+    m: 0,
     p: 0,
     // width
     width: "100%"

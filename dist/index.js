@@ -3,6 +3,8 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
+var Accordion_1 = require("./Accordion");
+exports.Accordion = Accordion_1.Accordion;
 var App_1 = require("./App");
 exports.App = App_1.App;
 var Box_1 = require("./Box");

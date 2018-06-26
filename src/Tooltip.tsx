@@ -10,6 +10,7 @@ const {
   textAlign,
   width,
 } = require("styled-system");
+import { Box } from "./";
 
 const TooltipText = styled.span`
   ${color}
@@ -34,9 +35,10 @@ const TooltipText = styled.span`
     position: absolute;
     border-width: 7px;
     border-style: solid;
+    ${borderColor}
   }
 
-  &.top {
+  ${(props: IProps) => props.placement == "top" && `
     bottom: 150%;
     left: -24px;
     &::after {
@@ -45,11 +47,10 @@ const TooltipText = styled.span`
       border-left-color: transparent !important;
       border-right-color: transparent !important;
       border-bottom-color: transparent !important;
-      ${borderColor}
     }
-  }
+  `};
 
-  &.left {
+  ${(props: IProps) => props.placement == "left" && `
     top: -10px;
     right: 110%;
 
@@ -59,11 +60,10 @@ const TooltipText = styled.span`
       border-top-color: transparent !important;
       border-right-color: transparent !important;
       border-bottom-color: transparent !important;
-      ${borderColor}
     }
-  }
+  `};
 
-  &.right {
+  ${(props: IProps) => props.placement == "right" && `
     top: -10px;
     left: 110%;
 
@@ -73,11 +73,10 @@ const TooltipText = styled.span`
       border-top-color: transparent !important;
       border-left-color: transparent !important;
       border-bottom-color: transparent !important;
-      ${borderColor}
     }
-  }
+  `};
 
-  &.bottom {
+  ${(props: IProps) => props.placement == "bottom" && `
     top: 150%;
     left: -24px;
     &::after {
@@ -86,9 +85,8 @@ const TooltipText = styled.span`
       border-top-color: transparent !important;
       border-left-color: transparent !important;
       border-right-color: transparent !important;
-      ${borderColor}
     }
-  }
+  `};
 `;
 
 const StyledTooltip = styled.div`
@@ -187,7 +185,7 @@ export class Tooltip extends React.Component<IProps, any> {
     return (
       <StyledTooltip>
         {this.props.children}
-        <TooltipText className={this.props.placement} {...this.props}>{this.nl2br(this.props.text)}</TooltipText>
+        <TooltipText {...this.props}>{this.nl2br(this.props.text)}</TooltipText>
       </StyledTooltip>
     );
   }

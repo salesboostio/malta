@@ -1,3 +1,4 @@
+export { Accordion } from "./Accordion";
 export { App } from "./App";
 export { Box } from "./Box";
 export { Button } from "./Button";

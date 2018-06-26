@@ -38,7 +38,7 @@ var Line = /** @class */ (function (_super) {
         // color
         color: "#ededf1",
         // space
-        m: 1,
+        m: 0,
         p: 0,
         // width
         width: "100%"

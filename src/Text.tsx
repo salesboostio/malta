@@ -69,6 +69,7 @@ export interface IProps {
   // options
   hover?: string;
   letterSpacing?: string;
+  style?: Object;
 }
 
 export class Text extends React.Component<IProps, any> {

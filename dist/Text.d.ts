@@ -25,6 +25,7 @@ export interface IProps {
     width?: Array<number | string> | number | string;
     hover?: string;
     letterSpacing?: string;
+    style?: Object;
 }
 export declare class Text extends React.Component<IProps, any> {
     static defaultProps: IProps;
