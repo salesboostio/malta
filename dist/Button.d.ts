@@ -29,6 +29,8 @@ export interface IProps {
     px?: Array<number | string> | number | string;
     py?: Array<number | string> | number | string;
     width?: Array<number | string> | number | string;
+    hoverColor?: string;
+    focusColor?: string;
 }
 export declare class Button extends React.Component<IProps, any> {
     static defaultProps: IProps;

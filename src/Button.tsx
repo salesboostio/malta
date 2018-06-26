@@ -36,11 +36,11 @@ const StyledButton = styled.button`
   `)};
 
   &:hover {
-    background-color: ${colors.blue.deep};
+    background-color: ${(props: IProps) => props.hoverColor};
   }
 
   &:focus {
-    background-color: ${colors.blue.dark};
+    background-color: ${(props: IProps) => props.focusColor};
   }
 `;
 
@@ -81,11 +81,14 @@ export interface IProps {
   py?: Array<number | string> | number | string;
   // width
   width?: Array<number | string> | number | string;
+  // options
+  hoverColor?: string;
+  focusColor?: string;
 }
 
 export class Button extends React.Component<IProps, any> {
   public static defaultProps: IProps = {
-    onClick: () => {},
+    onClick: () => { },
     // borderColor
     borderColor: "transparent",
     // borderRadius
@@ -105,6 +108,9 @@ export class Button extends React.Component<IProps, any> {
     px: 3,
     // width
     width: "auto",
+    // options
+    hoverColor: colors.blue.deep,
+    focusColor: colors.blue.dark,
   };
 
   public render() {
