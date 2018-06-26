@@ -4,6 +4,7 @@ export interface IProps {
     label?: string;
     error?: boolean;
     errorMessage?: string;
+    defaultValue?: string;
     disabled?: boolean;
     name?: string;
     onBlur?: React.FocusEventHandler<HTMLInputElement>;

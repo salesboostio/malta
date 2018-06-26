@@ -71,6 +71,7 @@ export interface IProps {
   error?: boolean;
   errorMessage?: string;
   // input component
+  defaultValue?: string;
   disabled?: boolean;
   name?: string;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
@@ -117,6 +118,7 @@ export class Input extends React.Component<IProps, any> {
       error,
       errorMessage,
       // input
+      defaultValue,
       disabled,
       name,
       onBlur,
@@ -132,6 +134,7 @@ export class Input extends React.Component<IProps, any> {
       <Wrapper {...props}>
         {this.renderLabel(label)}
         <StyledInput
+          defaultValue={defaultValue}
           disabled={disabled}
           name={name}
           onBlur={onBlur}
