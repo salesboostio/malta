@@ -115,6 +115,7 @@ export interface IProps {
   onChange?: React.ChangeEventHandler<HTMLElement>;
   // options
   size?: number | string;
+  style?: Object;
 }
 
 export class Radio extends React.Component<IProps, any> {
@@ -140,10 +141,12 @@ export class Radio extends React.Component<IProps, any> {
   };
 
   public render() {
-    const { checked, display, name, onClick, onChange, size, value } = this.props;
+    const { checked, display, name, onClick, onChange, size, style, m, p, value } = this.props;
 
     return (
-      <Wrapper {...{ display }}>
+      <Wrapper
+        style={style}
+        {...{ display, m, p }}>
         <Input type="radio"
           name={name}
           value={value}

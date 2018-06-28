@@ -22,6 +22,7 @@ export interface IProps {
     onClick?: React.MouseEventHandler<HTMLElement>;
     onChange?: React.ChangeEventHandler<HTMLElement>;
     size?: number | string;
+    style?: Object;
 }
 export declare class Radio extends React.Component<IProps, any> {
     static defaultProps: IProps;

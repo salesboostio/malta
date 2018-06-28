@@ -102,6 +102,9 @@ storiesOf("Components/Radio", module)
           <Radio m={2} p={1}>
             이것은 라디오버튼입니다.
           </Radio>
+          <Radio m={5} p={5}>
+            이것은 라디오버튼입니다.
+          </Radio>
         </App>
       );
     })
