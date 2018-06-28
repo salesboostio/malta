@@ -25,6 +25,7 @@ export interface IProps {
     align?: string;
     width?: number | string;
     text?: string;
+    offset?: number;
 }
 export declare class Tooltip extends React.Component<IProps, any> {
     static defaultProps: IProps;

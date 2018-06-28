@@ -97,6 +97,25 @@ storiesOf("Components/Tooltip", module)
       );
     })
   )
+  .add("with offset",
+    withInfo({
+      header: false,
+      inline: true,
+      propTables: false,
+    })(() => {
+      return (
+        <App>
+          <Box mx={5} p={5}>
+            <Tooltip offset={-10} placement="top" text={tooltipText}>이것은 offset이 -10인 툴팁입니다.</Tooltip><br/>
+            <Tooltip offset={0} placement="top" text={tooltipText}>이것은 offset이 0인 툴팁입니다.</Tooltip><br/>
+            <Tooltip offset={10} placement="top" text={tooltipText}>이것은 offset이 10인 툴팁입니다.</Tooltip><br/>
+            <Tooltip offset={30} placement="top" text={tooltipText}>이것은 offset이 30인 툴팁입니다.</Tooltip><br/>
+            <Tooltip offset={50} placement="top" text={tooltipText}>이것은 offset이 50인 툴팁입니다.</Tooltip><br/>
+          </Box>
+        </App>
+      );
+    })
+  )
   .add("with placement",
     withInfo({
       header: false,

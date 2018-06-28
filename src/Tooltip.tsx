@@ -43,7 +43,7 @@ const TooltipText = styled.span`
     left: -24px;
     &::after {
       top: 100%;
-      left: 24px;
+      left: ${24 + props.offset}px;
       border-left-color: transparent !important;
       border-right-color: transparent !important;
       border-bottom-color: transparent !important;
@@ -53,9 +53,8 @@ const TooltipText = styled.span`
   ${(props: IProps) => props.placement == "left" && `
     top: -10px;
     right: 110%;
-
     &::after {
-      top: 10px;
+      top: ${10  + props.offset}px;
       left: 100%;
       border-top-color: transparent !important;
       border-right-color: transparent !important;
@@ -66,9 +65,8 @@ const TooltipText = styled.span`
   ${(props: IProps) => props.placement == "right" && `
     top: -10px;
     left: 110%;
-
     &::after {
-      top: 10px;
+      top: ${10  + props.offset}px;
       right: 100%;
       border-top-color: transparent !important;
       border-left-color: transparent !important;
@@ -81,7 +79,7 @@ const TooltipText = styled.span`
     left: -24px;
     &::after {
       bottom: 100%;
-      left: 24px;
+      left: ${24 + props.offset}px;
       border-top-color: transparent !important;
       border-left-color: transparent !important;
       border-right-color: transparent !important;
@@ -137,6 +135,8 @@ export interface IProps {
   width?: number | string;
   // text
   text?: string;
+  // options
+  offset?: number;
 }
 
 export class Tooltip extends React.Component<IProps, any> {
@@ -160,6 +160,8 @@ export class Tooltip extends React.Component<IProps, any> {
     align: "left",
     // width
     width: 320,
+    // options
+    offset: 0,
   };
 
   private nl2br(text: any) {
