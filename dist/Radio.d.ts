@@ -19,6 +19,7 @@ export interface IProps {
     pr?: number | string;
     pb?: number | string;
     pl?: number | string;
+    size?: number | string;
 }
 export declare class Radio extends React.Component<IProps, any> {
     constructor(props: any);

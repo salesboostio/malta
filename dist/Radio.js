@@ -26,12 +26,10 @@ var React = require("react");
 var styled_components_1 = require("styled-components");
 var theme_1 = require("./theme");
 var _a = require("styled-system"), color = _a.color, fontSize = _a.fontSize, fontWeight = _a.fontWeight, lineHeight = _a.lineHeight, space = _a.space;
-var size = 24;
-var circleSize = size * 0.2;
-var StyledRadio = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n  float: left;\n  margin-right: 12px;\n  width: ", "px;\n  height: ", "px;\n  border-radius: 50%;\n  background-color: ", ";\n  border: solid 1px ", ";\n\n  & svg {\n    position: absolute;\n    & circle {\n      fill: ", ";\n      stroke: none;\n      r: 0;\n      transition: all .3s ease;\n    }\n  }\n"], ["\n  position: relative;\n  float: left;\n  margin-right: 12px;\n  width: ", "px;\n  height: ", "px;\n  border-radius: 50%;\n  background-color: ", ";\n  border: solid 1px ", ";\n\n  & svg {\n    position: absolute;\n    & circle {\n      fill: ", ";\n      stroke: none;\n      r: 0;\n      transition: all .3s ease;\n    }\n  }\n"])), size, size, theme_1.colors.white.standard, theme_1.colors.black._20, theme_1.colors.white.standard);
-var Label = styled_components_1.default.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: table-cell;\n  height: ", "px;\n  pointer-events: none;\n  vertical-align: middle;\n"], ["\n  display: table-cell;\n  height: ", "px;\n  pointer-events: none;\n  vertical-align: middle;\n"])), size + 2);
-var Input = styled_components_1.default.input(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: absolute;\n  z-index: -1;\n  width: 0;\n  height: 0;\n  opacity: 0;\n\n  &:checked {\n    & ~ ", " {\n      color: ", " !important;\n    }\n    & ~ ", " {\n      background-color: ", ";\n      border-color: ", " !important;\n      & svg {\n        & circle {\n          r: ", ";\n        }\n      }\n    }\n    &:hover {\n      & ", " {\n        border-color: ", ";\n      }\n    }\n  }\n"], ["\n  position: absolute;\n  z-index: -1;\n  width: 0;\n  height: 0;\n  opacity: 0;\n\n  &:checked {\n    & ~ ", " {\n      color: ", " !important;\n    }\n    & ~ ", " {\n      background-color: ", ";\n      border-color: ", " !important;\n      & svg {\n        & circle {\n          r: ", ";\n        }\n      }\n    }\n    &:hover {\n      & ", " {\n        border-color: ", ";\n      }\n    }\n  }\n"])), Label, theme_1.colors.blue.royal, StyledRadio, theme_1.colors.blue.royal, theme_1.colors.blue.royal, circleSize, StyledRadio, theme_1.colors.blue.royal);
-var Wrapper = styled_components_1.default.label(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n\n  user-select: none;\n  display: ", ";\n  cursor: pointer;\n  margin-bottom: 0;\n\n  &:hover {\n    & ", " {\n      border-color: ", ";\n    }\n  }\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n\n  user-select: none;\n  display: ", ";\n  cursor: pointer;\n  margin-bottom: 0;\n\n  &:hover {\n    & ", " {\n      border-color: ", ";\n    }\n  }\n"])), fontSize, fontWeight, lineHeight, space, function (props) { return props.display; }, StyledRadio, theme_1.colors.black.standard);
+var StyledRadio = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n  display: inline-block;\n  margin-right: 12px;\n  width: ", "px;\n  height: ", "px;\n  border-radius: 50%;\n  background-color: ", ";\n  border: solid 1px ", ";\n  vertical-align: middle;\n\n  & svg {\n    position: absolute;\n    & circle {\n      fill: ", ";\n      stroke: none;\n      r: 0;\n      transition: all .3s ease;\n    }\n  }\n"], ["\n  position: relative;\n  display: inline-block;\n  margin-right: 12px;\n  width: ", "px;\n  height: ", "px;\n  border-radius: 50%;\n  background-color: ", ";\n  border: solid 1px ", ";\n  vertical-align: middle;\n\n  & svg {\n    position: absolute;\n    & circle {\n      fill: ", ";\n      stroke: none;\n      r: 0;\n      transition: all .3s ease;\n    }\n  }\n"])), function (props) { return props.size; }, function (props) { return props.size; }, theme_1.colors.white.standard, theme_1.colors.black._20, theme_1.colors.white.standard);
+var Label = styled_components_1.default.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  pointer-events: none;\n  vertical-align: middle;\n"], ["\n  pointer-events: none;\n  vertical-align: middle;\n"])));
+var Input = styled_components_1.default.input(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: absolute;\n  z-index: -1;\n  width: 0;\n  height: 0;\n  opacity: 0;\n\n  &:checked {\n    & ~ ", " {\n      color: ", " !important;\n    }\n    & ~ ", " {\n      background-color: ", ";\n      border-color: ", " !important;\n      & svg {\n        & circle {\n          r: ", ";\n        }\n      }\n    }\n    &:hover {\n      & ", " {\n        border-color: ", ";\n      }\n    }\n  }\n"], ["\n  position: absolute;\n  z-index: -1;\n  width: 0;\n  height: 0;\n  opacity: 0;\n\n  &:checked {\n    & ~ ", " {\n      color: ", " !important;\n    }\n    & ~ ", " {\n      background-color: ", ";\n      border-color: ", " !important;\n      & svg {\n        & circle {\n          r: ", ";\n        }\n      }\n    }\n    &:hover {\n      & ", " {\n        border-color: ", ";\n      }\n    }\n  }\n"])), Label, theme_1.colors.blue.royal, StyledRadio, theme_1.colors.blue.royal, theme_1.colors.blue.royal, function (props) { return (Number(props.size) * 0.2); }, StyledRadio, theme_1.colors.blue.royal);
+var Wrapper = styled_components_1.default.label(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n\n  user-select: none;\n  display: ", ";\n  cursor: pointer;\n\n  &:hover {\n    & ", " {\n      border-color: ", ";\n    }\n  }\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n\n  user-select: none;\n  display: ", ";\n  cursor: pointer;\n\n  &:hover {\n    & ", " {\n      border-color: ", ";\n    }\n  }\n"])), fontSize, fontWeight, lineHeight, space, function (props) { return props.display; }, StyledRadio, theme_1.colors.black.standard);
 var Radio = /** @class */ (function (_super) {
     __extends(Radio, _super);
     function Radio(props) {
@@ -51,12 +49,12 @@ var Radio = /** @class */ (function (_super) {
         });
     };
     Radio.prototype.render = function () {
-        var _a = this.props, checked = _a.checked, name = _a.name, value = _a.value;
+        var _a = this.props, checked = _a.checked, name = _a.name, size = _a.size, value = _a.value;
         return (React.createElement(Wrapper, __assign({}, this.props),
-            React.createElement(Input, { type: "radio", name: name, value: value, defaultChecked: checked, onClick: this.handleSelection }),
-            React.createElement(StyledRadio, null,
+            React.createElement(Input, { type: "radio", name: name, value: value, defaultChecked: checked, onClick: this.handleSelection, size: Number(size) }),
+            React.createElement(StyledRadio, { size: size },
                 React.createElement("svg", { width: size + "px", height: size + "px", viewBox: "0 0 " + size + " " + size },
-                    React.createElement("circle", { cx: size / 2, cy: size / 2 }))),
+                    React.createElement("circle", { cx: Number(size) / 2, cy: Number(size) / 2 }))),
             React.createElement(Label, null, this.props.children)));
     };
     Radio.defaultProps = {
@@ -73,6 +71,8 @@ var Radio = /** @class */ (function (_super) {
         lineHeight: "1.44",
         // space
         m: 1,
+        // options
+        size: 18,
     };
     return Radio;
 }(React.Component));

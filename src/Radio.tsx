@@ -10,17 +10,16 @@ const {
   space,
 } = require("styled-system");
 
-const size = 24;
-const circleSize = size * 0.2;
 const StyledRadio = styled.div`
   position: relative;
-  float: left;
+  display: inline-block;
   margin-right: 12px;
-  width: ${size}px;
-  height: ${size}px;
+  width: ${(props: IProps) => props.size}px;
+  height: ${(props: IProps) => props.size}px;
   border-radius: 50%;
   background-color: ${colors.white.standard};
   border: solid 1px ${colors.black._20};
+  vertical-align: middle;
 
   & svg {
     position: absolute;
@@ -34,8 +33,6 @@ const StyledRadio = styled.div`
 `;
 
 const Label = styled.span`
-  display: table-cell;
-  height: ${size + 2}px;
   pointer-events: none;
   vertical-align: middle;
 `;
@@ -56,7 +53,7 @@ const Input = styled.input`
       border-color: ${colors.blue.royal} !important;
       & svg {
         & circle {
-          r: ${circleSize};
+          r: ${(props: IProps) => (Number(props.size) * 0.2)};
         }
       }
     }
@@ -77,7 +74,6 @@ const Wrapper = styled.label`
   user-select: none;
   display: ${(props: IProps) => props.display};
   cursor: pointer;
-  margin-bottom: 0;
 
   &:hover {
     & ${StyledRadio} {
@@ -111,6 +107,8 @@ export interface IProps {
   pr?: number | string;
   pb?: number | string;
   pl?: number | string;
+  // options
+  size?: number | string;
 }
 
 export class Radio extends React.Component<IProps, any> {
@@ -130,7 +128,7 @@ export class Radio extends React.Component<IProps, any> {
     this.setState({
       selectedValue: value
     });
- }
+  }
 
   public static defaultProps: IProps = {
     checked: false,
@@ -146,10 +144,12 @@ export class Radio extends React.Component<IProps, any> {
     lineHeight: "1.44",
     // space
     m: 1,
+    // options
+    size: 18,
   };
 
   public render() {
-    const { checked, name, value } = this.props;
+    const { checked, name, size, value } = this.props;
 
     return (
       <Wrapper {...this.props}>
@@ -158,10 +158,10 @@ export class Radio extends React.Component<IProps, any> {
           value={value}
           defaultChecked={checked}
           onClick={this.handleSelection}
-        />
-        <StyledRadio>
+          size={Number(size)} />
+        <StyledRadio size={size}>
           <svg width={size + "px"} height={size + "px"} viewBox={"0 0 " + size + " " + size}>
-            <circle cx={size / 2} cy={size / 2}/>
+            <circle cx={Number(size) / 2} cy={Number(size) / 2} />
           </svg>
         </StyledRadio>
         <Label>{this.props.children}</Label>
