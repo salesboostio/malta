@@ -37,7 +37,6 @@ const StyledCheckbox = styled.div`
 
 const Label = styled.span`
   display: table-cell;
-  height: ${(props: IProps) => Number(props.size) + 2}px;
   pointer-events: none;
   vertical-align: middle;
 `;
@@ -184,7 +183,7 @@ export class Checkbox extends React.Component<IProps, any> {
             <polyline points={this.renderCheckLinePoints(Number(size))}></polyline>
           </svg>
         </StyledCheckbox>
-        <Label size={size}>{this.props.children}</Label>
+        <Label>{this.props.children}</Label>
       </Wrapper>
     );
   }

@@ -29,6 +29,7 @@ export interface IProps {
     px?: Array<number | string> | number | string;
     py?: Array<number | string> | number | string;
     width?: Array<number | string> | number | string;
+    style?: Object;
 }
 export declare class Label extends React.Component<IProps, any> {
     static defaultProps: IProps;

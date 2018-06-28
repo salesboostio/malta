@@ -70,6 +70,7 @@ export interface IProps {
   py?: Array<number | string> | number | string;
   // width
   width?: Array<number | string> | number | string;
+  style?: Object;
 }
 
 export class Label extends React.Component<IProps, any> {

@@ -29,6 +29,11 @@ const StyledText = styled.div`
     color: ${props.hover};
   }
   `};
+  ${(props: IProps) => props.hoverWeight && `
+  &:hover {
+    font-weight: ${props.hoverWeight};
+  }
+  `};
 
   ${(props: IProps) => props.letterSpacing && `
     letter-spacing: ${props.letterSpacing};
@@ -69,13 +74,14 @@ export interface IProps {
   // options
   onClick?: React.MouseEventHandler<HTMLElement>;
   hover?: string;
+  hoverWeight?: number | string;
   letterSpacing?: string;
   style?: Object;
 }
 
 export class Text extends React.Component<IProps, any> {
   public static defaultProps: IProps = {
-    onClick: () => {},
+    onClick: () => { },
     // color
     color: "black.dark",
     bg: "transparent",

@@ -25,6 +25,7 @@ export interface IProps {
     width?: Array<number | string> | number | string;
     onClick?: React.MouseEventHandler<HTMLElement>;
     hover?: string;
+    hoverWeight?: number | string;
     letterSpacing?: string;
     style?: Object;
 }

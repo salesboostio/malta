@@ -69,6 +69,23 @@ storiesOf("Components/Text", module)
       );
     })
   )
+  .add("with hover",
+    withInfo({
+      header: false,
+      inline: true,
+      propTables: false,
+    })(() => {
+      return (
+        <App>
+          <div>
+            <Text hover="#ffbebe">이것은 hover 속성이 적용된 텍스트입니다.</Text>
+            <Text hover="#ffbebe" hoverWeight={600}>이것은 hover 속성이 적용된 텍스트입니다.</Text>
+            <Text hoverWeight={700}>이것은 hover 속성이 적용된 텍스트입니다.</Text>
+          </div>
+        </App>
+      );
+    })
+  )
   .add("with letterSpacing",
     withInfo({
       header: false,
