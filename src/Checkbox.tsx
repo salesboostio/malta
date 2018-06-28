@@ -12,13 +12,14 @@ const {
 
 const StyledCheckbox = styled.div`
   position: relative;
-  float: left;
+  display: inline-block
   margin-right: 8px;
   width: ${(props: IProps) => props.size}px;
   height: ${(props: IProps) => props.size}px;
   border-radius: 2px;
   background-color: ${colors.white.standard};
   border: solid 1px ${colors.black._20};
+  vertical-align: middle;
 
   & svg {
     position: absolute;
@@ -36,8 +37,13 @@ const StyledCheckbox = styled.div`
 `;
 
 const Label = styled.span`
-  display: table-cell;
+  ${color}
+  ${fontSize}
+  ${fontWeight}
+  ${lineHeight}
+  position: relative;
   pointer-events: none;
+  top: 2px;
   vertical-align: middle;
 `;
 
@@ -50,9 +56,6 @@ const Input = styled.input`
 `;
 
 const Wrapper = styled.label`
-  ${fontSize}
-  ${fontWeight}
-  ${lineHeight}
   ${space}
 
   user-select: none;
@@ -152,9 +155,9 @@ export class Checkbox extends React.Component<IProps, any> {
   public static defaultProps: IProps = {
     checked: false,
     // color
-    color: "black.dark",
+    color: "black.standard",
     // fontSize
-    fontSize: "h3",
+    fontSize: "h4",
     // fontWeight
     fontWeight: "regular",
     // lineHeight
@@ -164,7 +167,7 @@ export class Checkbox extends React.Component<IProps, any> {
     onChange: () => {},
     // options
     lineThickness: 3,
-    size: 24
+    size: 18,
   };
 
   public render() {
@@ -183,7 +186,7 @@ export class Checkbox extends React.Component<IProps, any> {
             <polyline points={this.renderCheckLinePoints(Number(size))}></polyline>
           </svg>
         </StyledCheckbox>
-        <Label>{this.props.children}</Label>
+        <Label {...this.props}>{this.props.children}</Label>
       </Wrapper>
     );
   }

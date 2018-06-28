@@ -33,7 +33,13 @@ const StyledRadio = styled.div`
 `;
 
 const Label = styled.span`
+  ${color}
+  ${fontSize}
+  ${fontWeight}
+  ${lineHeight}
+  position: relative;
   pointer-events: none;
+  top: 2px;
   vertical-align: middle;
 `;
 
@@ -66,9 +72,6 @@ const Input = styled.input`
 `;
 
 const Wrapper = styled.label`
-  ${fontSize}
-  ${fontWeight}
-  ${lineHeight}
   ${space}
 
   user-select: none;
@@ -133,11 +136,11 @@ export class Radio extends React.Component<IProps, any> {
   public static defaultProps: IProps = {
     checked: false,
     // color
-    color: "black.dark",
+    color: "black.standard",
     // display
     display: "block",
     // fontSize
-    fontSize: "h3",
+    fontSize: "h4",
     // fontWeight
     fontWeight: "regular",
     // lineHeight
@@ -164,7 +167,7 @@ export class Radio extends React.Component<IProps, any> {
             <circle cx={Number(size) / 2} cy={Number(size) / 2} />
           </svg>
         </StyledRadio>
-        <Label>{this.props.children}</Label>
+        <Label {...this.props}>{this.props.children}</Label>
       </Wrapper>
     );
   }
