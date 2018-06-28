@@ -12,7 +12,7 @@ storiesOf("Components/Radio", module)
     })(() => {
       return (
         <App>
-          <Radio name="options_1" value="1" checked>
+          <Radio name="options_1" value="1">
             이것은 라디오버튼입니다. (옵션1)
           </Radio>
           <Radio name="options_1" value="2">

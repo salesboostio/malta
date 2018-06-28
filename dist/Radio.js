@@ -38,7 +38,7 @@ var Radio = /** @class */ (function (_super) {
     Radio.prototype.render = function () {
         var _a = this.props, checked = _a.checked, display = _a.display, name = _a.name, onClick = _a.onClick, onChange = _a.onChange, size = _a.size, style = _a.style, m = _a.m, p = _a.p, value = _a.value;
         return (React.createElement(Wrapper, __assign({ style: style }, { display: display, m: m, p: p }),
-            React.createElement(Input, { type: "radio", name: name, value: value, checked: checked, onClick: onClick, onChange: onChange, size: Number(size) }),
+            React.createElement(Input, { type: "radio", name: name, value: value, defaultChecked: checked, onClick: onClick, onChange: onChange, size: Number(size) }),
             React.createElement(StyledRadio, { size: size },
                 React.createElement("svg", { width: size + "px", height: size + "px", viewBox: "0 0 " + size + " " + size },
                     React.createElement("circle", { cx: Number(size) / 2, cy: Number(size) / 2 }))),
@@ -60,7 +60,7 @@ var Radio = /** @class */ (function (_super) {
         m: 1,
         // event
         onClick: function () { },
-        onChange: function () { },
+        onChange: function (event) { },
         // options
         size: 18,
     };

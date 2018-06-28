@@ -135,7 +135,7 @@ export class Radio extends React.Component<IProps, any> {
     m: 1,
     // event
     onClick: () => { },
-    onChange: () => { },
+    onChange: (event) => { },
     // options
     size: 18,
   };
@@ -150,7 +150,7 @@ export class Radio extends React.Component<IProps, any> {
         <Input type="radio"
           name={name}
           value={value}
-          checked={checked}
+          defaultChecked={checked}
           onClick={onClick}
           onChange={onChange}
           size={Number(size)} />
