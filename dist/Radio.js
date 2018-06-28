@@ -32,26 +32,13 @@ var Input = styled_components_1.default.input(templateObject_3 || (templateObjec
 var Wrapper = styled_components_1.default.label(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  ", "\n\n  user-select: none;\n  display: ", ";\n  cursor: pointer;\n\n  &:hover {\n    & ", " {\n      border-color: ", ";\n    }\n  }\n"], ["\n  ", "\n\n  user-select: none;\n  display: ", ";\n  cursor: pointer;\n\n  &:hover {\n    & ", " {\n      border-color: ", ";\n    }\n  }\n"])), space, function (props) { return props.display; }, StyledRadio, theme_1.colors.black.standard);
 var Radio = /** @class */ (function (_super) {
     __extends(Radio, _super);
-    function Radio(props) {
-        var _this = _super.call(this, props) || this;
-        _this.state = {
-            selectedValue: undefined
-        };
-        _this.handleSelection = _this.handleSelection.bind(_this);
-        return _this;
+    function Radio() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Radio.prototype.handleSelection = function (event) {
-        var target = event.target;
-        var value = target.type === "checkbox" ? target.checked : target.value;
-        var name = target.name;
-        this.setState({
-            selectedValue: value
-        });
-    };
     Radio.prototype.render = function () {
-        var _a = this.props, checked = _a.checked, name = _a.name, size = _a.size, value = _a.value;
-        return (React.createElement(Wrapper, __assign({}, this.props),
-            React.createElement(Input, { type: "radio", name: name, value: value, defaultChecked: checked, onClick: this.handleSelection, size: Number(size) }),
+        var _a = this.props, checked = _a.checked, display = _a.display, name = _a.name, onClick = _a.onClick, onChange = _a.onChange, size = _a.size, value = _a.value;
+        return (React.createElement(Wrapper, __assign({}, { display: display }),
+            React.createElement(Input, { type: "radio", name: name, value: value, checked: checked, onClick: onClick, onChange: onChange, size: Number(size) }),
             React.createElement(StyledRadio, { size: size },
                 React.createElement("svg", { width: size + "px", height: size + "px", viewBox: "0 0 " + size + " " + size },
                     React.createElement("circle", { cx: Number(size) / 2, cy: Number(size) / 2 }))),
@@ -73,6 +60,7 @@ var Radio = /** @class */ (function (_super) {
         m: 1,
         // event
         onClick: function () { },
+        onChange: function () { },
         // options
         size: 18,
     };

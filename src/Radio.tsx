@@ -112,29 +112,12 @@ export interface IProps {
   pl?: number | string;
   // event
   onClick?: React.MouseEventHandler<HTMLElement>;
+  onChange?: React.ChangeEventHandler<HTMLElement>;
   // options
   size?: number | string;
 }
 
 export class Radio extends React.Component<IProps, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      selectedValue: undefined
-    };
-    this.handleSelection = this.handleSelection.bind(this);
-  }
-
-  handleSelection(event: any) {
-    const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      selectedValue: value
-    });
-  }
-
   public static defaultProps: IProps = {
     checked: false,
     // color
@@ -150,21 +133,23 @@ export class Radio extends React.Component<IProps, any> {
     // space
     m: 1,
     // event
-    onClick: () => {},
+    onClick: () => { },
+    onChange: () => { },
     // options
     size: 18,
   };
 
   public render() {
-    const { checked, name, size, value } = this.props;
+    const { checked, display, name, onClick, onChange, size, value } = this.props;
 
     return (
-      <Wrapper {...this.props}>
+      <Wrapper {...{ display }}>
         <Input type="radio"
           name={name}
           value={value}
-          defaultChecked={checked}
-          onClick={this.handleSelection}
+          checked={checked}
+          onClick={onClick}
+          onChange={onChange}
           size={Number(size)} />
         <StyledRadio size={size}>
           <svg width={size + "px"} height={size + "px"} viewBox={"0 0 " + size + " " + size}>

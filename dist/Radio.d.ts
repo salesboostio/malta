@@ -20,11 +20,10 @@ export interface IProps {
     pb?: number | string;
     pl?: number | string;
     onClick?: React.MouseEventHandler<HTMLElement>;
+    onChange?: React.ChangeEventHandler<HTMLElement>;
     size?: number | string;
 }
 export declare class Radio extends React.Component<IProps, any> {
-    constructor(props: any);
-    handleSelection(event: any): void;
     static defaultProps: IProps;
     render(): JSX.Element;
 }
