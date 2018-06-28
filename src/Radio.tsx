@@ -110,6 +110,8 @@ export interface IProps {
   pr?: number | string;
   pb?: number | string;
   pl?: number | string;
+  // event
+  onClick?: React.MouseEventHandler<HTMLElement>;
   // options
   size?: number | string;
 }
@@ -147,6 +149,8 @@ export class Radio extends React.Component<IProps, any> {
     lineHeight: "1.44",
     // space
     m: 1,
+    // event
+    onClick: () => {},
     // options
     size: 18,
   };

@@ -71,6 +71,8 @@ var Radio = /** @class */ (function (_super) {
         lineHeight: "1.44",
         // space
         m: 1,
+        // event
+        onClick: function () { },
         // options
         size: 18,
     };
