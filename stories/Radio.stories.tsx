@@ -1,4 +1,5 @@
 import * as React from "react";
+import { action } from '@storybook/addon-actions';
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 import { App, Radio } from "../src";
@@ -12,22 +13,22 @@ storiesOf("Components/Radio", module)
     })(() => {
       return (
         <App>
-          <Radio name="options_1" value="1">
+          <Radio name="options_1" value="1" onClick={(event)=>{console.log(event.target)}}>
             이것은 라디오버튼입니다. (옵션1)
           </Radio>
-          <Radio name="options_1" value="2">
+          <Radio name="options_1" value="2" onClick={(event)=>{console.log(event.target)}}>
             이것은 라디오버튼입니다. (옵션1)
           </Radio>
-          <Radio name="options_1" value="3">
+          <Radio name="options_1" value="3" onClick={(event)=>{console.log(event.target)}}>
             이것은 라디오버튼입니다. (옵션1)
           </Radio>
-          <Radio name="options_2" value="1">
+          <Radio name="options_2" value="1" onClick={(event)=>{console.log(event.target)}}>
             이것은 라디오버튼입니다. (옵션2)
           </Radio>
-          <Radio name="options_2" value="2">
+          <Radio name="options_2" value="2" onClick={(event)=>{console.log(event.target)}}>
             이것은 라디오버튼입니다. (옵션2)
           </Radio>
-          <Radio name="options_2" value="3" checked>
+          <Radio name="options_2" value="3" onClick={(event)=>{console.log(event.target)}} checked>
             이것은 라디오버튼입니다. (옵션2)
           </Radio>
         </App>

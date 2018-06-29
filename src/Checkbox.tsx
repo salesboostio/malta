@@ -43,7 +43,7 @@ const Label = styled.span`
   ${lineHeight}
   position: relative;
   pointer-events: none;
-  top: 2px;
+  display: inline-block;
   vertical-align: middle;
 `;
 

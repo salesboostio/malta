@@ -135,7 +135,7 @@ export class Radio extends React.Component<IProps, any> {
     m: 1,
     // event
     onClick: () => { },
-    onChange: (event) => { },
+    onChange: () => { },
     // options
     size: 18,
   };
@@ -146,6 +146,7 @@ export class Radio extends React.Component<IProps, any> {
     return (
       <Wrapper
         style={style}
+        value={value}
         {...{ display, m, p }}>
         <Input type="radio"
           name={name}
