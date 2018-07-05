@@ -17,7 +17,9 @@ export function generateQuery(query: string, breakpoint: string, style: string) 
  * [OUTPUT] mediqQuery: string => @media (...)
  */
 export function hiddenDown(breakpoint: string) {
-  const mediaQuery = "@media (" + getBreakpointRange("max-width", breakpoint) + ") { \
+  const breakpointIndex = breakpointNames.indexOf(breakpoint);
+  const breakpointValue = (Number(breakpoints[breakpointIndex].match(/\d+/)[0]) - 1) + "px";
+  const mediaQuery = "@media (" + getBreakpointRange("max-width", breakpointValue) + ") { \
     display: none; \
   }";
 
