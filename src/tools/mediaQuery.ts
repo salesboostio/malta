@@ -17,9 +17,7 @@ export function generateQuery(query: string, breakpoint: string, style: string) 
  * [OUTPUT] mediqQuery: string => @media (...)
  */
 export function hiddenDown(breakpoint: string) {
-  const breakpointIndex = breakpointNames.indexOf(breakpoint);
-  const breakpointValue = (Number(breakpoints[breakpointIndex].match(/\d+/)[0]) - 1) + "px";
-  const mediaQuery = "@media (" + getBreakpointRange("max-width", breakpointValue) + ") { \
+  const mediaQuery = "@media (" + getBreakpointRange("max-width", breakpoint) + ") { \
     display: none; \
   }";
 
@@ -46,8 +44,8 @@ function getBreakpointRange(query: string = "min-width", breakpoint: string) {
   if (query === "min-width" || query === "max-width") {
     const breakpointIndex = breakpointNames.indexOf(breakpoint);
     const breakpointValue =
-      query === "max-width" ?
-        (Number(breakpoints[breakpointIndex].match(/\d+/)[0]) - 1) + "px" :
+      query === "min-width" ?
+        (Number(breakpoints[breakpointIndex].match(/\d+/)[0]) + 1) + "px" :
         breakpoints[breakpointIndex];
 
     return (query + ": " + breakpointValue);
