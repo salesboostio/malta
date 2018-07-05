@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const Copyright = styled.div`
-  color: ${colors.white.standard};
+  color: ${colors.black.dark};
   font-size: ${fontSizes.h5}px;
   font-weight: ${fontWeights.demiLight};
 

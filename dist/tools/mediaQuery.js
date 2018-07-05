@@ -37,8 +37,8 @@ function getBreakpointRange(query, breakpoint) {
     if (query === void 0) { query = "min-width"; }
     if (query === "min-width" || query === "max-width") {
         var breakpointIndex = theme_1.breakpointNames.indexOf(breakpoint);
-        var breakpointValue = query === "min-width" ?
-            (Number(theme_1.breakpoints[breakpointIndex].match(/\d+/)[0]) + 1) + "px" :
+        var breakpointValue = query === "max-width" ?
+            (Number(theme_1.breakpoints[breakpointIndex].match(/\d+/)[0]) - 1) + "px" :
             theme_1.breakpoints[breakpointIndex];
         return (query + ": " + breakpointValue);
     }
