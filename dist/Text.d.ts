@@ -3,7 +3,7 @@ import * as React from "react";
 export interface IProps {
     color?: string;
     bg?: string;
-    display?: string;
+    display?: Array<string> | string;
     fontSize?: Array<number | string> | number | string;
     fontWeight?: Array<number | string> | number | string;
     lineHeight?: Array<number | string> | number | string;
