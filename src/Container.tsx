@@ -13,13 +13,14 @@ const StyledBox = Box.extend`
 
 export class Container extends React.Component<any, any> {
   public render() {
+    const { maxWidth, ...props } = this.props;
     return (
       <StyledBox
-        {...this.props}
+        {...props}
         mx="auto"
-        style={{ maxWidth: this.props.maxWidth || containerWidth }}
+        style={{ maxWidth: maxWidth || containerWidth }}
       >
-        {this.props.children}
+        {props.children}
       </StyledBox>
     );
   }

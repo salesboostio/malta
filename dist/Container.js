@@ -21,6 +21,15 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var grid_styled_1 = require("grid-styled");
@@ -34,7 +43,8 @@ var Container = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Container.prototype.render = function () {
-        return (React.createElement(StyledBox, __assign({}, this.props, { mx: "auto", style: { maxWidth: this.props.maxWidth || theme_1.containerWidth } }), this.props.children));
+        var _a = this.props, maxWidth = _a.maxWidth, props = __rest(_a, ["maxWidth"]);
+        return (React.createElement(StyledBox, __assign({}, props, { mx: "auto", style: { maxWidth: maxWidth || theme_1.containerWidth } }), props.children));
     };
     return Container;
 }(React.Component));
