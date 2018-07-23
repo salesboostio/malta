@@ -19,7 +19,7 @@ const Wrapper = Box.extend`
   z-index: 1000;
 `;
 
-const FlexHeader = Flex.extend`
+const Container = Flex.extend`
   height: ${navBarHeight}
 `;
 
@@ -51,17 +51,12 @@ export interface IProps {
   description?: string;
 }
 
-interface RProps {
-  display?: Array<string> | string;
-}
-
-
 export class Navbar extends React.Component<IProps, any> {
   public render() {
     const { logoUrl, title, description } = this.props;
     return (
       <Wrapper>
-        <FlexHeader alignItems="center" mx="auto" px={[2, 2, 3]}>
+        <Container alignItems="center" mx="auto" px={[2, 2, 3]}>
           <a href="/">
             <Img src={logoUrl} width={[96, 96, 125]} height={[26, 26, 34]} />
           </a>
@@ -69,8 +64,8 @@ export class Navbar extends React.Component<IProps, any> {
             <Title>{title}</Title>
             <Description>{description}</Description>
           </Box>
-        </FlexHeader>
-      </Wrapper >
+        </Container>
+      </Wrapper>
     );
   }
 }
