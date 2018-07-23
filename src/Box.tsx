@@ -21,9 +21,7 @@ const StyledBox = gridStyledBox.extend`
 export class Box extends React.Component<any, any> {
   public render() {
     return (
-      <StyledBox
-        {...this.props}
-      >
+      <StyledBox {...this.props} >
         {this.props.children}
       </StyledBox>
     );

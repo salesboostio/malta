@@ -7,7 +7,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
-    "outDir": "./dist",
+    "outDir": "/Users/minidonut/dev/salesboost/pixel-landing/node_modules/malta/dist",
     "preserveConstEnums": true,
     "target": "es5",
     "declaration": true

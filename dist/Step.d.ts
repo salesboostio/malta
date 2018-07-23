@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import * as React from "react";
 export interface IItem {
     id?: string;
@@ -15,6 +16,6 @@ export interface IProps {
 export declare class Step extends React.Component<IProps, any> {
     constructor(props: IProps);
     static defaultProps: IProps;
-    private renderStep;
+    private renderStep(items, useRouter);
     render(): JSX.Element;
 }
