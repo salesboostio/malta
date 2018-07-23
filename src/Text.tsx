@@ -8,6 +8,7 @@ const {
   space,
   textAlign,
   width,
+  display,
 } = require("styled-system");
 
 const StyledText = styled.div`
@@ -19,7 +20,7 @@ const StyledText = styled.div`
   ${space}
   ${textAlign}
   ${width}
-
+  ${display}
   ${(props: IProps) => props.display && `
     display: ${props.display};
   `};
@@ -45,7 +46,7 @@ export interface IProps {
   color?: string;
   bg?: string;
   // display
-  display?: string;
+  display?: Array<string> | string;
   // fontSize
   fontSize?: Array<number | string> | number | string;
   // fontWeight
