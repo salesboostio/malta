@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Img } from "./ImgResponsive";
+import { Img } from "./Img";
 import {
   colors,
   fontSizes,
