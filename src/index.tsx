@@ -28,4 +28,3 @@ export { Text } from "./Text";
 export { Tooltip } from "./Tooltip";
 export { Quote } from "./Quote";
 export * from "./theme";
-export * from "./tools/mediaQuery";
