@@ -155,11 +155,3 @@ export class Input extends React.Component<IProps, any> {
     );
   }
 }
-
-
-  // height: 60px;
-  // font-size: ${fontSizes.h3}px;
-  // ${generateQuery("max-width", "sm", `
-  //   font-size: ${fontSizes.h4}px;
-  //   height: 52px;
-  // `)}

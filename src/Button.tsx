@@ -14,7 +14,6 @@ const {
   space,
   width,
 } = require("styled-system");
-import { generateQuery } from "./tools/mediaQuery";
 
 const StyledButton = styled.button`
   align-items: center;
@@ -30,10 +29,10 @@ const StyledButton = styled.button`
   ${width}
   ${height}
 
-  ${generateQuery("max-width", "sm", `
+  @media(max-width: 768px){
     font-size: ${fontSizes.h5}px;
     height: 52px;
-  `)};
+  };
 
   &:hover {
     background-color: ${(props: IProps) => props.hoverColor};

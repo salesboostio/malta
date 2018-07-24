@@ -5,7 +5,6 @@ const {
   height,
   width,
 } = require("styled-system");
-import { generateQuery } from "./tools/mediaQuery";
 
 /*
   Total Step Width = 80% (Default Step = 4)
@@ -53,9 +52,9 @@ const StepWrap = styled.div`
   height: 60px;
   vertical-align: top;
 
-  ${generateQuery("max-width", "sm", `
+  @media(maw-width: 768px){
     height: auto;
-  `)};
+  };
 
   &.step-3 {
     width: 26.66%;
@@ -138,9 +137,9 @@ const StepTitle = styled.div`
   font-size: ${fontSizes.h3}px;
   margin: 0 ${space[1]}px;
 
-  ${generateQuery("max-width", "sm", `
+  @media(max-width: 768px){
     display: none;
-  `)};
+  };
 `;
 
 const MobileStepTitle = styled.div`
@@ -150,9 +149,9 @@ const MobileStepTitle = styled.div`
   height: 40px;
   line-height: 40px;
 
-  ${generateQuery("min-width", "sm", `
+  @media(min-width: 768px){
     display: none;
-  `)};
+  };
 `;
 
 export interface IItem {

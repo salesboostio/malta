@@ -2,14 +2,16 @@ import * as React from "react";
 import styled from "styled-components";
 import { Box as gridStyledBox } from "grid-styled";
 import { hiddenDown, hiddenUp } from "./tools/mediaQuery";
+const { display } = require("styled-system");
 
 export interface IProps {
-  display?: string;
+  display?: Array<string> | string;
   hiddendown?: string;
   hiddenup?: string;
 }
 
 const StyledBox = gridStyledBox.extend`
+  ${display}
   ${(props: IProps) => props.display && `
     display: ${props.display};
   `};
