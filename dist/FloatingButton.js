@@ -21,39 +21,22 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
-var _a = require("styled-system"), height = _a.height, space = _a.space, width = _a.width;
-var StyledImg = styled_components_1.default.img(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    ", "\n    ", "\n    ", "\n"], ["\n    ", "\n    ", "\n    ", "\n"])), height, space, width);
-var Img = /** @class */ (function (_super) {
-    __extends(Img, _super);
-    function Img() {
+var _a = require("styled-system"), color = _a.color, bottom = _a.bottom, right = _a.right;
+var hoverColor = function (props) { return "background: " + props.hoverColor; };
+var hoverDisplay = function (props) { return props.hoverDisplay; };
+var Container = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: fixed;\n  display: flex;\n  z-index: 1050;\n  border-radius: 50%;\n  cursor: pointer;\n  width: 60px;\n  height: 60px;\n  justify-content: center;\n  ", "\n  ", "\n  ", "\n  &:hover {\n    ", "\n    ", "\n  }\n"], ["\n  position: fixed;\n  display: flex;\n  z-index: 1050;\n  border-radius: 50%;\n  cursor: pointer;\n  width: 60px;\n  height: 60px;\n  justify-content: center;\n  ", "\n  ", "\n  ", "\n  &:hover {\n    ", "\n    ", "\n  }\n"])), bottom, right, color, hoverColor, hoverDisplay);
+var FloatingButton = /** @class */ (function (_super) {
+    __extends(FloatingButton, _super);
+    function FloatingButton() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Img.prototype.render = function () {
-        var _a = this.props, width = _a.width, height = _a.height, props = __rest(_a, ["width", "height"]);
-        return (React.createElement(StyledImg, __assign({ width: width, height: height }, props)));
+    FloatingButton.prototype.render = function () {
+        return (React.createElement(Container, __assign({}, this.props)));
     };
-    Img.defaultProps = {
-        src: "",
-        // height
-        height: "auto",
-        // space
-        m: 0,
-        // width
-        width: 100,
-    };
-    return Img;
+    return FloatingButton;
 }(React.Component));
-exports.Img = Img;
+exports.FloatingButton = FloatingButton;
 var templateObject_1;

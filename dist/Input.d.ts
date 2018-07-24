@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from "react";
 export interface IProps {
     label?: string;
@@ -26,7 +25,7 @@ export interface IProps {
 }
 export declare class Input extends React.Component<IProps, any> {
     static defaultProps: IProps;
-    private renderLabel(label);
-    private renderErrorLabel(error, errorMessage);
+    private renderLabel;
+    private renderErrorLabel;
     render(): JSX.Element;
 }

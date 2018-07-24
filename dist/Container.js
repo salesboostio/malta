@@ -34,9 +34,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var grid_styled_1 = require("grid-styled");
 var theme_1 = require("./theme");
-var mediaQuery_1 = require("./tools/mediaQuery");
-var StyledBox = grid_styled_1.Box.extend(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", ";\n  ", ";\n  ", ";\n"], ["\n  ",
-    ";\n  ", ";\n  ", ";\n"])), function (props) { return props.display && "\n    display: " + props.display + ";\n  "; }, function (props) { return props.hiddendown && mediaQuery_1.hiddenDown(props.hiddendown); }, function (props) { return props.hiddenup && mediaQuery_1.hiddenUp(props.hiddenup); });
+var display = require("styled-system").display;
+var StyledBox = grid_styled_1.Box.extend(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), display);
 var Container = /** @class */ (function (_super) {
     __extends(Container, _super);
     function Container() {

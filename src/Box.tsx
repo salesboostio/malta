@@ -4,8 +4,6 @@ const { display } = require("styled-system");
 
 export interface IProps {
   display?: Array<string> | string;
-  hiddendown?: string;
-  hiddenup?: string;
 }
 
 const StyledBox = gridStyledBox.extend`

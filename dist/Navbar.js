@@ -24,7 +24,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
-var ImgResponsive_1 = require("./ImgResponsive");
+var Img_1 = require("./Img");
 var theme_1 = require("./theme");
 var grid_styled_1 = require("grid-styled");
 var Text_1 = require("./Text");
@@ -45,7 +45,7 @@ var Navbar = /** @class */ (function (_super) {
         return (React.createElement(Wrapper, null,
             React.createElement(Container, { alignItems: "center", mx: "auto", px: [2, 2, 3] },
                 React.createElement("a", { href: "/" },
-                    React.createElement(ImgResponsive_1.Img, { src: logoUrl, width: [96, 96, 125], height: [26, 26, 34] })),
+                    React.createElement(Img_1.Img, { src: logoUrl, width: [96, 96, 125], height: [26, 26, 34] })),
                 React.createElement(Right, __assign({}, displayStyle),
                     React.createElement(Title, null, title),
                     React.createElement(Description, null, description)))));
