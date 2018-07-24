@@ -3,7 +3,7 @@ import { colors, fontSizes, fontWeights, footerHeight } from "./theme";
 import { Flex } from "./Flex";
 import { Box } from "grid-styled";
 
-const ContainerNew = Flex.extend`
+const Container = Flex.extend`
   background-color: ${colors.black.dark};
   height: ${footerHeight};
   align-items: center;
@@ -18,9 +18,9 @@ const Copyright = Box.extend`
 export class Footer extends React.Component<any, any> {
   public render() {
     return (
-      <ContainerNew pl={[0, 3, 3]} mx="auto">
+      <Container pl={[0, 3, 3]} mx="auto">
         <Copyright mx={["auto", "auto", "0px"]}>Copyright © 2018 Salesboost. Inc</Copyright>
-      </ContainerNew>
+      </Container>
     );
   }
 }

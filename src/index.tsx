@@ -6,6 +6,7 @@ export { Checkbox } from "./Checkbox";
 export { Column } from "./Column";
 export { Container } from "./Container";
 export { Flex } from "./Flex";
+export { FloatingButton } from "./FloatingButton";
 export { Footer } from "./Footer";
 export { Img } from "./Img";
 export { Input } from "./Input";

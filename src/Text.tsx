@@ -102,9 +102,10 @@ export class Text extends React.Component<IProps, any> {
   };
 
   public render() {
+    const { children, ...props } = this.props;
     return (
-      <StyledText {...this.props}>
-        {this.props.children}
+      <StyledText {...props}>
+        {children}
       </StyledText>
     );
   }
