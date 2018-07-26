@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import * as React from "react";
 export interface IProps {
     color?: string;
@@ -28,6 +29,6 @@ export interface IProps {
 }
 export declare class Tooltip extends React.Component<IProps, any> {
     static defaultProps: IProps;
-    private nl2br;
+    private nl2br(text);
     render(): JSX.Element;
 }

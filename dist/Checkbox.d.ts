@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import * as React from "react";
 export interface IProps {
     id?: string;
@@ -23,7 +24,7 @@ export interface IProps {
     size?: number | string;
 }
 export declare class Checkbox extends React.Component<IProps, any> {
-    private renderCheckLinePoints;
+    private renderCheckLinePoints(size);
     static defaultProps: IProps;
     render(): JSX.Element;
 }

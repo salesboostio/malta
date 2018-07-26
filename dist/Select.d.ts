@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import * as React from "react";
 export interface IItem {
     id: string;
@@ -13,6 +14,6 @@ export interface IProps {
 }
 export declare class Select extends React.Component<IProps, any> {
     static defaultProps: IProps;
-    private renderLabel;
+    private renderLabel();
     render(): JSX.Element;
 }

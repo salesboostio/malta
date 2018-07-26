@@ -1,7 +1,6 @@
 import * as React from "react";
 import { colors, fontSizes, fontWeights, footerHeight } from "./theme";
-import { Flex } from "./Flex";
-import { Box } from "grid-styled";
+import { Box, Flex } from "grid-styled";
 
 const Container = Flex.extend`
   background-color: ${colors.black.dark};

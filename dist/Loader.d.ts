@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import * as React from "react";
 export interface IProps {
     color?: string;
@@ -12,7 +13,7 @@ export interface IProps {
 }
 export declare class Loader extends React.Component<IProps, any> {
     static defaultProps: IProps;
-    private renderImage;
-    private renderLabelText;
+    private renderImage(src, imageWidth?, imageHeight?);
+    private renderLabelText(labelText);
     render(): JSX.Element;
 }
