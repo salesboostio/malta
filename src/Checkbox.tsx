@@ -23,6 +23,7 @@ const StyledCheckbox = styled.div`
 
   & svg {
     position: absolute;
+    left: 0;
     & polyline {
       fill: none;
       stroke: ${colors.white.standard};
