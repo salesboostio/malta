@@ -7,6 +7,7 @@ const {
   lineHeight,
   space,
   textAlign,
+  display,
 } = require("styled-system");
 
 const BlockQuote = styled.blockquote`
@@ -21,6 +22,7 @@ const BlockQuote = styled.blockquote`
   ${lineHeight}
   ${space}
   ${textAlign}
+  ${display}
 
   &:before {
     content: "“";
@@ -52,7 +54,7 @@ export interface IProps {
   color?: string;
   bg?: string;
   // display
-  display?: string;
+  display?: Array<string> | string;
   // fontSize
   fontSize?: Array<number | string> | number | string;
   // fontWeight

@@ -14,7 +14,6 @@ const {
   space,
   width,
 } = require("styled-system");
-import { generateQuery } from "./tools/mediaQuery";
 
 const StyledLabel = styled.span`
   display: inline-block;

@@ -1,8 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
-const { space } = require("styled-system");
+const { space, height } = require("styled-system");
 import { colors, fontSizes, fontWeights, space as spaces } from "./theme";
-import { generateQuery } from "./tools/mediaQuery";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -33,15 +32,14 @@ const StyledInput = styled.input`
   box-sizing: border-box;
   color: ${colors.black.dark};
   font-weight: ${fontWeights.regular};
-  font-size: ${fontSizes.h3}px;
-  height: 60px;
   padding: 0 ${spaces[2]}px;
   width: 100%;
 
-  ${generateQuery("max-width", "sm", `
+  ${height}
+  font-size: ${fontSizes.h3}px;
+  @media(max-width: 768px){
     font-size: ${fontSizes.h4}px;
-    height: 52px;
-  `)};
+  }
 
   &:disabled {
     background-color: ${colors.black._5};
@@ -132,10 +130,13 @@ export class Input extends React.Component<IProps, any> {
       type,
       value,
       ...props } = this.props;
+      const heightProps: any = [52, 52, 60];
+      const fontSizeProps: any = [fontSizes.h4, fontSizes.h4, fontSizes.h3];
     return (
       <Wrapper {...props}>
         {this.renderLabel(label)}
         <StyledInput
+          height={heightProps}
           defaultValue={defaultValue}
           disabled={disabled}
           name={name}

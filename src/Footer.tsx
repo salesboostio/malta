@@ -1,40 +1,25 @@
 import * as React from "react";
-import styled from "styled-components";
-const { theme } = require("styled-system");
-import { colors, containerWidth, fontSizes, fontWeights, footerHeight, space } from "./theme";
-import { generateQuery } from "./tools/mediaQuery";
+import { colors, fontSizes, fontWeights, footerHeight } from "./theme";
+import { Box, Flex } from "grid-styled";
 
-const Wrapper = styled.div`
-  background-color: ${colors.black._5};
-`;
-
-const Container = styled.div`
-  align-items: center;
-  display: flex;
+const Container = Flex.extend`
+  background-color: ${colors.black.dark};
   height: ${footerHeight};
-  padding-left: ${space[3]}px;
-  margin-left: auto;
-  margin-right: auto;
-
-  ${generateQuery("max-width", "sm", "padding-left: 0;")};
+  align-items: center;
 `;
 
-const Copyright = styled.div`
-  color: ${colors.black.dark};
+const Copyright = Box.extend`
+  color: ${colors.white.standard};
   font-size: ${fontSizes.h5}px;
   font-weight: ${fontWeights.demiLight};
-
-  ${generateQuery("max-width", "sm", "margin: 0 auto;")};
 `;
 
 export class Footer extends React.Component<any, any> {
   public render() {
     return (
-      <Wrapper>
-        <Container>
-          <Copyright>Copyright © 2018 Salesboost. Inc</Copyright>
-        </Container>
-      </Wrapper>
+      <Container pl={[0, 3, 3]} mx="auto">
+        <Copyright mx={["auto", "auto", "0px"]}>Copyright © 2018 Salesboost. Inc</Copyright>
+      </Container>
     );
   }
 }
