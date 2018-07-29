@@ -131,7 +131,6 @@ export class Input extends React.Component<IProps, any> {
       value,
       ...props } = this.props;
       const heightProps: any = [52, 52, 60];
-      const fontSizeProps: any = [fontSizes.h4, fontSizes.h4, fontSizes.h3];
     return (
       <Wrapper {...props}>
         {this.renderLabel(label)}

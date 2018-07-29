@@ -29,11 +29,6 @@ const StyledButton = styled.button`
   ${width}
   ${height}
 
-  @media(max-width: 768px){
-    font-size: ${fontSizes.h5}px;
-    height: 52px;
-  };
-
   &:hover {
     background-color: ${(props: IProps) => props.hoverColor};
   }
@@ -98,9 +93,9 @@ export class Button extends React.Component<IProps, any> {
     color: "white.standard",
     bg: "blue.royal",
     // fontSize
-    fontSize: "h3",
+    fontSize: ["h5", "h5", "h3"],
     // height
-    height: "60px",
+    height: ["52px", "52px", "60px"],
     // space
     m: 0,
     mb: 2,
