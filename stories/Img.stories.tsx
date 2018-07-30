@@ -50,18 +50,11 @@ storiesOf("Components/Img", module)
             </thead>
             <tbody>
               <tr>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddendown={"xs"} /></td>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddendown={"sm"} /></td>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddendown={"md"} /></td>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddendown={"lg"} /></td>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddendown={"xl"} /></td>
-              </tr>
-              <tr>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddenup={"xs"} /></td>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddenup={"sm"} /></td>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddenup={"md"} /></td>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddenup={"lg"} /></td>
-                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" hiddenup={"xl"} /></td>
+                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" /></td>
+                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" /></td>
+                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" /></td>
+                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" /></td>
+                <td><Img src={require("./images/img-gnb-logo.png")} width="125px" height="34px" /></td>
               </tr>
             </tbody>
           </table>

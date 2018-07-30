@@ -1,7 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import { breakpoints } from "./theme";
-import { hiddenDown, hiddenUp } from "./tools/mediaQuery";
 
 const {
   height,
@@ -10,18 +8,15 @@ const {
 } = require("styled-system");
 
 const StyledImg = styled.img`
-  ${height}
-  ${space}
-  ${width}
-
-  ${(props: IProps) => props.hiddendown && hiddenDown(props.hiddendown)};
-  ${(props: IProps) => props.hiddenup && hiddenUp(props.hiddenup)};
+    ${height}
+    ${space}
+    ${width}
 `;
 
 export interface IProps {
   src: string;
   // height
-  height: number | string;
+  height: Array<number | string> | number | string;
   // space
   m?: Array<number | string> | number | string;
   mt?: Array<number | string> | number | string;
@@ -31,10 +26,7 @@ export interface IProps {
   mx?: Array<number | string> | number | string;
   my?: Array<number | string> | number | string;
   // width
-  width: number | string;
-  // etc
-  hiddendown?: string;
-  hiddenup?: string;
+  width: Array<number | string> | number | string;
 }
 
 export class Img extends React.Component<IProps, any> {
@@ -45,14 +37,13 @@ export class Img extends React.Component<IProps, any> {
     // space
     m: 0,
     // width
-    width: 1,
+    width: 100,
   };
 
   public render() {
+    const { width, height, ...props } = this.props;
     return (
-      <StyledImg
-        {...this.props}
-      />
+      <StyledImg width={width as any} height={height as any} {...props} />
     );
   }
 }

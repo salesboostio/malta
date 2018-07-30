@@ -14,7 +14,6 @@ const {
   space,
   width,
 } = require("styled-system");
-import { generateQuery } from "./tools/mediaQuery";
 
 const StyledButton = styled.button`
   align-items: center;
@@ -29,11 +28,6 @@ const StyledButton = styled.button`
   ${space}
   ${width}
   ${height}
-
-  ${generateQuery("max-width", "sm", `
-    font-size: ${fontSizes.h5}px;
-    height: 52px;
-  `)};
 
   &:hover {
     background-color: ${(props: IProps) => props.hoverColor};
@@ -99,9 +93,9 @@ export class Button extends React.Component<IProps, any> {
     color: "white.standard",
     bg: "blue.royal",
     // fontSize
-    fontSize: "h3",
+    fontSize: ["h5", "h5", "h3"],
     // height
-    height: "60px",
+    height: ["52px", "52px", "60px"],
     // space
     m: 0,
     mb: 2,
