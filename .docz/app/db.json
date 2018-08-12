@@ -1,18 +1,18 @@
 {
   "config": {
     "title": "Malta",
-    "description": "My awesome app using docz",
+    "description": "Salesboost UI library built with Styled-component",
     "themeConfig": {},
     "ordering": "descending",
-    "version": "0.0.17"
+    "version": "0.2.0"
   },
   "entries": {
     "src/index.mdx": {
       "name": "Introduction",
       "route": "/",
-      "id": "01CMPSBDWYFM2P0W30RN7Z8QJF",
+      "id": "01CMPWQKQRD6PB2ZW2DGGYQJKA",
       "filepath": "src/index.mdx",
-      "link": null,
+      "link": "https://github.com/salesboostio/malta/tree/master/src/index.mdx",
       "slug": "src-index",
       "order": 0,
       "menu": null,

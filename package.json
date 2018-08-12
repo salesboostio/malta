@@ -1,6 +1,9 @@
 {
   "name": "malta",
-  "version": "0.0.17",
+  "version": "0.2.0",
+  "description": "Salesboost UI library built with Styled-component",
+  "repository": "git@github.com:salesboostio/malta.git",
+  "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -16,11 +19,12 @@
     "docz": "^0.9.6",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "styled-components": "^3.4.1",
+    "styled-components": "^3.4.2",
     "styled-system": "^3.0.2"
   },
   "devDependencies": {
-    "@types/react": "^16.4.8",
+    "@babel/core": "7.0.0-beta.42",
+    "@types/react": "^16.4.9",
     "@types/react-dom": "^16.0.7",
     "@types/styled-system": "^3.0.1",
     "codecov": "^3.0.4",
