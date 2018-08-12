@@ -1,0 +1,78 @@
+---
+name: Shadow
+menu: Misc
+---
+
+import { Playground } from "docz"
+import { App, Shadow, Flex, Box, Chip } from "../../dist"
+
+# Shadow
+그림자 스타일을 붙이는 래퍼 컴포넌트. 그림자는 Material Design에 정의된 0~5단계를 기준으로 했다.
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+| shadow | number | 0 |
+| space | ResponsiveValue | 0 |
+
+
+## Usecase 
+
+<Playground>
+  <App>
+    <Flex flexWrap="wrap">
+      <Shadow shadow={0} m={2}>
+        <Box bg="blue.royal" color="#FFF" p={2}>Shadowed Box</Box>
+      </Shadow>
+      <Shadow shadow={1} m={2}>
+        <Box bg="blue.deep" color="#FFF" p={2}>Shadowed Box</Box>
+      </Shadow>
+      <Shadow shadow={2} m={2}>
+        <Box bg="blue.dark" color="#FFF" p={2}>Shadowed Box</Box>
+      </Shadow>
+      <Shadow shadow={3} m={2}>
+        <Box bg="black.standard" color="#FFF" p={2}>Shadowed Box</Box>
+      </Shadow>
+      <Shadow shadow={4} m={2}>
+        <Box bg="black.sub" color="#FFF" p={2}>Shadowed Box</Box>
+      </Shadow>
+      <Shadow shadow={5} m={2}>
+        <Box bg="black.half" color="#FFF" p={2}>Shadowed Box</Box>
+      </Shadow>
+    </Flex>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00" color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+//마진은 Shadow에 넣어주도록 한다.
+<Shadow shadow={0} m={2}>
+  <Box bg="blue.royal" color="#FFF" p={2}>Shadowed Box</Box>
+</Shadow>
+```
+
+<App>
+  <Chip bg="#AA0000" color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+//기본 sizing이 border-box이기 때문에 하위 element에 margin이 들어가면 여백이 생긴다.
+<Shadow shadow={0}>
+  <Box bg="blue.royal" color="#FFF" p={2} m={2}>Shadowed Box</Box>
+</Shadow>
+```
+
+## Test

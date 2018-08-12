@@ -1,0 +1,77 @@
+---
+name: Span
+menu: Molecules
+---
+
+import { Playground } from "docz"
+import { App, Flex, Chip, Span, Box, Text } from "../../dist"
+
+# Span
+
+Span은 텍스트 노드 중간에 삽입될 수 있는 인라인 컴포넌트이다. 속성은 Text를 상속받는다
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">Text</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+|italic| boolean | false |
+|caps| boolean | false |
+|underline| boolean | false |
+|through| boolean | false |
+|medium| boolean | false |
+|regular| boolean | true |
+|demiLight| boolean | false |
+|light| boolean | false |
+|fontSize| ResponsiveValue | h4 |
+|lineHeight| ResponsiveValue | 1.4em |
+|color| ResponsiveValue | black.standard |
+
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <Box width={1/2}>
+      <Text>
+        In our use case, <Span italic>there’s</Span> a lot of heavy lifting that has to be do
+        ne through CSS to inject user-specific styling into a component. Many
+        components’ render methods end up <Span color="blue.deep" fontSize={"h2"}>containing style</Span> objects that clutter
+        them up and split the CSS into two places, making the code harder to parse.
+        Styled Components help keep the concerns of st
+      </Text>
+    </Box>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00" color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+...
+<Text> .............<Span>abcedf</Span> ...........</Text>
+...
+```
+
+<App>
+  <Chip bg="#AA0000" color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+// Span은 inline 컴포넌트기 때문에 space 속성이 없다. 
+...
+<Span mt={3}>abcedf</Span>
+...
+```
+
+## Test

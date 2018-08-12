@@ -1,0 +1,58 @@
+---
+name: FullScreen
+menu: Misc
+---
+
+import { Playground } from "docz"
+import { App, Flex, Chip, FullScreen } from "../../dist"
+
+# FullScreen
+
+스크롤없는 SPA앱의 wrapper, App바로 안쪽에 한번만 선언하며 그 높이는 `100vh`(클라이언트 화면 높이의 100%) 너비는 `100vw`(클라이언트 화면 너비의 100%)로 고정된다.
+Flexbox Container를 상속받는다. 
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">Flex</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+| flexDirection | row\|column | row |
+| justifyContent | flex-start\|flex-end\|center\|space-between | flex-start |
+| alignItems | flex-start\|flex-end\|center\|stretch | flex-start |
+| flexWrap | wrap\|no-wrap | no-wrap |
+
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <FullScreen>
+      Do Somthing here
+    </FullScreen>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00" color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+```
+
+<App>
+  <Chip bg="#AA0000" color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+```
+
+## Test

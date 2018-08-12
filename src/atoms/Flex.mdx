@@ -1,0 +1,61 @@
+---
+name: Flex
+menu: Atoms
+---
+
+import { Playground } from "docz"
+import { App, Flex, Chip } from "../../dist"
+
+# Flex
+
+Flex 레이아웃을 그리기 위한 부모 컨테이너다. CSS구조상 부모이자 자식으로 사용하는 것도 가능하다. Box와의 차이점은, Box는 부모 컨테이너가 될 수 없다. 
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">Box</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+| flexDirection | row\|column | row |
+| justifyContent | flex-start\|flex-end\|center\|space-between | flex-start |
+| alignItems | flex-start\|flex-end\|center\|stretch | flex-start |
+| order | number | 0 |
+| flexWrap | wrap\|no-wrap | no-wrap |
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <Flex></Flex>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00"color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+
+fill here
+
+```
+
+<App>
+  <Chip bg="#AA0000"color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+
+fill here
+
+```
+
+## Test

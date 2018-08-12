@@ -1,0 +1,59 @@
+---
+name: Chip
+menu: Molecules
+---
+
+import { Playground } from "docz"
+import { App, Flex, Chip } from "../../dist"
+
+# Chip
+
+기본 16px 폰트에, 중앙정렬되어있고 양쪽 모서리가 둥근 Chip 컴포넌트이다. 
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">Rounded</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+| width | ResponsiveValue | fit-ontent |
+| height | ResponsiveValue | auto |
+| borderRadius | ResponsiveValue | 22px |
+
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <Flex flexWrap="wrap">
+      <Chip bg="blue.royal" color="#FFF" m={2} width="100px">Chip1</Chip>
+      <Chip bg="blue.deep" color="#FFF" m={2} width="100px">Chip2</Chip>
+      <Chip bg="black.standard" color="#FFF" m={2} width="100px">Chip3</Chip>
+      <Chip bg="black.half" color="#FFF" m={2} width="100px">Chip4</Chip>
+    </Flex>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00" color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+```
+
+<App>
+  <Chip bg="#AA0000" color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+```
+
+## Test

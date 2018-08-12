@@ -33,18 +33,18 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
-var styled_system_1 = require("styled-system");
-exports.StyledBox = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system_1.space, styled_system_1.width, styled_system_1.height, styled_system_1.color, styled_system_1.justifySelf, styled_system_1.alignSelf, styled_system_1.order, styled_system_1.border);
-var Box = /** @class */ (function (_super) {
-    __extends(Box, _super);
-    function Box(props) {
+var theme_1 = require("../commons/theme");
+exports.StyledHide = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  @media (max-width: ", "){\n    display: ", ";\n  }\n\n  @media (max-width: ", ") and (min-width: ", "){\n    display: ", ";\n  }\n\n  @media (min-width: ", "){\n    display: ", ";\n  }\n"], ["\n  @media (max-width: ", "){\n    display: ", ";\n  }\n\n  @media (max-width: ", ") and (min-width: ", "){\n    display: ", ";\n  }\n\n  @media (min-width: ", "){\n    display: ", ";\n  }\n"])), theme_1.breakpoints[0], function (props) { return (props.mobile ? "none" : "block"); }, theme_1.breakpoints[1], theme_1.breakpoints[0], function (props) { return (props.tablet ? "none" : "block"); }, theme_1.breakpoints[1], function (props) { return (props.desktop ? "none" : "block"); });
+var Hide = /** @class */ (function (_super) {
+    __extends(Hide, _super);
+    function Hide(props) {
         return _super.call(this, props) || this;
     }
-    Box.prototype.render = function () {
+    Hide.prototype.render = function () {
         var _a = this.props, children = _a.children, props = __rest(_a, ["children"]);
-        return (React.createElement(exports.StyledBox, __assign({}, props), children));
+        return (React.createElement(exports.StyledHide, __assign({}, props), children));
     };
-    return Box;
+    return Hide;
 }(React.Component));
-exports.Box = Box;
+exports.Hide = Hide;
 var templateObject_1;

@@ -34,17 +34,32 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
 var styled_system_1 = require("styled-system");
-exports.StyledBox = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system_1.space, styled_system_1.width, styled_system_1.height, styled_system_1.color, styled_system_1.justifySelf, styled_system_1.alignSelf, styled_system_1.order, styled_system_1.border);
-var Box = /** @class */ (function (_super) {
-    __extends(Box, _super);
-    function Box(props) {
-        return _super.call(this, props) || this;
+exports.StyledOverlay = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", "\n  ", "\n  opacity: 0.4\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 5000;\n  width: 100%;\n  height: 100%;\n  background: #000;\n"], ["\n  ", "\n  ", "\n  opacity: 0.4\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 5000;\n  width: 100%;\n  height: 100%;\n  background: #000;\n"])), styled_system_1.left, styled_system_1.top);
+var Overlay = /** @class */ (function (_super) {
+    __extends(Overlay, _super);
+    function Overlay(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            isVisible: false
+        };
+        _this.close = _this.close.bind(_this);
+        _this.open = _this.open.bind(_this);
+        return _this;
     }
-    Box.prototype.render = function () {
-        var _a = this.props, children = _a.children, props = __rest(_a, ["children"]);
-        return (React.createElement(exports.StyledBox, __assign({}, props), children));
+    Overlay.prototype.close = function () {
+        this.setState({ isVisible: false });
     };
-    return Box;
+    Overlay.prototype.open = function () {
+        this.setState({ isVisible: false });
+    };
+    Overlay.prototype.render = function () {
+        var _a = this.props, children = _a.children, props = __rest(_a, ["children"]);
+        return (this.state.isVisible && React.createElement(exports.StyledOverlay, __assign({}, props, { onClick: this.close }),
+            " ",
+            children,
+            " "));
+    };
+    return Overlay;
 }(React.Component));
-exports.Box = Box;
+exports.Overlay = Overlay;
 var templateObject_1;

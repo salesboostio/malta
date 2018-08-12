@@ -1,0 +1,79 @@
+---
+name: HyperLink
+menu: Molecules
+---
+
+import { Playground } from "docz"
+import { App, Flex, Chip, HyperLink, Box, Text } from "../../dist"
+
+# HyperLink
+
+HyperLink는 앵커(a)태그로 표현되며, 링크를 표현하는 인라인 컴포넌트이다. 기본적으로 새 창에 열리게되어있다.
+이는 React Router가 Link를 사용하며 새 창이 아닌 기존 윈도우에서 전환되기 떄문이다.
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">Span</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+|italic| boolean | false |
+|caps| boolean | false |
+|underline| boolean | false |
+|through| boolean | false |
+|medium| boolean | false |
+|regular| boolean | true |
+|demiLight| boolean | false |
+|light| boolean | false |
+|fontSize| ResponsiveValue | h4 |
+|lineHeight| ResponsiveValue | 1.4em |
+|color| ResponsiveValue | black.standard |
+
+
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <Box width={1/2}>
+      <Text>
+        In our use case, <HyperLink color="blue.royal" medium href="http://google.com">google.com </HyperLink> a lot of heavy lifting that has to be do
+        ne through CSS to inject user-specific styling into a component. Many
+        components’ render methods end up objects that clutter
+        them up and split the CSS into two places, making the code harder to parse.
+        Styled Components help keep the concerns of st
+      </Text>
+    </Box>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00" color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+...
+<Text> .............<HyperLink href="....">abcedf</HyperLink> ...........</Text>
+...
+```
+
+<App>
+  <Chip bg="#AA0000" color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+// HyperLink은 inline 컴포넌트기 때문에 space 속성이 없다. 
+...
+<HyperLink mt={3}>abcedf</HyperLink>
+...
+```
+
+## Test

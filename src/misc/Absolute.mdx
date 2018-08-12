@@ -1,0 +1,68 @@
+---
+name: Absolute
+menu: Misc
+---
+
+import { Playground } from "docz"
+import { App, Flex, Chip, Absolute, Relative, Box, Text } from "../../dist"
+
+# Absolute
+
+정상적인 document flow를 벗어난 곳에 컴포넌트를 위치시키고 싶을 때 사용하는 wrapper.  `<Relative>` 블락 안에서만 적용된다. 
+`<Absolute>` 내부에 있는 컴포넌트의 width, height는 그 부모 컴포넌트의 전체 width, height 계산에서 제외되며
+당연히 padding, margin 속성은 적용되지 않는다.
+
+top, left, right, bottom의 offset은 부모 컴포넌트를 기준으로 계산된다.
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">none</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+| top | ResponsiveValue | 0 |
+| bottom | ResponsiveValue | 0 |
+| left | ResponsiveValue | 0 |
+| right | ResponsiveValue | 0 |
+| z-index | ResponsiveValue | 0 |
+
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <Relative>
+      <Box p={5} bg="blue.royal">
+        <Absolute top="20px" right="20px"><Chip bg="blue.dark" color="#fff">top20,right20</Chip></Absolute>
+        <Absolute top="20px" left="20px"><Chip bg="blue.dark" color="#fff">top20,left20</Chip></Absolute>
+        <Absolute bottom="20px" right="20px"><Chip bg="blue.dark" color="#fff">bottom20,right20</Chip></Absolute>
+        <Absolute bottom="20px" left="20px"><Chip bg="blue.dark" color="#fff">bottom20,left20</Chip></Absolute>
+        <Text color="#FFF">With this we know that 1vh is equals to 1% of the visible part of the user browser (Viewport). We are going to use it with min-height to make sure the section is Full no matter the content size.</Text>
+      </Box>
+    </Relative> 
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00" color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+```
+
+<App>
+  <Chip bg="#AA0000" color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+```
+
+## Test

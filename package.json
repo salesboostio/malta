@@ -7,7 +7,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -r ./dist && tsc",
     "start": "npm run build",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --coverage",

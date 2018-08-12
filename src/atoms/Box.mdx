@@ -1,0 +1,70 @@
+---
+name: Box
+menu: Atoms
+---
+
+import { Playground, PropsTable } from "docz"
+import { App, Text, Box, Container, Chip, Flex } from "../../dist"
+
+# Box
+
+가장 기본이 되는 Box 엘레먼트. 컨테이너로 사용하면 안된다. 즉 하나 이상의 자식노드를 가질 수 없다.
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+|space|ResponsiveValue|0|
+|width|ResponsiveValue|100%|
+|height|ResponsiveValue|auto|
+|color|ResponsiveValue|inherit|
+|justifySelf|ResponsiveValue|none|
+|alignSelf|ResponsiveValue|none|
+|order|number[]|none|
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <Flex flexDirection="column">
+      <Box m={2} p={2} color="#FFF" bg="blue.dark">Box</Box>
+      <Box m={2} p={2} color="#FFF" bg="black.standard" width="300px">Fixed width</Box>
+      <Box m={2} p={2} color="#FFF" bg="black.standard" width="300px" alignSelf="center">Centered</Box>
+      <Box m={2} p={2} color="#FFF" bg="black.standard" width="300px" ml="auto">Right aligned</Box>
+    </Flex>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00"color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+// somewhere in codebase
+
+<Box><Image...></Box>
+<Box><Text...></Box>
+```
+
+<App>
+  <Chip bg="#AA0000"color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+<Box>
+  <Box>...box1</Box>
+  <Box>...box2</Box>
+<Box>
+```
+
+## Test

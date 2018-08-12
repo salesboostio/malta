@@ -34,17 +34,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
 var styled_system_1 = require("styled-system");
-exports.StyledBox = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system_1.space, styled_system_1.width, styled_system_1.height, styled_system_1.color, styled_system_1.justifySelf, styled_system_1.alignSelf, styled_system_1.order, styled_system_1.border);
-var Box = /** @class */ (function (_super) {
-    __extends(Box, _super);
-    function Box(props) {
+exports.StyledAbsolute = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: absolute;\n  ", " ", " ", " ", "\n  ", "\n"], ["\n  position: absolute;\n  ", " ", " ", " ", "\n  ", "\n"])), styled_system_1.top, styled_system_1.bottom, styled_system_1.left, styled_system_1.right, styled_system_1.zIndex);
+var Absolute = /** @class */ (function (_super) {
+    __extends(Absolute, _super);
+    function Absolute(props) {
         return _super.call(this, props) || this;
     }
-    Box.prototype.render = function () {
+    Absolute.prototype.render = function () {
         var _a = this.props, children = _a.children, props = __rest(_a, ["children"]);
-        return (React.createElement(exports.StyledBox, __assign({}, props), children));
+        return (React.createElement(exports.StyledAbsolute, __assign({}, props), children));
     };
-    return Box;
+    return Absolute;
 }(React.Component));
-exports.Box = Box;
+exports.Absolute = Absolute;
 var templateObject_1;

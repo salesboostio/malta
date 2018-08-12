@@ -1,0 +1,59 @@
+---
+name: SalesboostFooter
+menu: Templates
+---
+
+import { Playground } from "docz"
+import { App, Flex, Chip, SalesboostFooter } from "../../dist"
+
+# SalesboostFooter
+
+SalesboostFooter
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF" mx={1}>Flex</Chip>
+<Chip bg="blue.royal" color="#FFF" mx={1}>Text</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+|fontFamily | string | Arial |
+|color | string | black.hint |
+|bg | string | black._20 |
+|fontSize | ResponsiveValue | [h4, h3, h3] |
+|height | ResponsiveValue | [32px, 50px, 50px] |
+
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <SalesboostFooter />
+    <SalesboostFooter color="black.hint" bg="black.half" fontSize={["h5", "h4", "h3"]}/>
+    <SalesboostFooter fontFamily="serif" height={["40px", "60px", "70px"]}/>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00" color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+```
+
+<App>
+  <Chip bg="#AA0000" color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+```
+
+## Test

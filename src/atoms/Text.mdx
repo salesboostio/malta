@@ -1,0 +1,74 @@
+---
+name: Text
+menu: Atoms
+---
+
+import { Playground, PropsTable } from "docz"
+import { Text, App, Chip, Flex } from "../../dist"
+
+# Text
+
+기본적인 Text를 표시하는 태그.
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+|left| boolean | true |
+|right| boolean | false |
+|center| boolean | false |
+|italic| boolean | false |
+|caps| boolean | false |
+|underline| boolean | false |
+|through| boolean | false |
+|medium| boolean | false |
+|regular| boolean | true |
+|demiLight| boolean | false |
+|light| boolean | false |
+|fontSize| ResponsiveValue | h4 |
+|lineHeight| ResponsiveValue | 1.4em |
+|color| ResponsiveValue | black.standard |
+
+## Usecase
+
+<Playground>
+  <App>
+    <Text left color="blue.deep">Left Aligned Text</Text>
+    <Text center color="blue.dark">Center Aligned Text</Text>
+    <Text right color="blue.royal">Right Aligned Text</Text>
+    <Text italic>Italic Text</Text>
+    <Text medium>Fontweight is medium Text</Text>
+    <Text light>Fontweight is light Text</Text>
+    <Text caps>Capitalized Text</Text>
+    <Text underline>Underlined Text</Text>
+    <Text through>Line-through Text</Text>
+    <Text center italic medium caps underline>Centered Italic MediumWeight Capitalized Underlined Text</Text>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00"color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+@todo
+```
+
+<App>
+  <Chip bg="#AA0000"color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+@todo
+```
+
+## Test

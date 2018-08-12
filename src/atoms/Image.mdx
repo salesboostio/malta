@@ -1,0 +1,62 @@
+---
+name: Image
+menu: Atoms
+---
+
+import { Playground, PropsTable } from "docz"
+import { App, Image, Flex, Chip, Box } from "../../dist"
+
+# Image
+
+이미지 태그. 
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+|fit| fill \| contain \| cover \| none \| scale-down | fill |
+|position| number% number% | 50% 50% |
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <Flex flexDirection="column" alignItems="center">
+      <Box mt={3} width="100px" height="100px">
+      <Image fit="contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScA3CeUqpv8EXQ_n31tYqJ-VR0aw1Dj0n6ljCM9iL0XZk-qq9A" />
+      </Box>
+      <Box mt={3} width="200px" height="200px">
+        <Image fit="cover" src="https://avatars.mds.yandex.net/get-pdb/215709/e205ff71-90fe-41f5-b769-1800542ac3aa/orig" />
+      </Box>
+    </Flex>
+  </App>
+</Playground>
+
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00"color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+@todo
+```
+
+<App>
+  <Chip bg="#AA0000"color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+@todo
+```
+
+## Test

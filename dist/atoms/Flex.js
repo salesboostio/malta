@@ -32,19 +32,19 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var styled_components_1 = require("styled-components");
 var styled_system_1 = require("styled-system");
-exports.StyledBox = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system_1.space, styled_system_1.width, styled_system_1.height, styled_system_1.color, styled_system_1.justifySelf, styled_system_1.alignSelf, styled_system_1.order, styled_system_1.border);
-var Box = /** @class */ (function (_super) {
-    __extends(Box, _super);
-    function Box(props) {
+var Box_1 = require("./Box");
+exports.StyledFlex = Box_1.StyledBox.extend(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  display: flex;\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system_1.alignItems, styled_system_1.justifyContent, styled_system_1.flexWrap, styled_system_1.flexDirection);
+var Flex = /** @class */ (function (_super) {
+    __extends(Flex, _super);
+    function Flex(props) {
         return _super.call(this, props) || this;
     }
-    Box.prototype.render = function () {
+    Flex.prototype.render = function () {
         var _a = this.props, children = _a.children, props = __rest(_a, ["children"]);
-        return (React.createElement(exports.StyledBox, __assign({}, props), children));
+        return (React.createElement(exports.StyledFlex, __assign({}, props), children));
     };
-    return Box;
+    return Flex;
 }(React.Component));
-exports.Box = Box;
+exports.Flex = Flex;
 var templateObject_1;

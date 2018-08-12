@@ -34,17 +34,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
 var styled_system_1 = require("styled-system");
-exports.StyledBox = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system_1.space, styled_system_1.width, styled_system_1.height, styled_system_1.color, styled_system_1.justifySelf, styled_system_1.alignSelf, styled_system_1.order, styled_system_1.border);
-var Box = /** @class */ (function (_super) {
-    __extends(Box, _super);
-    function Box(props) {
+exports.StyledRounded = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  width: fit-content;\n  height: auto;\n  overflow: hidden;\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  width: fit-content;\n  height: auto;\n  overflow: hidden;\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system_1.space, styled_system_1.width, styled_system_1.height, styled_system_1.borderRadius);
+var Rounded = /** @class */ (function (_super) {
+    __extends(Rounded, _super);
+    function Rounded(props) {
         return _super.call(this, props) || this;
     }
-    Box.prototype.render = function () {
+    Rounded.prototype.render = function () {
         var _a = this.props, children = _a.children, props = __rest(_a, ["children"]);
-        return (React.createElement(exports.StyledBox, __assign({}, props), children));
+        return (React.createElement(exports.StyledRounded, __assign({}, props), children));
     };
-    return Box;
+    return Rounded;
 }(React.Component));
-exports.Box = Box;
+exports.Rounded = Rounded;
 var templateObject_1;

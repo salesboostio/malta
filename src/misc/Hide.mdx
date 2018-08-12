@@ -1,0 +1,79 @@
+---
+name: Hide
+menu: Misc
+---
+
+import { Playground, PropsTable } from "docz"
+import { App, Hide, Text, Box, Container, Chip, Flex } from "../../dist"
+
+# Hide
+
+Responsive하게 display속성을 켜고 끄는 wrapper. 속성을 여러개 동시에 넣어줄 수 도 있다. 
+
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+|mobile| boolean | false |
+|tablet| boolean | false |
+|desktop| boolean | false |
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <Container>
+      <Hide mobile tablet>
+          <Box bg="black.standard" width={1/2} p="16px" mt="16px">
+          <Text center color="#FFF">Show only Desktop</Text>
+          </Box>
+      </Hide>
+      <Hide mobile desktop>
+          <Box bg="black.sub" width={1/2} p="16px" mt="16px">
+          <Text center color="#FFF">Show only tablet</Text>
+          </Box>
+      </Hide>
+      <Hide desktop tablet>
+          <Box bg="black.half" width={1/2} p="16px" mt="16px">
+          <Text center color="#FFF">Show only mobile</Text>
+          </Box>
+      </Hide>
+      <Hide mobile>
+          <Box bg="black.hint" width={1/2} p="16px" mt="16px">
+          <Text center color="#FFF">Show Desktop and tablet</Text>
+          </Box>
+      </Hide>
+    </Container>
+  </App>
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00"color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+@todo
+```
+
+<App>
+  <Chip bg="#AA0000"color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+@todo
+```
+
+## Test

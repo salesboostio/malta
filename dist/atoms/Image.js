@@ -33,18 +33,22 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var styled_components_1 = require("styled-components");
-var styled_system_1 = require("styled-system");
-exports.StyledBox = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  box-sizing: border-box;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system_1.space, styled_system_1.width, styled_system_1.height, styled_system_1.color, styled_system_1.justifySelf, styled_system_1.alignSelf, styled_system_1.order, styled_system_1.border);
-var Box = /** @class */ (function (_super) {
-    __extends(Box, _super);
-    function Box(props) {
+var fit = function (props) { return "object-fit: " + props.fit + ";"; };
+var position = function (props) { return "object-position: " + props.position + ";"; };
+exports.StyledImage = styled_components_1.default.img(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  height: 100%;\n  ", "\n  ", "\n"])), fit, position);
+exports.StyledImage.defaultProps = {
+    alt: "img"
+};
+var Image = /** @class */ (function (_super) {
+    __extends(Image, _super);
+    function Image(props) {
         return _super.call(this, props) || this;
     }
-    Box.prototype.render = function () {
+    Image.prototype.render = function () {
         var _a = this.props, children = _a.children, props = __rest(_a, ["children"]);
-        return (React.createElement(exports.StyledBox, __assign({}, props), children));
+        return (React.createElement(exports.StyledImage, __assign({}, props), children));
     };
-    return Box;
+    return Image;
 }(React.Component));
-exports.Box = Box;
+exports.Image = Image;
 var templateObject_1;

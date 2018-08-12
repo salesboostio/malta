@@ -1,0 +1,90 @@
+---
+name: Rounded
+menu: Misc
+---
+
+import { Playground } from "docz"
+import { App, Rounded, Flex, Box, Chip, Image, Text, Shadow } from "../../dist"
+
+# Rounded
+라운드 모서리로 감싸주는 래퍼. 
+
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+| shadow | number | 0 |
+| space | ResponsiveValue | 0 |
+| width | ResponsiveValue | fit-content |
+| height | ResponsiveValue | auto |
+
+
+## Usecase
+
+<Playground>
+  <App>
+    <Flex flexDirection="column" alignItems="center">
+      <Rounded borderRadius="50%" width="100px" height="100px" mt={2}>
+        <Flex bg="blue.royal" alignItems="center" justifyContent="center" height="100%">
+          <Box 
+            color="#FFF" 
+            p={2}>
+            Rounded
+          </Box>
+        </Flex>
+      </Rounded>
+      <Rounded borderRadius="25px" mt={2} >
+        <Flex bg="blue.deep" height="50px" width="100px" alignItems="center">
+          <Text center caps color="#FFF" height="fit-content">
+            Chip
+          </Text>
+        </Flex>
+      </Rounded>
+      <Rounded borderRadius="50%" width="200px" height="200px" mt={2}>
+        <Image  fit="cover" src="https://cdn-images-1.medium.com/max/1600/1*zm5NLjdhGd3VVTA2u-xEPg.gif"/>
+      </Rounded>
+      <Rounded borderRadius="100px" width="300px" height="200px" mt={2} style={{boxShadow:"0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)"}}>
+        <Image  fit="cover" src="https://avatars.mds.yandex.net/get-pdb/921693/d3d5c6d0-19fc-42d2-9d36-a29aab35609d/orig"/>
+      </Rounded>
+    </Flex>
+  </App>  
+</Playground>
+
+## Best Practices
+
+<App>
+  <Chip bg="#00AA00" color="#FFF" width="100px">Do</Chip>
+</App>
+
+```javascript
+<Rounded borderRadius="50%" width="100px" height="100px" mt={2}>
+  <Flex bg="blue.royal" alignItems="center" justifyContent="center" height="100%">
+    <Box color="#FFF" p={2}>
+      Rounded
+    </Box>
+  </Flex>
+</Rounded>
+```
+
+<App>
+  <Chip bg="#AA0000" color="#FFF" width="100px">Don't</Chip>
+</App>
+
+```javascript
+// 감싸진 객체를 중앙에 오게 하려면 Flexbox안에 집어넣어야한다.
+<Rounded borderRadius="50%" width="100px" height="100px" mt={2}>
+  <Box color="#FFF" p={2}>
+    Rounded
+  </Box>
+</Rounded>
+```
+
+## Test
