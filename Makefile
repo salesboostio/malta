@@ -1,19 +1,19 @@
- PROJECT_NAME = malta
+PROJECT_NAME = malta
 
- install:
-     npm install
+install:
+	npm install
 
- run:
-     npm start
+run:
+	npm start
 
- build:
-     npm run build
+build:
+	npm run build
 
- lint:
-     npm run lint
+lint:
+	npm run lint
 
- test:
-     npm run test
+test:
+	npm run test
 
- report-coverage:
-     npm run coverage
+report-coverage:
+	npm run coverage
