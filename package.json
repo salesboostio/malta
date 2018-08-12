@@ -8,7 +8,9 @@
     "start": "npm run build",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --coverage",
-    "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859"
+    "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859",
+    "docz": "docz dev",
+    "docz-build": "docz build"
   },
   "dependencies": {
     "docz": "^0.9.6",

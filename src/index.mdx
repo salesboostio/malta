@@ -1,0 +1,39 @@
+---
+name: Introduction
+route: /
+---
+
+# Malta [[Github]](https://github.com/salesboostio/malta)
+
+Salesboost UI library. Atomic Design 패러다임을 적용해 컴포넌트들이 추상화의
+수준에 맞춰 카테고리가 나뉘어져 있다. 카테고리의 hierarchy는 `atom` - `molecule` - `organism` - `template`
+순이며 모든 컴포넌트는 자신보다 상위레벨의 컴포넌트를 참조해선 안된다.
+
+- [Atom](http://localhost:3000/src-atoms-index): Text, Box, Image...
+- [Molecules](http://localhost:3000/src-molecules-index): Shadow, RoundedBox, Label, Button, Span, HyperLink, Chip, ListContainer, ListItem...
+- [Organisms](http://localhost:3000/src-organisms-index): Card, FixedHeader, FeedItem, GridItem, Slider...
+- [Templates](http://localhost:3000/src-templates-index): SalesBoostFooter, SalesBoostHeader, CatalogNav...
+
+
+
+- [Misc](http://localhost:3000/src-misc-index): 아직 분류되지 않은 draft 컴포넌트들, deprecate 컴포넌트들을 모아놓은 폴더
+- [Commons](http://localhost:3000/src-commons-index): 공통으로 사용하는 App, Theme, Other utils...
+
+## WorkFlow
+
+## Shell Command
+```
+~/malta$ tsc             # 컴파일
+~/malta$ ./bin/todo      # /src내에 존재하는 todo를 grep해서 src/index.mdx에 업데이트
+```
+
+## Docz [[link]](https://www.docz.site/)
+프로젝트 다큐멘테이션 라이브러리며 mdx를 사용한다. 소스 폴더내에 어디든 .mdx 파일을 생성하기만 하면
+자동으로 docz 웹페이지로 변환시켜준다.
+```
+npm run docz
+npm run docz build
+```
+
+
+## References

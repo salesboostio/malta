@@ -1,0 +1,48 @@
+{
+  "config": {
+    "title": "Malta",
+    "description": "My awesome app using docz",
+    "themeConfig": {},
+    "ordering": "descending",
+    "version": "0.0.17"
+  },
+  "entries": {
+    "src/index.mdx": {
+      "name": "Introduction",
+      "route": "/",
+      "id": "01CMPSBDWYFM2P0W30RN7Z8QJF",
+      "filepath": "src/index.mdx",
+      "link": null,
+      "slug": "src-index",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "malta-github",
+          "value": "Malta github"
+        },
+        {
+          "depth": 2,
+          "slug": "workflow",
+          "value": "Workflow"
+        },
+        {
+          "depth": 2,
+          "slug": "shell-command",
+          "value": "Shell command"
+        },
+        {
+          "depth": 2,
+          "slug": "docz-link",
+          "value": "Docz link"
+        },
+        {
+          "depth": 2,
+          "slug": "references",
+          "value": "References"
+        }
+      ]
+    }
+  }
+}
