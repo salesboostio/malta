@@ -1,9 +1,10 @@
 import * as React from "react";
+import styled from "styled-components";
 import { Text } from "../atoms/Text";
 import { Flex } from "../atoms/Flex";
 import { width, height, borderRadius } from "styled-system";
 
-const StyledChip = Flex.extend`
+const StyledChip = styled(Flex)`
   align-items: center;
   justify-content: center;
   border-radius: 22px;

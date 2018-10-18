@@ -18,7 +18,7 @@ type Props = BoxShadowProps & BorderRadiusProps;
 const boxShadow = (props: Props): string => `box-shadow: ${shadow[props.shadow]};`;
 const hoverShadow = (props: Props): string => `box-shadow: ${shadow[props.hoverShadow]};`;
 
-export const Card = Flex.extend<Props>`
+export const Card = styled(Flex)<Props>`
   overflow: hidden;
   cursor: pointer;
   ${boxShadow}

@@ -1,0 +1,48 @@
+---
+name: ToggleSwitch
+menu: Molecules
+---
+
+import { Playground } from "docz"
+import { App, Chip, Flex, ToggleSwitch } from "../../dist"
+
+# ToggleSwitch
+
+This is ToggleSwitch
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+|checked?|boolean|false|
+|loading?|boolean|false|
+|disbaled|boolean|false|
+|onClick|function|undefined|
+
+  checked?: boolean;
+  loading?: boolean;
+  disabled: boolean;
+  onClick?: Function;
+
+## Usecase
+
+<Playground>
+  <App>
+    <ToggleSwitch disabled={false} />
+    <ToggleSwitch disabled={false} checked={true} />
+    <ToggleSwitch disabled={true} checked={true} />
+    <ToggleSwitch disabled={true} checked={true} loading/>
+    <ToggleSwitch checked={true} loading/>
+  </App>
+</Playground>
+
+## Best Practices
+
+## Test

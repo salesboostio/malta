@@ -1,0 +1,51 @@
+---
+name: SalesboostHeader
+menu: Templates
+---
+
+import { Playground } from "docz"
+import { App, Chip, Flex, SalesboostHeader } from "../../dist"
+
+# SalesboostHeader
+
+This is SalesboostHeader
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+  |logoSrc| string | -- |
+  |headerHeight? | ResponsiveValue| -- |
+  |imageWidth? | ResponsiveValue| -- |
+  |imageHeight? | ResponsiveValue| -- |
+  |bg?| string| -- |
+  |padding?| ResponsiveValue| -- |
+  |onClick?| function | -- |
+  |href?| string | -- |
+
+## Usecase
+
+<Playground>
+  <App>
+    <SalesboostHeader 
+      logoSrc="https://res.cloudinary.com/ds9rfw9oy/image/upload/v1535092687/Salesboost/img-logo-salesboost-gnb_3x.png"
+      onClick={()=>alert("Clicked")} imageWidth="125px"/>
+    <SalesboostHeader 
+      logoSrc="https://res.cloudinary.com/ds9rfw9oy/image/upload/v1535092687/Salesboost/img-logo-salesboost-gnb_3x.png"
+      bg="blue.royal"
+      href="/"
+      imageWidth="125px"
+      />
+  </App>
+</Playground>
+
+## Best Practices
+
+## Test

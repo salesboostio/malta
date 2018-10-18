@@ -28,5 +28,5 @@ export const Box = styled.div<Props>`
   ${justifySelf}
   ${alignSelf}
   ${order}
+  transition: all 0.15s ease-out;
 `;
-

@@ -8,5 +8,5 @@ interface LineProps {
     color?: LineColor;
     thick?: LineThick;
 }
-export declare const Hr: import("../../../../../../../Users/minidonut/dev/salesboost/malta/node_modules/styled-components").StyledComponentClass<React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & LineProps & SpaceProps & WidthProps, any, React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & LineProps & SpaceProps & WidthProps>;
+export declare const Hr: import("styled-components").StyledComponentClass<React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & LineProps & SpaceProps & WidthProps, any, React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & LineProps & SpaceProps & WidthProps>;
 export {};

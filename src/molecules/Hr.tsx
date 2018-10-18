@@ -2,13 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { colors } from "../commons/theme";
 import { space, borderBottom, SpaceProps, width, WidthProps } from "styled-system";
-
-const get = (from: object, selector: string) =>
-  selector
-    .replace(/\[([^\[\]]*)\]/g, ".$1.")
-    .split(".")
-    .filter((t: any) => t !== "")
-    .reduce((prev: any, cur: any): any => prev && prev[cur], from);
+import { getValueFromTheme } from "../commons/utils";
 
 type LineStyle = "solid" | "dashed" | "dotted";
 type LineColor = string;
@@ -22,7 +16,7 @@ interface LineProps {
 
 type Props = LineProps & SpaceProps & WidthProps;
 
-const border = (props: Props) => `border-bottom: ${props.thick} ${props.lineStyle} ${get(colors, props.color) ? get(colors, props.color) : props.color}`;
+const border = (props: Props) => `border-bottom: ${props.thick} ${props.lineStyle} ${getValueFromTheme(colors, props.color)}`;
 
 export const Hr = styled.div<Props>`
   height: 0px;
@@ -35,5 +29,6 @@ Hr.defaultProps = {
   thick: "1px",
   lineStyle: "solid",
   color: "black._20",
-  my: 1
+  my: 1,
+  width: "100%"
 };

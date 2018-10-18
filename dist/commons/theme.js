@@ -28,6 +28,7 @@ exports.colors = {
     red: "#F51A1A",
     yellow: "#F5A921",
     green: "#059D5B",
+    mint: "#23C1A6"
 };
 exports.fontSizes = {
     h1: 40,
@@ -35,7 +36,7 @@ exports.fontSizes = {
     h3: 18,
     h4: 16,
     h5: 14,
-    h6: 13,
+    h6: 12,
 };
 exports.fontWeights = {
     medium: 500,

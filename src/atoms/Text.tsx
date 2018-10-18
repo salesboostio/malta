@@ -25,6 +25,7 @@ interface Props {
   center: boolean;
   underline: boolean;
   through: boolean;
+  hoverColor: string;
 }
 
 const caps = ({ caps }: Props) =>
@@ -45,6 +46,8 @@ const underline = ({ underline }: Props) =>
   underline ? { textDecorationLine: "underline" } : null;
 const through = ({ through }: Props) =>
   through ? { textDecorationLine: "line-through" } : null;
+const hoverColor = ({ hoverColor }: Props) =>
+  hoverColor ? { color: hoverColor } : null;
 
 export const Text = styled.div`
   overflow-wrap: break-word;
@@ -73,12 +76,14 @@ export const Text = styled.div`
   ${lineHeight}
   ${height}
   ${width}
+  :hover {
+   ${hoverColor}
+  }
 `.withComponent("p");
 
 Text.defaultProps = {
   color: "black.standard",
   fontSize: "h4",
-  regular: true,
   left: true,
   lineHeight: "1.4em"
 };

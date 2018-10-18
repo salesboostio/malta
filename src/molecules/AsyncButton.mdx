@@ -1,0 +1,54 @@
+---
+name: AsyncButton
+menu: Molecules
+---
+
+import { Flex, App, Chip, AsyncButton } from "../../dist"
+import { Playground } from "docz"
+
+# AsyncButton
+
+버튼입니다. onClick Prop에 콜백함수를 넣어주세요.
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">Box</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+| color | string | white.standard |
+| height | ResponsiveValues | [52px, 60px] |
+| width | ResponsiveValue | fit-content |
+| fontSize | ResponsiveValues | [h5, h3] |
+| hoverColor | String | color.blue.deep |
+| focusColor | String | color.blue.dark |
+| bg | String | blue.royal |
+| onClick | function | ()=>{} |
+| disabled | boolean | false |
+| loading | boolean | false |
+
+- width는 spinner의 width를 의미한다. 왜냐하면 label의 width를 텍스트에 맞추면서 spinner의 width를 동기화시키기 힘들기 때문이다.
+
+## Usecase
+
+<Playground>
+  <App>
+    <AsyncButton label="Click me" disabled={false} loading={false} onClick={()=>{console.log("ButtonClicked!");}}/>
+    <AsyncButton label="Disabled" disabled={true} loading={false}  onClick={()=>{console.log("ButtonClicked!");}}/>
+    <AsyncButton
+    label="Click me"
+    disabled={false}
+    loading={true}
+    width={["40px", "60px"]}
+    onClick={()=>{console.log("ButtonClicked!");}}/>
+  </App>
+</Playground>
+
+## Best Practices
+
+## Test

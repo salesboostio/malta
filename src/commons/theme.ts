@@ -27,6 +27,7 @@ export const colors = {
   red: "#F51A1A",
   yellow: "#F5A921",
   green: "#059D5B",
+  mint: "#23C1A6"
 };
 
 export const fontSizes = {
@@ -35,7 +36,7 @@ export const fontSizes = {
   h3: 18,
   h4: 16,
   h5: 14,
-  h6: 13,
+  h6: 12,
 };
 
 export const fontWeights = {
@@ -52,12 +53,12 @@ export const fontFamilies = {
 export const space = [0, 8, 16, 32, 64, 128];
 
 export const shadow = [
- "none",
- "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
- "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
- "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
- "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
- "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)"
+  "none",
+  "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
+  "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
+  "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
+  "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
+  "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)"
 ];
 
 const theme = {

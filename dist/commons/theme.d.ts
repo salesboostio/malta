@@ -26,6 +26,7 @@ export declare const colors: {
     red: string;
     yellow: string;
     green: string;
+    mint: string;
 };
 export declare const fontSizes: {
     h1: number;
@@ -75,6 +76,7 @@ declare const theme: {
         red: string;
         yellow: string;
         green: string;
+        mint: string;
     };
     fontSizes: {
         h1: number;

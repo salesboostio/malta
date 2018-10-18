@@ -51,11 +51,14 @@ var through = function (_a) {
     var through = _a.through;
     return through ? { textDecorationLine: "line-through" } : null;
 };
-exports.Text = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  overflow-wrap: break-word;\n  hyphens: auto;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 0;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  overflow-wrap: break-word;\n  hyphens: auto;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 0;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), caps, medium, regular, demiLight, light, italic, left, right, center, underline, through, styled_system_1.color, styled_system_1.space, styled_system_1.fontSize, styled_system_1.fontFamily, styled_system_1.textAlign, styled_system_1.letterSpacing, styled_system_1.lineHeight, styled_system_1.height, styled_system_1.width).withComponent("p");
+var hoverColor = function (_a) {
+    var hoverColor = _a.hoverColor;
+    return hoverColor ? { color: hoverColor } : null;
+};
+exports.Text = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  overflow-wrap: break-word;\n  hyphens: auto;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 0;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  :hover {\n   ", "\n  }\n"], ["\n  overflow-wrap: break-word;\n  hyphens: auto;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 0;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  :hover {\n   ", "\n  }\n"])), caps, medium, regular, demiLight, light, italic, left, right, center, underline, through, styled_system_1.color, styled_system_1.space, styled_system_1.fontSize, styled_system_1.fontFamily, styled_system_1.textAlign, styled_system_1.letterSpacing, styled_system_1.lineHeight, styled_system_1.height, styled_system_1.width, hoverColor).withComponent("p");
 exports.Text.defaultProps = {
     color: "black.standard",
     fontSize: "h4",
-    regular: true,
     left: true,
     lineHeight: "1.4em"
 };

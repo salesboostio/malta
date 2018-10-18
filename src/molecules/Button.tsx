@@ -1,4 +1,5 @@
 import * as React from "react";
+import styled from "styled-components";
 import { border, BorderProps, borderColor, BorderColorProps, borderRadius, BorderRadiusProps, fontSize, FontSizeProps } from "styled-system";
 import { Box } from "../atoms/Box";
 import { colors } from "../commons/theme";
@@ -12,11 +13,12 @@ interface FocusColorProps {
 
 type Props = BorderColorProps & BorderRadiusProps & BorderProps & FontSizeProps & HoverColorProps & FocusColorProps;
 
-export const Button = Box.extend<Props>`
+export const Button = styled(Box)<Props>`
   display: flex;
   cursor: pointer;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
   width: fit-content;
   &:hover {
     background: ${(props: Props) => props.hoverColor};

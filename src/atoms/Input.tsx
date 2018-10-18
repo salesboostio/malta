@@ -1,44 +1,65 @@
 import * as React from "react";
 import styled from "styled-components";
-import { space } from "styled-system";
+import {
+  space,
+  width,
+  height,
+  fontSize
+} from "styled-system";
 import theme from "../commons/theme";
 
-const borders = () => {
-  const borderColor = theme.colors.black.hint;
-  const focusColor = theme.colors.blue.dark;
+
+const borders = ({ error }: any) => {
+  const borderColor = error ? theme.colors.red : theme.colors.black._20;
+  const focusColor = theme.colors.blue.royal;
+  const hoverColor = theme.colors.black.half;
   return {
-    "border-color": borderColor,
     "box-shadow": `0 0 0 1px ${borderColor}`,
+    ":hover:enabled:not(:focus)": {
+      "box-shadow": `0 0 0 1px ${hoverColor}`
+    },
     ":focus": {
       outline: 0,
       "border-color": focusColor,
-      "box-shadow": `0 0 0 2px ${focusColor}`
+      "box-shadow": `0 0 0 1px ${focusColor}`
     }
   };
 };
 
-export const Input = styled.input`
+
+export const Input = styled.input<any>`
   appearance: none;
   display: block;
-  width: 100%;
   font-family: inherit;
   color: inherit;
-  font-size: 16px;
   background-color: transparent;
-  border-radius: 2px;
   border-width: 0px;
-  border-style: solid;
-  border-color: ${theme.colors.blue.dark};
-  padding-top: 14px;
-  padding-bottom: 14px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin: 0;
+  border-radius: 2px
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 0px;
+  paddong-bottom: 0px;
   ::placeholder {
     color: ${theme.colors.black._20};
   }
   ::-ms-clear {
     display: none;
   }
-  ${borders} ${space};
+  :disabled{
+    background: ${theme.colors.black._5};
+  }
+  ${borders}
+  ${space}
+  ${width}
+  ${height}
+  ${fontSize}
 `;
+
+Input.defaultProps = {
+  my: "8px",
+  mx: "0px",
+  width: ["320px", "440px"],
+  height: ["52px", "60px"],
+  fontSize: ["h4", "h3"],
+  error: false
+};

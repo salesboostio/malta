@@ -1,0 +1,45 @@
+---
+name: Spinner
+menu: Molecules
+---
+
+import { Playground } from "docz"
+import { App, Chip, Flex, Spinner } from "../../dist"
+
+# Spinner
+
+This is Spinner
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+## Properties
+
+|Property|Type|Default|
+|-|-|-|
+|show?|boolean|true|
+|duration?|number|1.0|
+|sacle?|number|1.0|
+|color?|string|blue.royal|
+
+## Usecase
+
+<Playground>
+  <App>
+    <Spinner />
+    <Spinner color="mint" />
+    <Spinner duration={2}/>
+    <Spinner color="black.standard" />
+    <Flex bg="black.standard" p={2}>
+      <Spinner color="white.standard" scale={2}/>
+    </Flex>
+  </App>
+</Playground>
+
+## Best Practices
+
+## Test

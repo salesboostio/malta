@@ -1,2 +1,8 @@
 import * as React from "react";
-export declare const Hide: import("../../../../../../../Users/minidonut/dev/salesboost/malta/node_modules/styled-components").StyledComponentClass<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, any, React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>>;
+interface Props {
+    mobile?: boolean;
+    tablet?: boolean;
+    desktop?: boolean;
+}
+export declare const Hide: import("styled-components").StyledComponentClass<React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & Props, any, React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & Props>;
+export {};

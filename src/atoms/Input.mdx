@@ -30,7 +30,9 @@ Input
 <Playground>
   <App>
     <Input placeholder="Enter your email" mt={2}/>
-    <Input placeholder="Enter your password" type="password" mt={2}/>    
+    <Input placeholder="Enter your password(See console!)" type="password" mt={2} onChange={(e)=>console.log("password value is ", e.target.value)}/>
+    <Input placeholder="Error" type="password" mt={2} error />
+    <Input placeholder="Disabled" mt={2} disabled />
   </App>
 </Playground>
 

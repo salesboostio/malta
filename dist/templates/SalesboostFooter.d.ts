@@ -7,6 +7,7 @@ export declare class SalesboostFooter extends React.Component<any, any> {
         fontSize: string[];
         fontFamily: string;
         height: string[];
+        mt: string;
     };
     render(): JSX.Element;
 }

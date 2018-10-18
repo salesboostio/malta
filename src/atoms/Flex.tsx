@@ -1,4 +1,5 @@
 import * as React from "react";
+import styled from "styled-components";
 import {
   alignItems,
   AlignItemsProps,
@@ -13,9 +14,8 @@ import { Box } from "./Box";
 
 type FlexProps = AlignItemsProps & JustifyContentProps & FlexWrapProps & FlexDirectionProps;
 
-export const Flex = Box.extend<FlexProps>`
+export const Flex = styled(Box) <FlexProps>`
   display: flex;
-  box-sizing: border-box;
   ${alignItems}
   ${justifyContent}
   ${flexWrap}

@@ -1,0 +1,40 @@
+---
+name: CheckBox
+menu: Molecules
+---
+
+import { Playground } from "docz"
+import { App, Chip, Flex, CheckBox } from "../../dist"
+
+# CheckBox
+
+This is CheckBox
+
+## Dependencies
+<App>
+<Flex>
+<Chip bg="blue.deep" color="#FFF">None</Chip>
+</Flex>
+</App>
+
+## Properties
+
+| Property | Type     | Default   |
+|----------|----------|-----------|
+| checked  | boolean  | false     |
+| disabled | boolean  | false     |
+| onClick  | callback | undefined |
+
+## Usecase
+
+<Playground>
+  <App>
+    <CheckBox disabled={false} checked={true}/>
+    <CheckBox disabled={false} checked={false}/>
+    <CheckBox disabled={true} />
+  </App>
+</Playground>
+
+## Best Practices
+
+## Test
