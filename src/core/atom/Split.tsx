@@ -27,13 +27,13 @@ const StyledSplit = styled.div<any>`
 interface Props {
   horizontal?: boolean;
   vertical?: boolean;
-  length?: ResponsiveValue<TLengthStyledSystem>
+  length?: ResponsiveValue<TLengthStyledSystem>;
 }
 
 export const Split = (props: Props & ColorProps & AlignSelfProps & JustifySelfProps & SpaceProps) => {
   const { horizontal, length, vertical, ...styles } = props;
-  return <StyledSplit width={horizontal ? length : "1px"} height={vertical ? length : "1px"} {...styles} />
-}
+  return <StyledSplit width={horizontal ? length : "1px"} height={vertical ? length : "1px"} {...styles} />;
+};
 
 Split.defaultProps = {
   horizontal: false,
@@ -41,4 +41,4 @@ Split.defaultProps = {
   length: "100%",
   alignSelf: "center",
   bg: "rgba(22,27,72,0.4)",
-}
+};
