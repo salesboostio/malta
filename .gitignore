@@ -27,6 +27,6 @@ coverage
 docs/.next
 
 #build files
-core
-salesboost
-utils
+/core
+/salesboost
+/utils
