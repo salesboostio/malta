@@ -1,19 +1,19 @@
 {
   "name": "@salesboost/malta",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Salesboost UI library built with Styled-component",
   "repository": "git@github.com:salesboostio/malta.git",
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf core utils salesboost && tsc",
+    "build": "rm -rf core utils salesboost typography && tsc",
     "dev": "NODE_ENV=localhost nodemon ./docs/server.ts",
     "docs": "cd docs && next build",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --coverage",
     "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859",
-    "postbuild": "mv ./dist/core ./ && mv ./dist/salesboost ./ && mv ./dist/utils ./ && rm -rf ./dist"
+    "postbuild": "mv ./dist/* ./ && rm -rf ./dist"
   },
   "dependencies": {
     "react": "^16.7.0",
@@ -42,6 +42,7 @@
   "files": [
     "core",
     "salesboost",
-    "utils"
+    "utils",
+    "typography"
   ]
 }

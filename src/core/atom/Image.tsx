@@ -11,6 +11,8 @@ import {
   MaxWidthProps,
   maxHeight,
   MaxHeightProps,
+  space,
+  SpaceProps,
 } from "styled-system";
 
 const objectFit = (props: any) => `object-fit: ${props.fit};`;
@@ -22,12 +24,13 @@ interface ImgProps {
   alt?: string;
 }
 
-type Props = WidthProps & HeightProps & ImgProps & FlexProps & MaxWidthProps & MaxHeightProps;
+type Props = WidthProps & HeightProps & ImgProps & FlexProps & MaxWidthProps & MaxHeightProps & SpaceProps;
 
 export const Image = styled.img<Props>`
   box-sizing: border-box;
   flex-shrink: 0;
   overflow: hidden;
+  ${space}
   ${width}
   ${height}
   ${objectFit}

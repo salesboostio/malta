@@ -1,15 +1,14 @@
 import * as React from "react";
 import {
-  Flex,
   Icon,
 } from "../../core";
 import {
   Select,
 } from "../../salesboost";
-import styled from "styled-components";
 import {
   hover
 } from "../../utils";
+import styled from "styled-components";
 import Router from "next/router";
 
 const HoverElem = styled.div<any>`
@@ -34,6 +33,9 @@ class Index extends React.Component<any, any> {
           <option>C</option>
           <option>D</option>
         </Select>
+        <Flex width="300px" height="300px" bg="mint._90" alignItems="center" justifyContent="center">
+          <Split horizontal />
+        </Flex>
       </div>
     );
   }
