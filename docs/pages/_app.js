@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../../dist/salesboost";
+import { theme } from "../../salesboost";
 import App, { Container } from "next/app";
 
 class MyApp extends App {

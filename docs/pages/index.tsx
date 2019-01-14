@@ -2,12 +2,15 @@ import * as React from "react";
 import {
   Flex,
   Icon,
-} from "../../dist/core";
+} from "../../core";
+import {
+  Select,
+} from "../../salesboost";
 import styled from "styled-components";
 import {
   hover
-} from "../../dist/utils";
-import Router from "next/router"
+} from "../../utils";
+import Router from "next/router";
 
 const HoverElem = styled.div<any>`
   ${hover}
@@ -25,6 +28,12 @@ class Index extends React.Component<any, any> {
         <Icon name="arrow-right" color="rgba(22,27,72,0.3)" size={50} cursor="pointer" hover={{ color: "rgba(22,27,72,0.8)" }} />
         <Flex cursor="pointer" size="50px" bg="red" hover={{ "background": "rgba(22,27,72,0.3)" }} />
         <HoverElem hover={{ "background": "red" }} />
+        <Select initialSelection={-1}>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>D</option>
+        </Select>
       </div>
     );
   }

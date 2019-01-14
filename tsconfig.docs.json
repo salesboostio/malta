@@ -2,7 +2,6 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
     "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node",
@@ -26,6 +25,7 @@
     ]
   },
   "include": [
+    "src/**/*",
     "docs/**/*",
     "types/**/*"
   ]

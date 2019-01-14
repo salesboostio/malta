@@ -80,7 +80,7 @@ const DropdownItem = styled(Flex)`
 `;
 
 interface Props {
-  children?: React.ReactElement<any>;
+  children: any;
   initialSelection?: number;
   placeholder?: string;
   onValueChange?: (value: string, index: number) => void;
@@ -92,7 +92,7 @@ interface State {
   isOpened: boolean;
 }
 
-export default class Select extends React.Component<Props, State> {
+export class Select extends React.Component<Props, State> {
 
   state = {
     index: this.props.initialSelection || -1,
@@ -100,8 +100,8 @@ export default class Select extends React.Component<Props, State> {
     isOpened: false
   };
 
-  getValueFromOptions (options: React.ReactElement<any>, index: number) {
-    return options instanceof Array ? options.props.children : options.props.children;
+  getValueFromOptions (options: any, index: number) {
+    return options instanceof Array ? options[index].props.children : options.props.children;
   }
 
   public render() {
