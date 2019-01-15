@@ -1,6 +1,8 @@
 import * as React from "react";
 import {
   Icon,
+  Flex,
+  Split,
 } from "../../core";
 import {
   Select,
@@ -27,7 +29,7 @@ class Index extends React.Component<any, any> {
         <Icon name="arrow-right" color="rgba(22,27,72,0.3)" size={50} cursor="pointer" hover={{ color: "rgba(22,27,72,0.8)" }} />
         <Flex cursor="pointer" size="50px" bg="red" hover={{ "background": "rgba(22,27,72,0.3)" }} />
         <HoverElem hover={{ "background": "red" }} />
-        <Select initialSelection={-1}>
+        <Select mb={3} placeholder="Please select" initialSelection={1}>
           <option>A</option>
           <option>B</option>
           <option>C</option>

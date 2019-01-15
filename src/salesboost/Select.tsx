@@ -6,6 +6,7 @@ import {
   Text
 } from "../core";
 import styled from "styled-components";
+import { SpaceProps } from "styled-system";
 
 const SelectWrapper = styled<any>(Box)`
   position: relative;
@@ -86,13 +87,15 @@ interface Props {
   onValueChange?: (value: string, index: number) => void;
 }
 
+type SelectProps = Props & SpaceProps;
+
 interface State {
   index: number;
   value: string;
   isOpened: boolean;
 }
 
-export class Select extends React.Component<Props, State> {
+export class Select extends React.Component<SelectProps, State> {
 
   state = {
     index: this.props.initialSelection || -1,
@@ -105,9 +108,9 @@ export class Select extends React.Component<Props, State> {
   }
 
   public render() {
-    const { children } = this.props;
+    const { children, ...styles } = this.props;
     return (
-      <SelectWrapper>
+      <SelectWrapper {...styles}>
         <HiddenSelect>
           {children}
         </HiddenSelect>
