@@ -24,6 +24,10 @@ const HoverElem = styled.div<any>`
 
 class Index extends React.Component<any, any> {
 
+  state = {
+    inputValue: ""
+  };
+
   render() {
     return (
       <div>
@@ -42,6 +46,8 @@ class Index extends React.Component<any, any> {
         <Input
           my={2} mx={2}
           placeholder="Input placeholder"
+          value={this.state.inputValue}
+          onTextChange={(text) => this.setState({ inputValue: text })}
           validator={(text) => { return text.length < 5; }}
           title="Input title"
           errorText="Input error"

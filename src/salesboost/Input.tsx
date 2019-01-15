@@ -91,6 +91,7 @@ const Help = (props: HelpProps) => {
 };
 
 interface Props {
+  value: string;
   lg?: boolean;
   placeholder?: string;
   disabled?: boolean;
@@ -98,20 +99,19 @@ interface Props {
   errorText?: string;
   title?: string;
   description?: string;
+  onTextChange: (text: string) => void;
   validator?: (text: string) => boolean;
 }
 
 type InputProps = Props & SpaceProps;
 
 interface State {
-  value: string;
   valid: boolean;
 }
 
 export class Input extends React.Component<InputProps, State> {
 
   state = {
-    value: "",
     valid: true,
   };
 
@@ -125,15 +125,18 @@ export class Input extends React.Component<InputProps, State> {
           onChange={this.onChange}
           valid={this.state.valid}
           disabled={this.props.disabled}
-          placeholder={this.props.placeholder}/>
+          placeholder={this.props.placeholder}
+          value={this.props.value}/>
         {this.renderBottomText()}
       </InputWrapper>
     );
   }
 
   onChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    const text = ev.target.value;
+
+    this.props.onTextChange(text);
     if (this.props.validator) {
-      const text = ev.target.value;
       this.setState({
         valid: this.props.validator(text),
       });
