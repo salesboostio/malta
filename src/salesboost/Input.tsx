@@ -20,6 +20,7 @@ interface InnerInputProps {
 const InnerInput = styled.input<InnerInputProps>`
   width: 100%;
   height: 52px;
+  box-sizing: border-box;
   padding-left: 16px;
   padding-right: 16px;
   color: #162348;
