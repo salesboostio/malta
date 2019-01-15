@@ -5,6 +5,7 @@ import {
   Split,
 } from "../../core";
 import {
+  Input,
   Select,
 } from "../../salesboost";
 import {
@@ -38,6 +39,14 @@ class Index extends React.Component<any, any> {
         <Flex width="300px" height="300px" bg="mint._90" alignItems="center" justifyContent="center">
           <Split horizontal />
         </Flex>
+        <Input
+          my={2} mx={2}
+          placeholder="Input placeholder"
+          validator={(text) => { return text.length < 5; }}
+          title="Input title"
+          errorText="Input error"
+          description="Input description"
+          helpText="Input help"/>
       </div>
     );
   }
