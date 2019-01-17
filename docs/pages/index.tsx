@@ -58,7 +58,6 @@ class Index extends React.Component<any, any> {
             errorText="Input error"
             description="Input description"
             helpText="Input help" />
-
         </Drawer>
       </div>
     );
