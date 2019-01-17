@@ -31,6 +31,7 @@ export default class MyDocument extends Document {
           <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.23.0/polyfill.min.js' />
           <script dangerouslySetInnerHTML={{__html: `window.__ENV__ = ${JSON.stringify(process.env)}`}} />
           <NextScript />
+          <div id="portal-root"></div>
         </body>
       </html>
     )
