@@ -31,7 +31,7 @@ const ButtonWrapper = styled.div<any>`
 `;
 
 interface Props {
-  disabled?: false,
+  disabled?: false;
 }
 
 export type IconButtonProps = IconProps & Props & SpaceProps & WidthProps & HeightProps & ColorProps;
@@ -43,7 +43,7 @@ export const IconButton: React.SFC<IconButtonProps> = (props) => {
       <Icon name={name} size={size} color={color} hover={hover} />
     </ButtonWrapper>
   );
-}
+};
 
 IconButton.defaultProps = {
   size: 24,
@@ -51,4 +51,4 @@ IconButton.defaultProps = {
   height: "40px",
   disabled: false,
   color: "rgba(22,27,72,0.8)",
-}
+};

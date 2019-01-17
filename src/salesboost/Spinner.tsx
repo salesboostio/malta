@@ -45,7 +45,7 @@ const Wrapper = styled.div<any>`
   }
 `;
 
-export type SpinnerProps = Props & ColorProps & SpaceProps
+export type SpinnerProps = Props & ColorProps & SpaceProps;
 
 export const Spinner: React.SFC<SpinnerProps> = (props: Props) => (
   <Wrapper {...props}>
