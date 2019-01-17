@@ -18,15 +18,15 @@ import {
 const objectFit = (props: any) => `object-fit: ${props.fit};`;
 const objectPosition = (props: any) => `object-position: ${props.position};`;
 
-interface ImgProps {
+interface Props {
   objectFit?: string;
   objectPosition?: string;
   alt?: string;
 }
 
-type Props = WidthProps & HeightProps & ImgProps & FlexProps & MaxWidthProps & MaxHeightProps & SpaceProps;
+export type ImageProps = WidthProps & HeightProps & Props & FlexProps & MaxWidthProps & MaxHeightProps & SpaceProps;
 
-export const Image = styled.img<Props>`
+export const Image = styled.img<ImageProps>`
   box-sizing: border-box;
   flex-shrink: 0;
   overflow: hidden;

@@ -78,7 +78,7 @@ import {
   CursorProps,
 } from "../../utils";
 
-type BlockProps = SpaceProps & WidthProps & HeightProps & ColorProps
+export type BlockProps = SpaceProps & WidthProps & HeightProps & ColorProps
   & JustifySelfProps & AlignSelfProps & OrderProps & DisplayProps & MaxWidthProps & MaxHeightProps
   & MinWidthProps & MinHeightProps & SizeProps & RatioProps & VerticalAlignProps & FlexBasisProps & OpacityProps
   & FlexProps & GridColumnProps & GridRowProps & GridAreaProps & BordersProps & BorderRadiusProps & BoxShadowProps

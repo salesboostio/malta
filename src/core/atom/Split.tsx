@@ -30,7 +30,9 @@ interface Props {
   length?: ResponsiveValue<TLengthStyledSystem>;
 }
 
-export const Split = (props: Props & ColorProps & AlignSelfProps & JustifySelfProps & SpaceProps) => {
+export type SplitProps = Props & ColorProps & AlignSelfProps & JustifySelfProps & SpaceProps
+
+export const Split: React.SFC<SplitProps> = (props) => {
   const { horizontal, length, vertical, ...styles } = props;
   return <StyledSplit width={horizontal ? length : "1px"} height={vertical ? length : "1px"} {...styles} />;
 };

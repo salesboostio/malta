@@ -11,7 +11,7 @@ import {
   FlexWrapProps,
 } from "styled-system";
 
-type FlexProps = AlignItemsProps & JustifyContentProps & FlexDirectionProps & FlexWrapProps;
+export type FlexProps = AlignItemsProps & JustifyContentProps & FlexDirectionProps & FlexWrapProps;
 
 export const Flex = styled(Block) <FlexProps>`
   display: flex;

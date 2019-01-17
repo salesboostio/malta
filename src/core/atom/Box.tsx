@@ -8,7 +8,7 @@ import {
   OfReducerProps,
 } from "../../utils";
 
-type BoxProps = SpaceProps & OfReducerProps;
+export type BoxProps = SpaceProps & OfReducerProps;
 
 export const Box = styled.div<BoxProps>`
   box-sizing: border-box;

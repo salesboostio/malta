@@ -13,7 +13,7 @@ import {
   lineHeight,
   LineHeightProps,
 } from "styled-system";
-import { Block } from "./Block";
+import { Block, BlockProps } from "./Block";
 
 interface Props {
   medium?: boolean;
@@ -41,9 +41,11 @@ const textOverflow = ({ textOverflow }: Props) => textOverflow ? `text-overflow:
 const wordBreak = ({ wordBreak }: Props) => wordBreak ? `word-break: ${wordBreak};` : "";
 const whiteSpace = ({ whiteSpace }: Props) => whiteSpace ? `white-space: ${whiteSpace};` : "";
 
-type TextProps = Props & FontFamilyProps & FontSizeProps & TextAlignProps & FontWeightProps & LetterSpacingProps & LineHeightProps;
+type InnerProps = Props & FontFamilyProps & FontSizeProps & TextAlignProps & FontWeightProps & LetterSpacingProps & LineHeightProps;
 
-export const Text = styled(Block.withComponent("p")) <TextProps>`
+export type TextProps = InnerProps & BlockProps;
+
+export const Text = styled(Block.withComponent("p")) <InnerProps>`
   hyphens: auto;
   ${medium}
   ${regular}

@@ -19,8 +19,8 @@ import {
   MinHeightProps,
   flex,
   FlexProps,
-  borders,
-  BordersProps,
+  border,
+  BorderProps,
   borderRadius,
   BorderRadiusProps,
   fontFamily,
@@ -39,9 +39,9 @@ import {
   TransitionProps,
 } from "../../utils";
 
-type InputProps = SpaceProps & WidthProps & HeightProps & ColorProps
+export type InputProps = SpaceProps & WidthProps & HeightProps & ColorProps
   & MaxWidthProps & MaxHeightProps & MinWidthProps & MinHeightProps
-  & FlexProps & BordersProps & BorderRadiusProps
+  & FlexProps & BorderProps & BorderRadiusProps
   & FontSizeProps & FontWeightProps & FontFamilyProps
   & HoverProps & OfReducerProps & TransitionProps;
 
@@ -57,7 +57,7 @@ export const Input = styled.input<InputProps>`
   ${minWidth}
   ${minHeight}
   ${flex}
-  ${borders}
+  ${border}
   ${borderRadius}
   ${fontSize}
   ${fontWeight}
@@ -71,4 +71,5 @@ Input.defaultProps = {
   p: 0,
   m: 0,
   fontSize: "16px",
+  border: "none"
 };

@@ -4,6 +4,10 @@ import {
   display
 } from "styled-system";
 
-export const Br = styled.br<{ display: ResponsiveValue<"inline" | "none"> }>`
+export interface BrProps {
+  display: ResponsiveValue<"inline" | "none">;
+}
+
+export const Br = styled.br<BrProps>`
   ${display}
 `;

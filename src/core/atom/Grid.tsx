@@ -21,7 +21,7 @@ import {
   GridTemplatesRowsProps,
 } from "styled-system";
 
-type GridProps =
+export type GridProps =
   GridAutoColumnsProps & GridAutoFlowProps & GridAutoRowsProps
   & GridColumnGapProps & GridRowGapProps & GridTemplatesAreasProps
   & GridTemplatesColumnsProps & GridTemplatesRowsProps & GridGapProps;

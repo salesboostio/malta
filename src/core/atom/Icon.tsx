@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { color, ColorProps } from "styled-system";
 import { getValueFromTheme, hover, HoverProps, cursor, CursorProps } from "../../utils";
 
+type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder";
+
 interface Props {
-  name: string;
+  name: IconName;
   theme?: any;
   size: number;
 }
@@ -21,7 +23,9 @@ const StyledSvg = styled.svg.attrs((props: any) => ({
   transition: all 0.15s ease-out;
 `;
 
-export const Icon: React.SFC<Props & HoverProps & ColorProps & CursorProps> = (props) => {
+export type IconProps = Props & HoverProps & ColorProps & CursorProps;
+
+export const Icon: React.SFC<IconProps> = (props) => {
   const ic = getIcons(props.name);
   return (
     <StyledSvg {...props} viewBox={`0 0 ${ic.width} ${ic.height}`} >
