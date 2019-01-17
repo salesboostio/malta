@@ -6,7 +6,12 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-export const App = (props: any) => {
+interface Props {
+  theme: object;
+  children?: any;
+}
+
+export const App = (props: Props) => {
   return (
     <ThemeProvider theme={props.theme}>
       <Wrapper>
