@@ -80,10 +80,10 @@ export const radii = ["0", "2px", "4px", "8px", "16px", "32px"];
 
 export const shadows = [
   "none",
-  "0 2px 4px 0 rgba(22, 27, 72, 0)",
-  "0 4px 8px 0 rgba(22, 27, 72, 0)",
-  "0 8px 16px 0 rgba(22, 27, 72, 0)",
-  "0 16px 32px 0 rgba(22, 27, 72, 0)",
+  "0 2px 4px 0 rgba(22, 27, 72, 0.1)",
+  "0 4px 8px 0 rgba(22, 27, 72, 0.1)",
+  "0 8px 16px 0 rgba(22, 27, 72, 0.08)",
+  "0 16px 32px 0 rgba(22, 27, 72, 0.04)",
 ];
 
 export const theme = {
