@@ -59,6 +59,11 @@ class Index extends React.Component<any, any> {
             description="Input description"
             helpText="Input help" />
         </Drawer>
+
+        <Drawer left render={(handleOpen) =>
+          <IconButton name="arrow-right" color="red._100" hover={{ color: "rgba(22,27,72,0.2)" }} onClick={handleOpen} />}>
+          Left Drawer
+        </Drawer>
       </div>
     );
   }

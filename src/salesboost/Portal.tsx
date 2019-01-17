@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from "react-dom";
 import styled from "styled-components";
 
 export class Portal extends React.Component<any> {
@@ -9,7 +9,7 @@ export class Portal extends React.Component<any> {
 
   constructor(props: any) {
     super(props);
-    this.el = document.createElement('div');
+    this.el = document.createElement("div");
     this.modalRoot = document.getElementById("portal-root");
   }
 
