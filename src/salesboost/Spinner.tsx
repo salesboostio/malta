@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
-import { space, color, ColorProps } from "styled-system";
+import { space, SpaceProps, color, ColorProps } from "styled-system";
 
 const ballbeat = keyframes`
   0% {
@@ -23,10 +23,11 @@ interface Props {
   scale?: number;
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<any>`
   display: ${(props: Props) => props.show ? "flex" : "none"};
   width: max-content;
   animation-fill-mode: both;
+  ${space}
   > div {
     width: ${(props: Props) => props.scale * 12}px;
     height: ${(props: Props) => props.scale * 12}px;
@@ -44,7 +45,9 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Spinner: React.SFC<Props & ColorProps> = (props: Props) => (
+export type SpinnerProps = Props & ColorProps & SpaceProps
+
+export const Spinner: React.SFC<SpinnerProps> = (props: Props) => (
   <Wrapper {...props}>
     <div />
     <div />

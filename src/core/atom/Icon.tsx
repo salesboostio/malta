@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { color, ColorProps } from "styled-system";
+import { color, ColorProps, space, SpaceProps } from "styled-system";
 import { getValueFromTheme, hover, HoverProps, cursor, CursorProps } from "../../utils";
 
 type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder";
@@ -8,7 +8,7 @@ type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back
 interface Props {
   name: IconName;
   theme?: any;
-  size: number;
+  size?: number;
 }
 
 const StyledSvg = styled.svg.attrs((props: any) => ({
@@ -20,10 +20,11 @@ const StyledSvg = styled.svg.attrs((props: any) => ({
   ${color}
   ${hover}
   ${cursor}
+  ${space}
   transition: all 0.15s ease-out;
 `;
 
-export type IconProps = Props & HoverProps & ColorProps & CursorProps;
+export type IconProps = Props & HoverProps & ColorProps & CursorProps & SpaceProps;
 
 export const Icon: React.SFC<IconProps> = (props) => {
   const ic = getIcons(props.name);

@@ -1,4 +1,5 @@
 export * from "./theme";
 export { Select } from "./Select";
-export { Spinner } from "./Spinner";
+export { Spinner, SpinnerProps } from "./Spinner";
 export { Input } from "./Input";
+export { IconButton, IconButtonProps } from "./IconButton";

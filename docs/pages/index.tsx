@@ -7,6 +7,7 @@ import {
 import {
   Input,
   Select,
+  IconButton,
 } from "../../salesboost";
 import {
   hover
@@ -52,7 +53,8 @@ class Index extends React.Component<any, any> {
           title="Input title"
           errorText="Input error"
           description="Input description"
-          helpText="Input help"/>
+          helpText="Input help" />
+        <IconButton name="arrow-right" color="red._100" hover={{ color: "rgba(22,27,72,0.2)" }} />
       </div>
     );
   }
