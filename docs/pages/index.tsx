@@ -10,6 +10,7 @@ import {
   IconButton,
   Drawer,
   Header,
+  Button,
 } from "../../salesboost";
 import {
   hover
@@ -33,8 +34,14 @@ class Index extends React.Component<any, any> {
 
   render() {
     return (
-      <div style={{ marginTop: "60px" }}>
+      <div style={{ paddingTop: "60px" }}>
         <Header />
+        <Button label="Click me" line />
+        <Button label="Line me" />
+        <Button label="Click me" line disabled />
+        <Button label="Line me" disabled />
+        <Button label="Click me" line loading />
+        <Button label="Line me" loading />
         <Drawer render={(handleOpen) =>
           <IconButton name="arrow-right" color="red._100" hover={{ color: "rgba(22,27,72,0.2)" }} onClick={handleOpen} />}>
 
