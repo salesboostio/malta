@@ -11,8 +11,8 @@ import {
   FontSizeProps,
   height,
   HeightProps,
-  display,
-  DisplayProps,
+  width,
+  WidthProps,
 } from "styled-system";
 import { Spinner } from "./Spinner";
 
@@ -35,13 +35,14 @@ const LineStyle = css<any>`
 `;
 
 const Wrapper = styled.div<any>`
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: ${props => props.loading ? "progress" : props.disabled ? "not-allowed" : "pointer"};
   ${height}
+  ${width}
   ${space}
   ${borderRadius}
-  ${display}
   transition: all 0.15s ease-out;
   ${props => props.line ? LineStyle : SolidStyle}
 `;
@@ -58,9 +59,11 @@ interface Props {
   line?: boolean;
   disabled?: boolean;
   hoverBg?: string;
+  onClick?: any;
+  style?: any;
 }
 
-export type ButtonProps = React.SFC<Props & SpaceProps & ColorProps & HeightProps & BorderRadiusProps & FontSizeProps & DisplayProps>;
+export type ButtonProps = React.SFC<Props & SpaceProps & ColorProps & HeightProps & BorderRadiusProps & FontSizeProps & WidthProps>;
 
 export const Button: ButtonProps = (props) => {
   const { fontSize, loading, label, line, ...rest } = props;
@@ -82,5 +85,5 @@ Button.defaultProps = {
   borderRadius: "30px",
   bg: "rgba(69, 78, 223, 0.9)",
   hoverBg: "rgba(69, 78, 223, 0.7)",
-  display: "inline-flex",
+  width: "fit-content",
 };

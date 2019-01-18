@@ -33,6 +33,7 @@ const ButtonWrapper = styled.div<any>`
 interface Props {
   disabled?: false;
   onClick?: any;
+  style?: any;
 }
 
 export type IconButtonProps = IconProps & Props & SpaceProps & WidthProps & HeightProps & ColorProps;
