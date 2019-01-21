@@ -93,7 +93,8 @@ const Container = styled.div<any>`
 interface Props {
   slide?: number[];
   left?: boolean;
-  render?: any;
+  render?: ({ handleClose }: { handleClose: Function }) => any;
+  opener?: ({ handleOpen }: { handleOpen: Function }) => any;
 }
 
 export type DrawerProps = Props & ColorProps & WidthProps & SpaceProps;
@@ -119,14 +120,16 @@ export class Drawer extends React.Component<DrawerProps, { open: boolean; closin
   }
 
   render() {
-    const { render, ...rest } = this.props;
+    const { render, opener, ...rest } = this.props;
     return (
       <>
-        {render(this.handleOpen)}
+        {opener({ handleOpen: this.handleOpen })}
         {this.state.open ?
           <Portal>
             <Overlay onClick={this.handleClose} closing={this.state.closing} />
-            <Container closing={this.state.closing} {...rest} />
+            <Container closing={this.state.closing} {...rest}>
+              {render({ handleClose: this.handleClose })}
+            </Container>
           </Portal>
           : null}
       </>
