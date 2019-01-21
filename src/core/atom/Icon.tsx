@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { color, ColorProps, space, SpaceProps } from "styled-system";
 import { getValueFromTheme, hover, HoverProps, cursor, CursorProps } from "../../utils";
 
-type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder";
+type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder" | "hamburger";
 
 interface Props {
   name: IconName;
@@ -296,6 +296,17 @@ const getIcons = (name: string) => {
       height: 24,
       path: <g fill="currentColor">
         <path d="M12.677033,5 L13,5 L22,5 C23.1045695,5 24,5.8954305 24,7 L24,21 C24,21.5522847 23.5522847,22 23,22 L1,22 C0.44771525,22 8.71091205e-14,21.5522847 8.70414851e-14,21 L1.02251541e-13,6 L8.68194405e-14,1 C8.5280223e-14,0.44771525 0.44771525,-3.63965922e-14 1,-3.79696274e-14 L9.32296704,-3.21964677e-14 C9.73187163,-3.22715823e-14 10.0995804,0.248950944 10.2514437,0.628609324 L11.7485563,4.37139068 C11.9004196,4.75104906 12.2681284,5 12.677033,5 Z M11.021934,5 C10.9747106,4.91815055 10.9329128,4.83228191 10.8971125,4.74278135 L9.4,1 L1,1 L1,6 L1,21 L23,21 L23,7 C23,6.44771525 22.5522847,6 22,6 L12.877033,6 L1,6 L1,5 L11.021934,5 Z"></path>
+      </g>
+    },
+    "hamburger": {
+      width: 24,
+      height: 24,
+      path: <g fill="currentColor">
+        <g transform="translate(0 2)">
+          <rect width="24" height="1" rx=".5" />
+          <rect width="24" height="1" y="9" rx=".5" />
+          <rect width="24" height="1" y="18" rx=".5" />
+        </g>
       </g>
     }
   };
