@@ -1,6 +1,6 @@
 {
   "name": "@salesboost/malta",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "description": "Salesboost UI library built with Styled-component",
   "repository": "git@github.com:salesboostio/malta.git",
   "license": "MIT",
