@@ -9,3 +9,4 @@ export { Button, ButtonProps } from "./Button";
 export { Switch, SwitchProps } from "./Switch";
 export { Checkbox, CheckboxProps } from "./Checkbox";
 export { IconButton, IconButtonProps } from "./IconButton";
+export { RadioButton, RadioButtonProps } from "./RadioButton";

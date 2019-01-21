@@ -13,6 +13,7 @@ import {
   Button,
   Switch,
   Checkbox,
+  RadioButton,
 } from "../../salesboost";
 import {
   hover
@@ -34,6 +35,7 @@ class Index extends React.Component<any, any> {
     inputValue: "",
     switch: false,
     checked: false,
+    radioChecked: false,
   };
 
   render() {
@@ -57,6 +59,9 @@ class Index extends React.Component<any, any> {
         <Switch disabled m={2} />
         <Switch checked={this.state.switch} m={2} onClick={() => { this.setState(prev => ({ switch: !prev.switch })); }} />
         <Switch checked disabled m={2} />
+        <RadioButton checked={this.state.radioChecked} onClick={(checked) => this.setState({ radioChecked: checked })}/>
+        <RadioButton disabled leftText="RadioButton" display="inline-flex"/>
+        <RadioButton disabled checked rightText="RadioText"/>
         <Drawer render={(handleOpen) =>
           <IconButton name="arrow-right" color="red._100" hover={{ color: "rgba(22,27,72,0.2)" }} onClick={handleOpen} />}>
 
