@@ -43,7 +43,7 @@ class Index extends React.Component<any, any> {
       <div style={{ paddingTop: "60px" }}>
         <Header />
         <Button label="Click me" line onClick={() => { console.log("Click!"); }} />
-        <Button label="Line me" />
+        <Button label="Line me" bg="#fff" color="#162348"/>
         <Button label="Click me" line disabled />
         <Button label="Line me" disabled />
         <Button label="Click me" line loading />

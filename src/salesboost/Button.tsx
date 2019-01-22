@@ -21,7 +21,7 @@ const SolidStyle = css<any>`
   :hover {
     background: ${props => props.hoverBg};
   }
-  ${props => props.disabled ? "background: rgba(22,27,72,0.3)!important;" : ""}
+  ${props => props.disabled ? `background: ${props.bg ? props.bg : "rgba(22,27,72,0.3)"}!important;` : ""}
 `;
 
 const LineStyle = css<any>`
@@ -50,7 +50,7 @@ const Wrapper = styled.div<any>`
 const Text = styled.p<any>`
   ${fontSize}
   font-weight: normal;
-  color: ${props => props.line ? "rgba(22,27,72,0.9)" : "#FFF"};
+  color: ${props => props.color ? props.color : props.line ? "rgba(22,27,72,0.9)" : "#FFF"};
 `;
 
 interface Props {
@@ -59,6 +59,7 @@ interface Props {
   line?: boolean;
   disabled?: boolean;
   hoverBg?: string;
+  bg?: string;
   onClick?: any;
   style?: any;
 }
@@ -66,12 +67,12 @@ interface Props {
 export type ButtonProps = React.SFC<Props & SpaceProps & ColorProps & HeightProps & BorderRadiusProps & FontSizeProps & WidthProps>;
 
 export const Button: ButtonProps = (props) => {
-  const { fontSize, loading, label, line, ...rest } = props;
+  const { bg, color, fontSize, loading, label, line, ...rest } = props;
   return (
-    <Wrapper line={line} loading={loading} {...rest} >
+    <Wrapper line={line} loading={loading} bg={bg} {...rest} >
       {loading ?
         <Spinner />
-        : <Text disabled={props.disabled} line={line} fontSize={fontSize}>{label}</Text>}
+        : <Text disabled={props.disabled} line={line} fontSize={fontSize} color={color}>{label}</Text>}
     </Wrapper>
   );
 };
