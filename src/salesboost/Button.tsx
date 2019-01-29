@@ -17,11 +17,11 @@ import {
 import { Spinner } from "./Spinner";
 
 const SolidStyle = css<any>`
-  ${color}
   :hover {
     background: ${props => props.hoverBg};
   }
-  ${props => props.disabled ? `background: ${props.bg ? props.bg : "rgba(22,27,72,0.3)"}!important;` : ""}
+  ${props => props.disabled ? "background: rgba(22,27,72,0.3) !important;" : ""}
+  ${color}
 `;
 
 const LineStyle = css<any>`
@@ -67,12 +67,12 @@ interface Props {
 export type ButtonProps = React.SFC<Props & SpaceProps & ColorProps & HeightProps & BorderRadiusProps & FontSizeProps & WidthProps>;
 
 export const Button: ButtonProps = (props) => {
-  const { bg, color, fontSize, loading, label, line, ...rest } = props;
+  const { bg, color, fontSize, loading, label, line, onClick, disabled, ...rest } = props;
   return (
-    <Wrapper line={line} loading={loading} bg={bg} {...rest} >
+    <Wrapper disabled={disabled} line={line} loading={loading} onClick={(disabled || loading) ? () => { } : onClick} bg={bg} {...rest} >
       {loading ?
         <Spinner />
-        : <Text disabled={props.disabled} line={line} fontSize={fontSize} color={color}>{label}</Text>}
+        : <Text disabled={disabled} line={line} fontSize={fontSize} color={color}>{label}</Text>}
     </Wrapper>
   );
 };
