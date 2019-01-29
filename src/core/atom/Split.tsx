@@ -12,7 +12,7 @@ import {
   justifySelf,
   JustifySelfProps,
   ResponsiveValue,
-  TLengthStyledSystem
+  TLengthStyledSystem,
 } from "styled-system";
 
 const StyledSplit = styled.div<any>`

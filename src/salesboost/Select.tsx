@@ -6,9 +6,15 @@ import {
   Text
 } from "../core";
 import styled from "styled-components";
-import { SpaceProps } from "styled-system";
+import {
+  SpaceProps,
+  width,
+  WidthProps
+} from "styled-system";
 
 const SelectWrapper = styled<any>(Box)`
+  width: 327px;
+  ${width}
   position: relative;
 `;
 
@@ -21,7 +27,6 @@ interface SelectedProps {
 }
 
 const Selected = styled<SelectedProps | any>(Flex)`
-  max-width: 400px;
   width: 100%;
   height: 60px;
   flex-direction: row;
@@ -43,11 +48,11 @@ const Selected = styled<SelectedProps | any>(Flex)`
 `;
 
 const DropdownWrapper = styled(Flex)`
+  width: 100%;
   position: absolute;
   left: 0;
   right: 0;
   margin-top: -4px;
-  max-width: 400px;
   max-height: 330px;
   flex-direction: column;
   overflow-y: overlay;
@@ -87,7 +92,7 @@ interface Props {
   onValueChange?: (value: string, index: number) => void;
 }
 
-type SelectProps = Props & SpaceProps;
+type SelectProps = Props & SpaceProps & WidthProps;
 
 interface State {
   index: number;

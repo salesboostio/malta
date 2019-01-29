@@ -5,11 +5,12 @@ import {
   Text,
 } from "../core";
 import styled from "styled-components";
-import { SpaceProps } from "styled-system";
+import { SpaceProps, width, WidthProps } from "styled-system";
 import { theme } from "./theme";
 
 const InputWrapper = styled<any>(Block)`
-  width: ${({ lg }) => lg ? "440" : "295"}px;
+  width: 327ox;
+  ${width}
 `;
 
 interface InnerInputProps {
@@ -93,7 +94,6 @@ const Help = (props: HelpProps) => {
 
 interface Props {
   value: string;
-  lg?: boolean;
   placeholder?: string;
   disabled?: boolean;
   helpText?: string;
@@ -104,7 +104,7 @@ interface Props {
   validator?: (text: string) => boolean;
 }
 
-type InputProps = Props & SpaceProps;
+type InputProps = Props & SpaceProps & WidthProps;
 
 interface State {
   valid: boolean;
@@ -117,9 +117,9 @@ export class Input extends React.Component<InputProps, State> {
   };
 
   render() {
-    const { lg, title, description, placeholder, helpText, errorText, disabled, ...styles } = this.props;
+    const { title, description, placeholder, helpText, errorText, disabled, ...styles } = this.props;
     return (
-      <InputWrapper lg={lg} {...styles}>
+      <InputWrapper {...styles}>
         {title ? <Title>{title}</Title> : null}
         {helpText ? <Help>{helpText}</Help> : null}
         <InnerInput
