@@ -57,6 +57,7 @@ const Overlay = styled.div<any>`
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 1000;
   animation: ${props => props.closing ? fadeOut : fadeIn} 0.25s ease-in-out 1 normal both;
 `;
 
@@ -67,6 +68,7 @@ const Container = styled.div<any>`
   align-items: center;
   position: fixed;
   border-radius: 16px;
+  z-index: 1100;
   box-shadow: 0 4px 10px 4px rgba(22,27,72,0.08);
 
   ${width}
