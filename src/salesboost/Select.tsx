@@ -113,7 +113,7 @@ export class Select extends React.Component<SelectProps, State> {
   }
 
   public render() {
-    const { children, ...styles } = this.props;
+    const { children, onValueChange, ...styles } = this.props;
     return (
       <SelectWrapper {...styles}>
         <HiddenSelect>

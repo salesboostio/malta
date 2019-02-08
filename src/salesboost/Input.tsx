@@ -100,7 +100,7 @@ interface Props {
   errorText?: string;
   title?: string;
   description?: string;
-  onTextChange: (text: string) => void;
+  onTextChange?: (text: string) => void;
   validator?: (text: string) => boolean;
 }
 
@@ -117,13 +117,13 @@ export class Input extends React.Component<InputProps, State> {
   };
 
   render() {
-    const { title, description, placeholder, helpText, errorText, disabled, ...styles } = this.props;
+    const { title, description, placeholder, helpText, errorText, disabled, onTextChange, ...styles } = this.props;
     return (
       <InputWrapper {...styles}>
         {title ? <Title>{title}</Title> : null}
         {helpText ? <Help>{helpText}</Help> : null}
         <InnerInput
-          onChange={this.onChange}
+          onChange={this.handleChange}
           valid={this.state.valid}
           disabled={this.props.disabled}
           placeholder={this.props.placeholder}
@@ -133,10 +133,11 @@ export class Input extends React.Component<InputProps, State> {
     );
   }
 
-  onChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
+  handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
     const text = ev.target.value;
-
-    this.props.onTextChange(text);
+    if (this.props.onTextChange) {
+      this.props.onTextChange(text);
+    }
     if (this.props.validator) {
       this.setState({
         valid: this.props.validator(text),
