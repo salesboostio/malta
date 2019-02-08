@@ -55,7 +55,7 @@ const Text = styled.p<any>`
 
 interface Props {
   children?: any;
-  label: string;
+  label?: string;
   loading?: boolean;
   line?: boolean;
   disabled?: boolean;
