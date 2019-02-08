@@ -45,6 +45,7 @@ const Wrapper = styled.div<any>`
   ${borderRadius}
   transition: all 0.15s ease-out;
   ${props => props.line ? LineStyle : SolidStyle}
+  ${({ bg }) => bg ? `background-color: ${bg};` : ""}
 `;
 
 const Text = styled.p<any>`
