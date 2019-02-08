@@ -3,6 +3,7 @@ import {
   Icon,
   Flex,
   Split,
+  Text,
 } from "../../core";
 import {
   Input,
@@ -48,6 +49,10 @@ class Index extends React.Component<any, any> {
         <Button label="Line me" disabled onClick={() => alert("clicked")} />
         <Button label="Click me" line loading onClick={() => alert("clicked")} />
         <Button label="Line me" loading onClick={() => alert("clicked")} />
+        <Button line>
+          <Text>Right arrow button</Text>
+          <Icon ml={1} name="arrow-right" size={20}/>
+        </Button>
         <Checkbox disabled />
         <Checkbox disabled checked />
         <Checkbox checked m={2} />
