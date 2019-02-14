@@ -23,6 +23,8 @@ coverage
 # legacy
 .docz
 
+dist
+
 #next document build
 docs/.next
 
