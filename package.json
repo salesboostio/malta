@@ -7,11 +7,12 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf core utils salesboost typography && tsc",
+    "build": "rm -rf core utils salesboost && tsc",
     "dev": "NODE_ENV=localhost nodemon ./docs/server.ts",
     "docs": "cd docs && next build",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --coverage",
+    "clear": "rm -rf core utils salesboost",
     "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859",
     "postbuild": "mv ./dist/* ./ && rm -rf ./dist"
   },
@@ -42,7 +43,6 @@
   "files": [
     "core",
     "salesboost",
-    "utils",
-    "typography"
+    "utils"
   ]
 }
