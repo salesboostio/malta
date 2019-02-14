@@ -1,9 +1,0 @@
-export declare const getEnv: () => any;
-export declare const isLocalhost: () => boolean;
-export declare const isDevelopment: () => boolean;
-export declare const isStaging: () => boolean;
-export declare const isProduction: () => boolean;
-export declare const getAPI: () => "https://api.salesboost.ai" | "https://api.staging.salesboost.ai" | "https://api.dev.salesboost.ai";
-export declare const getPixelURL: () => "https://pixel.salesboost.ai" | "https://pixel.staging.salesboost.ai" | "https://pixel.dev.salesboost.ai";
-export declare const getCatalogURL: () => "https://catalog.salesboost.ai" | "https://catalog.staging.salesboost.ai" | "https://catalog.dev.salesboost.ai";
-export declare const getAuthURL: () => "https://auth.salesboost.ai" | "https://auth.staging.salesboost.ai" | "https://auth.dev.salesboost.ai";
