@@ -45,6 +45,7 @@ const Wrapper = styled.div<any>`
   ${borderRadius}
   transition: all 0.15s ease-out;
   ${props => props.line ? LineStyle : SolidStyle}
+  ${({ bg }) => bg ? `background-color: ${bg};` : ""}
 `;
 
 const Text = styled.p<any>`
@@ -54,7 +55,8 @@ const Text = styled.p<any>`
 `;
 
 interface Props {
-  label: string;
+  children?: any;
+  label?: string;
   loading?: boolean;
   line?: boolean;
   disabled?: boolean;
@@ -67,12 +69,13 @@ interface Props {
 export type ButtonProps = React.SFC<Props & SpaceProps & ColorProps & HeightProps & BorderRadiusProps & FontSizeProps & WidthProps>;
 
 export const Button: ButtonProps = (props) => {
-  const { bg, color, fontSize, loading, label, line, onClick, disabled, ...rest } = props;
+  const { bg, children, color, fontSize, loading, label, line, onClick, disabled, ...rest } = props;
   return (
-    <Wrapper disabled={disabled} line={line} loading={loading} onClick={(disabled || loading) ? () => { } : onClick} bg={bg} {...rest} >
-      {loading ?
-        <Spinner />
-        : <Text disabled={disabled} line={line} fontSize={fontSize} color={color}>{label}</Text>}
+    <Wrapper disabled={disabled} line={line} loading={loading} onClick={(disabled || loading) ? null : onClick} bg={bg} {...rest} >
+      {loading
+      ? <Spinner />
+      : label ? <Text disabled={disabled} line={line} fontSize={fontSize} color={color}>{label}</Text>
+      : children}
     </Wrapper>
   );
 };
