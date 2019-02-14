@@ -1,6 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../salesboost";
 import App, { Container } from "next/app";
 
 class MyApp extends App {
@@ -10,9 +8,7 @@ class MyApp extends App {
 
     return (
       <Container>
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <Component {...pageProps} />
       </Container>
     );
   }
