@@ -8,6 +8,7 @@
     "dev": "NODE_ENV=localhost nodemon ./docs/server.ts",
     "build": "cd docs && next build",
     "test": "jest --coverage",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
     "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859"
   },
   "dependencies": {
