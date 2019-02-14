@@ -15,7 +15,8 @@
     "react-dom": "^16.7.0",
     "styled-components": "^4.1.3",
     "@salesboost/malta": "*",
-    "@salesboost/common": "*"
+    "@salesboost/common": "*",
+    "@salesboost/drawer": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
