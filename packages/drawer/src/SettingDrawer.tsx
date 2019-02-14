@@ -156,7 +156,7 @@ const ShopPanelPopup = (props: any) => {
     <PanelPopupWrapper closing={props.closing}>
       {props.stores.map((store: any, i: number) =>
         <PanelListItem key={i} height="72px" onClick={() => { props.switchShop(i); props.handleCloseAll(); }}>
-          <Text fontSize="20px" demiLight color="white._100" ml={4}>{store.name}</Text>
+          <Text fontSize="20px" demiLight color="#FFF" ml={4}>{store.name}</Text>
           <Divider />
         </PanelListItem>
       )}
@@ -335,12 +335,12 @@ const ShopMenuPanel = (props: { userIndex: number, onClickStore: any, onClickMem
       {
         label: "쇼핑몰 기본 정보",
         image: "https://cdn.dev.salesboost.ai/static/img-settingdrawer-store@2x.png",
-        handleClick: (userIndex: any) => props.onClickStore(userIndex),
+        handleClick: () => props.onClickStore(props.userIndex),
       },
       {
         label: "쇼핑몰 구성원 관리",
         image: "https://cdn.dev.salesboost.ai/static/img-settingdrawer-members@2x.png",
-        handleClick: (userIndex: any) => props.onClickMember(userIndex),
+        handleClick: () => props.onClickMember(props.userIndex),
       },
       {
         label: "자주 묻는 질문",
@@ -401,7 +401,7 @@ class Contents extends React.Component<any> {
       <ShopPanel
         switchShop={this.switchShop}
         userIndex={this.props.userIndex}
-        addStoreLink={`${getAuthURL()}/signin?redirectTo=${window.location.origin}`}
+        addStoreLink={`${getAuthURL()}/users?redirectTo=${window.location.origin}`}
         handleCloseAll={() => { this.props.handleClose; }} />
       <MenuPanelWrapper>
         {this.props.serviceMenu.map((service: Service, index: number) =>
