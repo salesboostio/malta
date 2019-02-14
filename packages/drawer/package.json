@@ -1,6 +1,12 @@
 {
-  "name": "drawer",
+  "name": "@salesboost/drawer",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
