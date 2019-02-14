@@ -15,8 +15,8 @@ import {
   SpaceProps,
 } from "styled-system";
 
-const objectFit = (props: any) => `object-fit: ${props.fit};`;
-const objectPosition = (props: any) => `object-position: ${props.position};`;
+const objectFit = (props: any) => `object-fit: ${props.objectFit};`;
+const objectPosition = (props: any) => `object-position: ${props.objectPosition};`;
 
 interface Props {
   objectFit?: string;
