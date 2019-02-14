@@ -44,5 +44,9 @@
     "core",
     "salesboost",
     "utils"
+  ],
+  "private": true,
+  "workspaces": [
+    "palmbeach/*"
   ]
 }
