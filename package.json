@@ -1,35 +1,25 @@
 {
-  "name": "@salesboost/malta",
-  "version": "0.3.20",
+  "name": "malta",
+  "version": "1.0.0",
   "description": "Salesboost UI library built with Styled-component",
   "repository": "git@github.com:salesboostio/malta.git",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf core utils salesboost && tsc",
     "dev": "NODE_ENV=localhost nodemon ./docs/server.ts",
     "docs": "cd docs && next build",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --coverage",
-    "clear": "rm -rf core utils salesboost",
-    "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859",
-    "postbuild": "mv ./dist/* ./ && rm -rf ./dist"
+    "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859"
   },
   "dependencies": {
     "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "styled-components": "^4.1.3",
-    "styled-system": "3.1.11"
+    "react-dom": "^16.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@types/express": "^4.16.0",
     "@types/next": "^7.0.6",
-    "@types/react": "^16.7.18",
-    "@types/react-dom": "^16.0.11",
-    "@types/styled-components": "4.1.2",
-    "@types/styled-system": "^3.1.0",
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.1",
     "@zeit/next-typescript": "^1.1.1",
     "codecov": "^3.1.0",
     "express": "^4.16.4",
@@ -38,15 +28,10 @@
     "nodemon": "^1.18.9",
     "ts-node": "^7.0.1",
     "tslint": "^5.12.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.3.3"
   },
-  "files": [
-    "core",
-    "salesboost",
-    "utils"
-  ],
   "private": true,
   "workspaces": [
-    "palmbeach/*"
+    "packages/*"
   ]
 }

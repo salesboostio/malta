@@ -9,17 +9,16 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
-    "outDir": "./dist",
     "preserveConstEnums": true,
+    "skipLibCheck": true,
     "target": "es5",
     "declaration": true,
     "lib": ["esnext", "dom"],
     "typeRoots": [
-      "./node_modules/@types",
-    ],
+      "./node_modules/@types"
+    ]
   },
   "include": [
-    "types/**/*",
-    "src/**/*"
+    "types/**/*"
   ]
 }

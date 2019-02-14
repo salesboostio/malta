@@ -1,0 +1,22 @@
+{
+  "name": "@salesboost/malta",
+  "version": "0.4.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && tsc"
+  },
+  "author": "salesboost",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "styled-components": "^4.1.3",
+    "styled-system": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/styled-components": "4.1.2",
+    "@types/styled-system": "^3.2.2"
+  }
+}
