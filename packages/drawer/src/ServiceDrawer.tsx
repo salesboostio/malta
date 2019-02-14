@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   Flex,
   Image,
@@ -54,11 +54,22 @@ interface ServiceItemProps {
   sub?: string;
 }
 
+const serviceItemStyle = css`
+  & * {
+    transition: color 0.15s ease-out;
+  }
+
+  :hover {
+    & * {
+      color: rgba(22, 27, 72, 1);
+    }
+  }
+`;
+
 const ServiceItem = (props: ServiceItemProps) => {
   return (
     <Flex width="100%" alignItems="center" cursor="pointer"
-      of={[{ "& *": { transition: "color 0.15s ease-out" } }]}
-      hover={{ "& *": { color: "rgba(22, 27, 72, 1)" } }}
+      of={[serviceItemStyle]}
       onClick={props.onClick} >
       <Image src={props.image} width="48px" height="48px" mr="16px" />
       <Block>

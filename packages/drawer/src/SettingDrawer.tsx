@@ -12,7 +12,7 @@ import {
   Drawer,
   Spinner,
 } from "@salesboost/malta";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { getAPI, getAuthURL } from "@salesboost/common";
 
 const GET_STORES = gql`
@@ -156,7 +156,7 @@ const ShopPanelPopup = (props: any) => {
     <PanelPopupWrapper closing={props.closing}>
       {props.stores.map((store: any, i: number) =>
         <PanelListItem key={i} height="72px" onClick={() => { props.switchShop(i); props.handleCloseAll(); }}>
-          <Text fontSize="20px" demiLight color="#FFF" ml={4}>{store.name}</Text>
+          <Text fontSize="20px" demiLight color="#FFF" ml="24px">{store.name}</Text>
           <Divider />
         </PanelListItem>
       )}
@@ -213,7 +213,7 @@ class ShopPanel extends React.Component<any, any> {
               <Block width="32px" height="32px">
                 <Icon name="home" size={32} color="navy._80" />
               </Block>
-              <Text medium fontSize="24px" ml={[2, 3]} mr="auto">{storeName}</Text>
+              <Text medium fontSize="24px" ml={["4px", "8px"]} mr="auto">{storeName}</Text>
               {this.renderIconButton()}
             </ShopButtonWrapper>
             {
@@ -251,8 +251,8 @@ class MenuItem extends React.Component<any> {
         width="100%"
         height="32px"
         transition="background 0.15s ease-out"
-        hover={{ background: "rgba(22, 27, 72, 0.05)" }}
-        my={3} onClick={this.handleClick} cursor="pointer">
+        of={[css`:hover { background: rgba(22, 27, 72, 0.05); }`]}
+        my="16px" onClick={this.handleClick} cursor="pointer">
         <Block mr="16px" width="32px" height="32px">
           <Image src={this.props.image} />
         </Block>
@@ -274,9 +274,9 @@ class MenuItem extends React.Component<any> {
 
 const MenuGroup = (props: { title: string; menuList: any[], handleClose?: any }) => {
   return (
-    <Block width="100%" mb={6}>
+    <Block width="100%" mb="64px">
       <Text fontSize="14px">{props.title}</Text>
-      <Split length="100%" mt={1} horizontal bg="rgba(22, 27, 72, 0.2)" />
+      <Split length="100%" mt="4px" horizontal bg="rgba(22, 27, 72, 0.2)" />
       {props.menuList.map((menu, index) =>
         <MenuItem
           key={index}
@@ -309,16 +309,20 @@ const PersonalPanel = (props: { signOut: () => void, userIndex: number; }) => {
           return <>
             <Flex
               maxWidth="calc(100% - 120px)"
+              alignItems="center"
               onClick={() => { window.location.href = `${getAuthURL()}/settings/user?authuser=${props.userIndex}`; }}
-              cursor="pointer" ml="40px" hover={{ "> *": { color: "rgba(22, 27, 72, 1)" } }}>
+              cursor="pointer" ml="40px" of={[css`:hover { > * { color: rgba(22, 27, 72, 1); } }`]}>
               <Icon name="personal" size={24} color="rgba(22, 27, 72, 0.5)" />
-              <Text ml={2} demiLight whiteSpace="nowrap" mr="16px" textOverflow="ellipsis">
+              <Text ml="8px" demiLight whiteSpace="nowrap" mr="16px" textOverflow="ellipsis">
                 {userName}
               </Text>
             </Flex>
-            <Flex onClick={props.signOut} cursor="pointer" ml="auto" mr="40px" hover={{ "> *": { color: "rgba(22, 27, 72, 1)" } }}>
+            <Flex alignItems="center"
+              onClick={props.signOut}
+              cursor="pointer" ml="auto"
+              mr="40px" of={[css`:hover { > * { color: rgba(22, 27, 72, 1); } }`]}>
               <Icon name="logout" size={24} color="rgba(22, 27, 72, 0.5)" />
-              <Text ml={2} demiLight display={["none", "block"]}>
+              <Text ml="4px" demiLight display={["none", "block"]}>
                 로그아웃
               </Text>
             </Flex>
@@ -427,6 +431,6 @@ export const SettingDrawer = (props: SettingDrawerProps) => {
   return (
     <Drawer
       opener={props.opener}
-      render={({ handleClose }) => <Contents handleClose={handleClose} {...rest} />} />
+      render={({ handleClose }: any) => <Contents handleClose={handleClose} {...rest} />} />
   );
 };

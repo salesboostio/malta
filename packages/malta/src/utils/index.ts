@@ -18,7 +18,7 @@ export interface TransitionProps {
   transition?: any;
 }
 
-export const styleReducer: ThemedCssFunction<any> = (...styles: any[]) => css("", styles);
+export const styleReducer: ThemedCssFunction<any> = (...styles: any[]) => (css as any)("", styles);
 export const ofReducer: any = (props: any) => styleReducer(props.of);
 
 export interface OfReducerProps {
