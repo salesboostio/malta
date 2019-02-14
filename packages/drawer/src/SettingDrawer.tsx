@@ -1,3 +1,4 @@
+import "isomorphic-unfetch";
 import * as React from "react";
 import ApolloClient, { gql, InMemoryCache } from "apollo-boost";
 import { Query, ApolloProvider } from "react-apollo";
