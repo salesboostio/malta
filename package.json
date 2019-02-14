@@ -6,10 +6,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=localhost nodemon ./docs/server.ts",
-    "docs": "cd docs && next build",
+    "build": "cd docs && next build",
     "test": "jest --coverage",
-    "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859",
-    "build": ""
+    "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859"
   },
   "dependencies": {
     "react": "^16.7.0",

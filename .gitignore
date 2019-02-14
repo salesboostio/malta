@@ -23,10 +23,10 @@ coverage
 # legacy
 .docz
 
-dist
-
 #next document build
 docs/.next
+
+dist
 
 #build files
 /core
