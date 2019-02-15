@@ -20,6 +20,7 @@ export {
   Header,
   IconButton,
   Input,
+  Message,
   Portal,
   RadioButton,
   Select,
