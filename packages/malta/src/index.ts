@@ -14,6 +14,7 @@ export {
 export {
   theme,
   Button,
+  Card,
   Checkbox,
   Drawer,
   Header,
