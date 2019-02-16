@@ -3,14 +3,8 @@ import * as ReactDOM from "react-dom";
 
 export class Portal extends React.Component<any> {
 
-  el: any;
-  modalRoot: any;
-
-  constructor(props: any) {
-    super(props);
-    this.el = document.createElement("div");
-    this.modalRoot = document.getElementById("portal-root");
-  }
+  el = document.createElement("div");
+  modalRoot = document.getElementById("portal-root");
 
   componentDidMount() {
     this.modalRoot.appendChild(this.el);
@@ -21,6 +15,9 @@ export class Portal extends React.Component<any> {
   }
 
   render() {
+    if (!this.el) {
+      return null;
+    }
     return ReactDOM.createPortal(
       this.props.children,
       this.el,

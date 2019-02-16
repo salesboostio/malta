@@ -48,27 +48,50 @@ interface Props {
   onDismiss: () => void;
 }
 
+interface State {
+  showing: boolean;
+}
+
 export type MessageProps = Props & SpaceProps;
 
-export class Message extends React.Component<MessageProps> {
+export class Message extends React.Component<MessageProps, State> {
 
   static defaultProps = {
     duraction: 5000,
     show: false,
   };
 
+  state = {
+    showing: false,
+  };
+
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps.show) {
-      setTimeout(() => this.props.onDismiss(), this.props.duraction);
+      this.show();
+      setTimeout(() => {
+        this.hide();
+      }, this.props.duraction);
     }
+  }
+
+  show() {
+    setImmediate(() => this.setState({ showing: true }));
+  }
+
+  hide() {
+    this.setState({ showing: false });
+    setTimeout(() => this.props.onDismiss(), 500);
   }
 
   render() {
     const { type, message, duraction, show, onDismiss, ...styles } = this.props;
+    if (!this.props.show) {
+      return null;
+    }
     return (
       <Portal>
         <Container width={["327px", "440px"]}>
-          <Wrapper bg={colors[type]} show={show} {...styles}>
+          <Wrapper bg={colors[type]} show={this.state.showing} {...styles}>
             <Icon name={this.getIconName(type)} size={20} color={type === "warning" ? theme.colors.navy._80 : theme.colors.white._100} />
             <Text ml={2} medium color={type === "warning" ? theme.colors.navy._80 : theme.colors.white._100} fontSize={theme.fontsizes.p} lineHeight="24px">{message}</Text>
           </Wrapper>
