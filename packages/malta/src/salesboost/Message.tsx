@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { SpaceProps } from "styled-system";
 import {
   Block,
@@ -9,9 +9,6 @@ import {
   Portal,
   theme,
 } from "../index";
-import {
-
-} from "../core/atom/Icon";
 
 const colors = {
   error: "#F34646",
@@ -20,25 +17,27 @@ const colors = {
   warning: "#F5A921",
 };
 
-const Wrapper = styled(Flex)`
+const Container = styled(Block)`
+  height: 56px;
   position: fixed;
   left: 0;
   right: 0;
-  top: 60px;
-  flex-direction: column;
-  align-items: center;
+  top: 76px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: hidden;
 `;
 
-const MessageWrapper = styled<any>(Block)`
+const Wrapper = styled<any>(Flex)`
   height: 40px;
-  margin-top: 16px;
   padding: 0 16px;
-  display: flex;
   border-radius: 4px;
+  display: flex;
   flex-direction: row;
   align-items: center;
   box-shadow: 0 8px 16px 0 rgba(22, 27, 72, 0.08);
-  opacity: ${({ show }) => show ? "1" : "0"};
+  transform: translateY(${({ show }) => show ? "0" : "-56"}px);
+  transition: transform 0.5s ease-out;
 `;
 
 interface Props {
@@ -68,12 +67,12 @@ export class Message extends React.Component<MessageProps> {
     const { type, message, duraction, show, onDismiss, ...styles } = this.props;
     return (
       <Portal>
-        <Wrapper>
-          <MessageWrapper width={["327px", "440px"]} height="40px" bg={colors[type]} show={show} {...styles}>
+        <Container width={["327px", "440px"]}>
+          <Wrapper bg={colors[type]} show={show} {...styles}>
             <Icon name={this.getIconName(type)} size={20} color={type === "warning" ? theme.colors.navy._80 : theme.colors.white._100} />
             <Text ml={2} medium color={type === "warning" ? theme.colors.navy._80 : theme.colors.white._100} fontSize={theme.fontsizes.p} lineHeight="24px">{message}</Text>
-          </MessageWrapper>
-        </Wrapper>
+          </Wrapper>
+        </Container>
       </Portal>
     );
   }
