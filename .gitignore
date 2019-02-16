@@ -27,8 +27,3 @@ coverage
 docs/.next
 
 dist
-
-#build files
-/core
-/salesboost
-/utils

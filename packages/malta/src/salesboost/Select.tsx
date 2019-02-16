@@ -1,6 +1,6 @@
 import * as React from "react";
 import {
-  Box,
+  Block,
   Flex,
   Icon,
   Text
@@ -12,7 +12,7 @@ import {
   WidthProps
 } from "styled-system";
 
-const SelectWrapper = styled<any>(Box)`
+const SelectWrapper = styled<any>(Block)`
   width: 327px;
   ${width}
   position: relative;
