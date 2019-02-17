@@ -124,7 +124,7 @@ export class Input extends React.Component<InputProps, State> {
   };
 
   render() {
-    const { title, description, placeholder, helpText, errorText, disabled, value, type, onTextChange, ...styles } = this.props;
+    const { title, description, placeholder, helpText, errorText, disabled, value, type, onTextChange, onEnterPress, ...styles } = this.props;
     return (
       <InputWrapper {...styles}>
         {title ? <Title>{title}</Title> : null}

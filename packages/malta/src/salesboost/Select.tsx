@@ -59,6 +59,7 @@ const DropdownWrapper = styled(Flex)`
   background-color: #ffffff;
   border-radius: 2px;
   border: solid 1px rgba(22, 27, 72, 0.4);
+  z-index: 1;
   ::-webkit-scrollbar {
     width: 20px;
   }
@@ -142,7 +143,6 @@ export class Select extends React.Component<SelectProps, State> {
     if (!children || !this.state.isOpened) {
       return null;
     }
-
     return (
       <DropdownWrapper>
         {React.Children.map(children, (child, index) =>
