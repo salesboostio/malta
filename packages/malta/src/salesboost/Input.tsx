@@ -93,6 +93,7 @@ const Help = (props: HelpProps) => {
 };
 
 interface Props {
+  type: string;
   value: string;
   placeholder?: string;
   disabled?: boolean;
@@ -101,6 +102,7 @@ interface Props {
   title?: string;
   description?: string;
   onTextChange?: (text: string) => void;
+  onEnterPress?: () => void;
   validator?: (text: string) => boolean;
 }
 
@@ -112,22 +114,29 @@ interface State {
 
 export class Input extends React.Component<InputProps, State> {
 
+  static defaultProps = {
+    type: "text",
+    value: "",
+  };
+
   state = {
     valid: true,
   };
 
   render() {
-    const { title, description, placeholder, helpText, errorText, disabled, onTextChange, ...styles } = this.props;
+    const { title, description, placeholder, helpText, errorText, disabled, value, type, onTextChange, ...styles } = this.props;
     return (
       <InputWrapper {...styles}>
         {title ? <Title>{title}</Title> : null}
         {helpText ? <Help>{helpText}</Help> : null}
         <InnerInput
           onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}
+          type={type}
           valid={this.state.valid}
-          disabled={this.props.disabled}
-          placeholder={this.props.placeholder}
-          value={this.props.value}/>
+          disabled={disabled}
+          placeholder={placeholder}
+          value={value}/>
         {this.renderBottomText()}
       </InputWrapper>
     );
@@ -142,6 +151,12 @@ export class Input extends React.Component<InputProps, State> {
       this.setState({
         valid: this.props.validator(text),
       });
+    }
+  };
+
+  handleKeyPress = (ev: React.KeyboardEvent<HTMLInputElement>) => {
+    if (this.props.onEnterPress && ev.key === "Enter") {
+      this.props.onEnterPress();
     }
   };
 
