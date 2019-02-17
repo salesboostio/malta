@@ -18,7 +18,6 @@ const colors = {
 };
 
 const Container = styled(Block)`
-  height: 56px;
   position: fixed;
   left: 0;
   right: 0;
@@ -29,8 +28,8 @@ const Container = styled(Block)`
 `;
 
 const Wrapper = styled<any>(Flex)`
-  height: 40px;
-  padding: 0 16px;
+  min-height: 40px;
+  padding: 12px 16px;
   border-radius: 4px;
   display: flex;
   flex-direction: row;
