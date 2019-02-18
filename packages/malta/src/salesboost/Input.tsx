@@ -120,7 +120,7 @@ export class Input extends React.Component<InputProps> {
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}
           type={type}
-          valid={!!this.props.errorText}
+          valid={!errorText}
           disabled={disabled}
           placeholder={placeholder}
           value={value}/>
