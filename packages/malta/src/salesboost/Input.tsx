@@ -22,7 +22,8 @@ const InnerInput = styled.input<InnerInputProps>`
   width: 100%;
   height: 52px;
   box-sizing: border-box;
-  padding: 0 16px;
+  padding-left: 16px;
+  padding-right: 16px;
   color: #162348;
   font-size: 16px;
   font-family: ${theme.fontfamilies.sans};
@@ -40,34 +41,37 @@ const InnerInput = styled.input<InnerInputProps>`
   }
 `;
 
-const Title = styled<any>(Text)`
+const InputText = styled(Text)`
+  width: 100%;
+  font-family: ${theme.fontfamilies.sans};
+`;
+
+const Title = styled<any>(InputText)`
   margin-bottom: 8px;
   opacity: 0.8;
   color: #162348;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1.43;
 `;
 
-const Description = styled<any>(Text)`
+const Description = styled<any>(InputText)`
   margin-top: 8px;
   opacity: 0.8;
   color: #161b48;
   font-size: 14px;
+  line-height: 1.71;
 `;
 
-const Error = styled<any>(Text)`
+const Error = styled<any>(InputText)`
   margin-top: 8px;
   color: #f51a1a;
   opacity: 0.9;
-  font-size: 16px;
+  line-height: 1.43;
 `;
 
 const HelpMark = styled(Flex)`
   width: 51px;
   height: 20px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-radius: 2px;
   background-color: #454edf;
   margin-right: 8px;
@@ -79,11 +83,11 @@ interface HelpProps {
 
 const Help = (props: HelpProps) => {
   return (
-    <Flex width="100%" flexDirection="row" alignItems="center" mb={2}>
-      <HelpMark>
-        <Text color="#fff" fontSize="14px">HELP</Text>
+    <Flex width="100%" flexDirection="row" mb={2}>
+      <HelpMark justifyContent="center">
+        <Text color="#fff" fontSize="14px" fontFamily={theme.fontfamilies.sans}>HELP</Text>
       </HelpMark>
-      <Text color="#161fba" fontSize="14px" lineHeight="24px">{props.children}</Text>
+      <Text color="#161fba" fontSize={"14px"}>{props.children}</Text>
     </Flex>
   );
 };
@@ -99,15 +103,24 @@ interface Props {
   description?: string;
   onTextChange?: (text: string) => void;
   onEnterPress?: () => void;
+  validator?: (text: string) => boolean;
 }
 
 type InputProps = Props & SpaceProps & WidthProps;
 
-export class Input extends React.Component<InputProps> {
+interface State {
+  valid: boolean;
+}
+
+export class Input extends React.Component<InputProps, State> {
 
   static defaultProps = {
     type: "text",
     value: "",
+  };
+
+  state = {
+    valid: true,
   };
 
   render() {
@@ -120,7 +133,7 @@ export class Input extends React.Component<InputProps> {
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}
           type={type}
-          valid={!!this.props.errorText}
+          valid={this.state.valid}
           disabled={disabled}
           placeholder={placeholder}
           value={value}/>
@@ -134,6 +147,11 @@ export class Input extends React.Component<InputProps> {
     if (this.props.onTextChange) {
       this.props.onTextChange(text);
     }
+    if (this.props.validator) {
+      this.setState({
+        valid: this.props.validator(text),
+      });
+    }
   };
 
   handleKeyPress = (ev: React.KeyboardEvent<HTMLInputElement>) => {
@@ -144,7 +162,7 @@ export class Input extends React.Component<InputProps> {
 
   renderBottomText = () => {
     const { description, errorText } = this.props;
-    if (errorText) {
+    if (!this.state.valid) {
       return <Error>{errorText}</Error>;
     }
     if (description) {
