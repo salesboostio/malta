@@ -67,9 +67,9 @@ export const Text = styled(Block.withComponent("p")) <InnerProps>`
 `;
 
 Text.defaultProps = {
-  color: "rgba(22 ,27 ,72 ,0.8)",
-  fontSize: "20px",
-  lineHeight: "normal",
+  color: "rgba(22,27,72,0.8)",
+  fontSize: "h4",
+  lineHeight: "1.4em",
   overflow: "hidden",
   overflowWrap: "break-word",
   m: 0,
