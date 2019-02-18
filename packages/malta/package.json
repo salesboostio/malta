@@ -1,6 +1,6 @@
 {
   "name": "@salesboost/malta",
-  "version": "0.4.22",
+  "version": "0.4.21",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
