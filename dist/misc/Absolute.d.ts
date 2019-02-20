@@ -1,3 +1,4 @@
-import * as React from "react";
 import { TopProps, BottomProps, LeftProps, RightProps, ZIndexProps } from "styled-system";
-export declare const Absolute: import("styled-components").StyledComponentClass<React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & TopProps<string | number> & BottomProps<string | number> & LeftProps<string | number> & RightProps<string | number> & ZIndexProps, any, React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & TopProps<string | number> & BottomProps<string | number> & LeftProps<string | number> & RightProps<string | number> & ZIndexProps>;
+declare type Props = TopProps & BottomProps & LeftProps & RightProps & ZIndexProps;
+export declare const Absolute: import("styled-components").StyledComponent<"div", any, Props, never>;
+export {};

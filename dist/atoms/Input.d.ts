@@ -1,1 +1,1 @@
-export declare const Input: import("styled-components").StyledComponentClass<any, any, any>;
+export declare const Input: import("styled-components").StyledComponent<"input", any, any, never>;

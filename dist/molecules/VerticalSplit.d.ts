@@ -1,6 +1,2 @@
 import { SpaceProps, HeightProps } from "styled-system";
-declare type Props = SpaceProps & HeightProps;
-export declare const VerticalSplit: import("styled-components").StyledComponentClass<Props, any, Pick<Props, "height" | "p" | "m" | "mt" | "mr" | "mb" | "ml" | "mx" | "my" | "pt" | "pr" | "pb" | "pl" | "px" | "py"> & {
-    theme?: any;
-}>;
-export {};
+export declare const VerticalSplit: import("styled-components").StyledComponent<"div", any, SpaceProps<import("styled-system/dist/space").TLengthStyledSystem> & import("styled-system/dist/styles").WidthProps<import("styled-system/dist/space").TLengthStyledSystem> & HeightProps<import("styled-system/dist/space").TLengthStyledSystem> & import("styled-system/dist/styles").ColorProps & import("styled-system/dist/styles").JustifySelfProps & import("styled-system/dist/styles").AlignSelfProps & import("styled-system/dist/styles").OrderProps & import("styled-system/dist/styles").AlignItemsProps & import("styled-system/dist/styles").JustifyContentProps & import("styled-system/dist/styles").FlexWrapProps & import("styled-system/dist/styles").FlexDirectionProps, never>;

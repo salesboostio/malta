@@ -1,4 +1,3 @@
-import * as React from "react";
 import { SpaceProps, WidthProps } from "styled-system";
 declare type LineStyle = "solid" | "dashed" | "dotted";
 declare type LineColor = string;
@@ -8,5 +7,6 @@ interface LineProps {
     color?: LineColor;
     thick?: LineThick;
 }
-export declare const Hr: import("styled-components").StyledComponentClass<React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & LineProps & SpaceProps<string | number> & WidthProps<string | number>, any, React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & LineProps & SpaceProps<string | number> & WidthProps<string | number>>;
+declare type Props = LineProps & SpaceProps & WidthProps;
+export declare const Hr: import("styled-components").StyledComponent<"div", any, Props, never>;
 export {};

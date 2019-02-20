@@ -14,42 +14,42 @@ import {
 import { fontWeights } from "../commons/theme";
 
 interface Props {
-  caps: boolean;
-  medium: boolean;
-  regular: boolean;
-  demiLight: boolean;
-  light: boolean;
-  italic: boolean;
-  left: boolean;
-  right: boolean;
-  center: boolean;
-  underline: boolean;
-  through: boolean;
-  hoverColor: string;
+  caps?: boolean;
+  medium?: boolean;
+  regular?: boolean;
+  demiLight?: boolean;
+  light?: boolean;
+  italic?: boolean;
+  left?: boolean;
+  right?: boolean;
+  center?: boolean;
+  underline?: boolean;
+  through?: boolean;
+  hoverColor?: string;
 }
 
-const caps = ({ caps }: Props) =>
+const caps: any = ({ caps }: Props) =>
   caps ? { textTransform: "uppercase" } : null;
-const medium = ({ medium }: Props) =>
+const medium: any = ({ medium }: Props) =>
   medium ? { fontWeight: `${fontWeights.medium}` } : null;
-const regular = ({ regular }: Props) =>
+const regular: any = ({ regular }: Props) =>
   regular ? { fontWeight: `${fontWeights.regular}` } : null;
-const demiLight = ({ demiLight }: Props) =>
+const demiLight: any = ({ demiLight }: Props) =>
   demiLight ? { fontWeight: `${fontWeights.demiLight}` } : null;
-const light = ({ light }: Props) =>
+const light: any = ({ light }: Props) =>
   light ? { fontWeight: `${fontWeights.light}` } : null;
-const italic = ({ italic }: Props) => (italic ? { fontStyle: "italic" } : null);
-const left = ({ left }: Props) => (left ? { textAlign: "left" } : null);
-const right = ({ right }: Props) => (right ? { textAlign: "right" } : null);
-const center = ({ center }: Props) => (center ? { textAlign: "center" } : null);
-const underline = ({ underline }: Props) =>
+const italic: any = ({ italic }: Props) => (italic ? { fontStyle: "italic" } : null);
+const left: any = ({ left }: Props) => (left ? { textAlign: "left" } : null);
+const right: any = ({ right }: Props) => (right ? { textAlign: "right" } : null);
+const center: any = ({ center }: Props) => (center ? { textAlign: "center" } : null);
+const underline: any = ({ underline }: Props) =>
   underline ? { textDecorationLine: "underline" } : null;
-const through = ({ through }: Props) =>
+const through: any = ({ through }: Props) =>
   through ? { textDecorationLine: "line-through" } : null;
-const hoverColor = ({ hoverColor }: Props) =>
+const hoverColor: any = ({ hoverColor }: Props) =>
   hoverColor ? { color: hoverColor } : null;
 
-export const Text = styled.div`
+export const Text = styled.div<any>`
   overflow-wrap: break-word;
   hyphens: auto;
   overflow: hidden;

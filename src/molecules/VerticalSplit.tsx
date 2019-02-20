@@ -9,7 +9,7 @@ import {
 
 type Props = SpaceProps & HeightProps;
 
-export const VerticalSplit = styled<Props>(Flex)`
+export const VerticalSplit = styled(Flex) <Props>`
   width: 0;
   border-right: 1px solid ${colors.black._20};
   ${space}

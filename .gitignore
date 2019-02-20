@@ -27,3 +27,7 @@ coverage
 .docz
 
 docs
+
+# new malta folders
+packages
+types

@@ -1,3 +1,4 @@
-import * as React from "react";
 import { SpaceProps, WidthProps, HeightProps, ColorProps, JustifySelfProps, AlignSelfProps, OrderProps } from "styled-system";
-export declare const Box: import("styled-components").StyledComponentClass<React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & SpaceProps<string | number> & WidthProps<string | number> & HeightProps<string | number> & ColorProps & JustifySelfProps & AlignSelfProps & OrderProps, any, React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & SpaceProps<string | number> & WidthProps<string | number> & HeightProps<string | number> & ColorProps & JustifySelfProps & AlignSelfProps & OrderProps>;
+declare type Props = SpaceProps & WidthProps & HeightProps & ColorProps & JustifySelfProps & AlignSelfProps & OrderProps;
+export declare const Box: import("styled-components").StyledComponent<"div", any, Props, never>;
+export {};
