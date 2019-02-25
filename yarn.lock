@@ -629,7 +629,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.1.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1":
   version "7.3.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.4.tgz#73d12ba819e365fcf7fd152aed56d6df97d21c83"
   integrity sha512-IvfvnMdSaLBateu0jfsYIpZTxAc2cKEXEMiezGGN75QcBcecDUKd3PgLAncT0oOgxKy8dd8hrJKj9MfzgfZd6g==
@@ -5314,6 +5314,13 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
   integrity sha512-ioMCzVDWvCvKD8eeT+iukyWrBGrA3DiFYkXfBsVYIRdaREZuBjENG+KjrikavCLasozqRWTwFUagU/O4vPpRMA==
+
+react-spring@^8.0.8:
+  version "8.0.8"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.8.tgz#67b81f0f2d28923a15b6ce99f7eb50c93fe16e39"
+  integrity sha512-nXLFizNgGNZzrSTkpBn2yiDNnQ3HH9K256LThAzp67eh9aCzDtbzSnXrrO2VCrO6bGBJuxi8Dj7M9XiLupSAZw==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
 
 react@^16.7.0:
   version "16.7.0"
