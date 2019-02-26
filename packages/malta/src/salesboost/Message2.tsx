@@ -70,7 +70,7 @@ const MessageWrapper = styled.div<any>`
 
 const getIconName = (type: MessageType) => ({
   "success": "circle-success",
-  "error": "circle-warning",
+  "error": "circle-error",
   "info": "circle-info",
   "warning": "circle-warning"
 })[type];
