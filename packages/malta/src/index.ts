@@ -26,4 +26,5 @@ export {
   Select,
   Spinner,
   Switch,
+  message,
 } from "./salesboost";

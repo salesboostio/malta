@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { color, ColorProps, space, SpaceProps } from "styled-system";
 import { getValueFromTheme, hover, HoverProps, cursor, CursorProps } from "../../utils";
 
-type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "circle-success" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder" | "hamburger";
+type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "circle-success" | "circle-error" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder" | "hamburger";
 
 interface Props {
   name: IconName;
@@ -88,6 +88,11 @@ const getIcons = (name: string) => {
       path: <path fill="currentColor" d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zM4.615 5.665c0 .21.088.404.263.585.176.18.391.27.646.27.433 0 .727-.258.882-.773.164-.492.365-.865.602-1.118.237-.253.606-.379 1.107-.379.429 0 .778.125 1.05.376.27.25.406.558.406.923 0 .187-.044.36-.133.52a1.96 1.96 0 0 1-.328.433c-.13.13-.34.323-.632.578-.333.292-.597.544-.793.755a2.525 2.525 0 0 0-.472.739c-.119.28-.178.612-.178.994 0 .306.081.536.243.69a.832.832 0 0 0 .598.233c.456 0 .727-.237.813-.71.05-.224.088-.38.113-.469.025-.089.06-.178.106-.267.046-.088.115-.186.209-.294.093-.107.217-.23.372-.372.56-.501.95-.858 1.166-1.07.216-.212.403-.464.56-.755.158-.292.236-.631.236-1.019a2.44 2.44 0 0 0-.413-1.367c-.276-.42-.667-.75-1.173-.995-.506-.243-1.089-.365-1.75-.365-.71 0-1.333.145-1.866.437-.533.292-.939.66-1.217 1.104-.278.444-.417.883-.417 1.316zm3.336 7.492c.27 0 .506-.09.711-.273.205-.183.308-.433.308-.752a.985.985 0 0 0-.294-.725.985.985 0 0 0-.725-.294c-.291 0-.538.098-.738.294-.2.196-.3.438-.3.725 0 .323.103.575.31.755.208.18.45.27.728.27z" />
     },
     "circle-warning": {
+      width: 24,
+      height: 24,
+      path: <path fill="currentColor" d="M23.4 20.047A2 2 0 0 1 21.643 23H2.358a2 2 0 0 1-1.759-2.953l9.642-17.8a2 2 0 0 1 3.518 0l9.642 17.8zm-12.128-5.64c.04.537.105.937.198 1.2.093.262.258.393.497.393.234 0 .402-.136.503-.407.102-.27.168-.66.199-1.168l.285-4.266c.03-.393.046-.78.046-1.16 0-.646-.064-1.14-.192-1.484-.128-.343-.382-.515-.762-.515-.313 0-.566.134-.758.402-.192.269-.288.642-.288 1.121 0 .352.02.932.06 1.74l.212 4.145zM12 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+    },
+    "circle-error": {
       width: 16,
       height: 16,
       path: <path fill="currentColor" d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm-.72-7.34c.041.423.11.739.205.946.096.207.267.311.513.311a.537.537 0 0 0 .52-.321c.104-.214.173-.522.205-.923l.294-3.37c.032-.31.047-.615.047-.916 0-.51-.066-.901-.198-1.173-.132-.27-.394-.406-.786-.406-.323 0-.584.106-.783.317C7.1 3.337 7 3.632 7 4.011c0 .278.02.736.062 1.374l.218 3.274zm.76 4.497c.273 0 .512-.09.717-.273.205-.183.307-.433.307-.752a.971.971 0 0 0-.304-.721 1.013 1.013 0 0 0-.735-.298.99.99 0 0 0-.728.298.982.982 0 0 0-.297.72c0 .324.104.576.311.756.207.18.45.27.728.27z" />
@@ -95,7 +100,7 @@ const getIcons = (name: string) => {
     "circle-success": {
       width: 24,
       height: 24,
-      path: <path fill="currentColor" d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm-1.06-8.49l-4.243-4.242a1 1 0 0 0-1.415 1.414l4.95 4.95a1 1 0 0 0 1.414 0l7.779-7.778a1 1 0 1 0-1.415-1.415l-7.07 7.071z"/>
+      path: <path fill="currentColor" d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm-1.06-8.49l-4.243-4.242a1 1 0 0 0-1.415 1.414l4.95 4.95a1 1 0 0 0 1.414 0l7.779-7.778a1 1 0 1 0-1.415-1.415l-7.07 7.071z" />
     },
     "close": {
       width: 24,
@@ -307,11 +312,7 @@ const getIcons = (name: string) => {
       width: 24,
       height: 24,
       path: <g fill="currentColor">
-        <g transform="translate(0 2)">
-          <rect width="24" height="1" rx=".5" />
-          <rect width="24" height="1" y="9" rx=".5" />
-          <rect width="24" height="1" y="18" rx=".5" />
-        </g>
+        <path d="M1 2h22a1 1 0 0 1 0 2H1a1 1 0 1 1 0-2zm0 9h22a1 1 0 0 1 0 2H1a1 1 0 0 1 0-2zm0 9h22a1 1 0 0 1 0 2H1a1 1 0 0 1 0-2z" />
       </g>
     }
   };
