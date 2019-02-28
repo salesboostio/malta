@@ -32,6 +32,7 @@ const InnerInput = styled.input<InnerInputProps>`
   box-shadow: 0 2px 6px 2px rgba(22, 27, 72, 0.03);
   border: ${({ valid }) => `${valid ? "rgba(22, 27, 72, 0.2)" : "#f51a1a"} solid 1px`};
   outline: none;
+  -webkit-appearance: none;
   :focus {
     border: #454edf solid 1px;
   }
