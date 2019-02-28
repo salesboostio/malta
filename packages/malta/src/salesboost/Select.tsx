@@ -147,7 +147,7 @@ export class Select extends React.Component<SelectProps, State> {
       <DropdownWrapper>
         {React.Children.map(children, (child, index) =>
           <DropdownItem key={`option-list-${index}`} onClick={() => this.handleOptionClick(index)}>
-            <Text fontSize={["16px", "18px"]} color="rgba(22,35,72,0.9)">{child}</Text>
+            <Text fontSize={["16px", "18px"]} color="rgba(22,35,72,0.9)">{child.props.children}</Text>
           </DropdownItem>
         )}
       </DropdownWrapper>
