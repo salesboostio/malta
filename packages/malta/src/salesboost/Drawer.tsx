@@ -77,13 +77,14 @@ const Container = styled.div<any>`
 
   top: 8px;
   ${props => props.left ? "left" : "right"}: 8px;
-  height: calc(100vh - 16px);
+  height: calc(100% - 16px);
   animation: ${props => props.closing ? slideOut((props.left ? -1 : 1) * props.slide[0]) : slideIn((props.left ? -1 : 1) * props.slide[0])} 0.5s cubic-bezier(0.3, 1, 0.32, 1) 1 normal both;
 
   @media screen and (min-width: 600px) {
     top: 16px;
     ${props => props.left ? "left" : "right"}: 16px;
-    height: calc(100vh - 32px);
+
+    height: calc(100% - 32px);
     animation: ${props => props.closing ? slideOut((props.left ? -1 : 1) * props.slide[1]) : slideIn((props.left ? -1 : 1) * props.slide[1])} 0.5s cubic-bezier(0.3, 1, 0.32, 1) 1 normal both;
   }
 
@@ -101,13 +102,14 @@ interface Props {
 
 export type DrawerProps = Props & ColorProps & WidthProps & SpaceProps;
 
-export class Drawer extends React.Component<DrawerProps, { open: boolean; closing: boolean; }> {
+export class Drawer extends React.Component<DrawerProps, { open: boolean; closing: boolean; ios: boolean; }> {
 
   static defaultProps: any;
 
   state = {
     open: false,
     closing: false,
+    ios: false,
   };
 
   handleOpen = () => {
@@ -121,6 +123,12 @@ export class Drawer extends React.Component<DrawerProps, { open: boolean; closin
     }, 500);
   }
 
+  componentDidMount() {
+    if (/iphone/i.test(navigator.userAgent)) {
+      this.setState({ ios: true });
+    }
+  }
+
   render() {
     const { render, opener, ...rest } = this.props;
     return (
@@ -129,7 +137,7 @@ export class Drawer extends React.Component<DrawerProps, { open: boolean; closin
         {this.state.open ?
           <Portal>
             <Overlay onClick={this.handleClose} closing={this.state.closing} />
-            <Container closing={this.state.closing} {...rest}>
+            <Container closing={this.state.closing} {...rest} ios={this.state.ios}>
               {render({ handleClose: this.handleClose })}
             </Container>
           </Portal>
