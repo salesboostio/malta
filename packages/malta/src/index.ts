@@ -27,4 +27,5 @@ export {
   Spinner,
   Switch,
   message,
+  notify,
 } from "./salesboost";

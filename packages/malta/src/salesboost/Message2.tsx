@@ -160,7 +160,12 @@ Message.newInstance = function newMessageInstance(callback: any) {
     return instance;
   }
 
-  ReactDOM.render(<Message ref={ref} />, document.getElementById("portal-root"));
+  const root = document.getElementById("portal-root");
+  const el = document.createElement("div");
+  el.setAttribute("id", "message-root");
+  root.appendChild(el);
+
+  ReactDOM.render(<Message ref={ref} />, el);
 };
 
 const getMessageRootInstance = (callback: any) => {
