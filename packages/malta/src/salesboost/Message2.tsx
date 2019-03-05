@@ -9,7 +9,7 @@ let MessageRootInstance: any = null;
 const MessageContainer = styled.div<any>`
   background: none;
   position: fixed;
-  top: 16px;
+  top: 76px;
   width: 440px;
   left: calc(50% - 220px);
   z-index: 990;
