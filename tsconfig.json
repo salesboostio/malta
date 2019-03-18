@@ -11,7 +11,7 @@
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "skipLibCheck": true,
-    "target": "es5",
+    "target": "esnext",
     "declaration": true,
     "lib": ["esnext", "dom", "es2018"],
     "typeRoots": [
