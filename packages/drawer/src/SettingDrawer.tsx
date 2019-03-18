@@ -394,7 +394,7 @@ class Contents extends React.Component<any> {
       mode: "cors",
       credentials: "include"
     }).then(() => {
-      window.location.href = `${getAuthURL()}/signin`;
+      window.location.href = window.location.origin;
     }).catch(error => {
       throw new Error(`Fail to signout: ${error.message}`);
     });
