@@ -14,9 +14,12 @@ import {
 export type FlexProps = AlignItemsProps & JustifyContentProps & FlexDirectionProps & FlexWrapProps;
 
 export const Flex = styled(Block) <FlexProps>`
-  display: flex;
   ${alignItems}
   ${justifyContent}
   ${flexDirection}
   ${flexWrap}
 `;
+
+Flex.defaultProps = {
+  display: "Flex",
+};
