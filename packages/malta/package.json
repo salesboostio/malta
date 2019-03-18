@@ -16,6 +16,6 @@
     "styled-system": "3.1.11"
   },
   "devDependencies": {
-    "@types/styled-system": "3.1.0"
+    "@types/styled-system": "~3.1.0"
   }
 }
