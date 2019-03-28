@@ -21,6 +21,9 @@ const GET_STORES = gql`
       name
       url
     }
+    getStore {
+      name
+    }
   }
 `;
 
@@ -206,7 +209,7 @@ class ShopPanel extends React.Component<any, any> {
           if (error) return "Error";
           if (loading) return <Flex width="100%" height="100%" alignItems="center" justifyContent="center"><Spinner /></Flex>;
           const stores = error ? [] : data.getStores;
-          const current = stores[this.props.userIndex];
+          const current = error ? {} : data.getStore;
           const storeName = error ? "쇼핑몰 이름" : current.name;
           return <>
             <ShopButtonWrapper onClick={this.state.open ? this.handleClose : this.handleOpen}>
