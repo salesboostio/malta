@@ -1109,10 +1109,10 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
-"@types/styled-system@~3.1.0":
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-3.1.3.tgz#102d42281f3237a064c32196bf36f76afd2d1840"
-  integrity sha512-F6yFE9QfWkgdIWtc/Qu9e/utyTFrq/7rUzUtGYb+OtWAoowVnRMZzwlITwnTh/QwQs40pm1vd1svbXbUtBG4sw==
+"@types/styled-system@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-3.2.2.tgz#a40b30baf20a8d9820808688a370a973cb778e7c"
+  integrity sha512-QjjszVXRIeAT1fAQewWKh1Ewq3/i6xeYp2DH7DC151FfnLNtUbjT8CxUuqpnKrRiessoKdQVLw+3xu/RiMpNBQ==
   dependencies:
     csstype "^2.2.0"
 
@@ -6725,9 +6725,9 @@ strip-ansi@^4.0.0:
     ansi-regex "^3.0.0"
 
 strip-ansi@^5.0.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-5.1.0.tgz#55aaa54e33b4c0649a7338a43437b1887d153ec4"
-  integrity sha512-TjxrkPONqO2Z8QDCpeE2j6n0M6EwxzyDgzEeGp+FbdvaJAt//ClYi6W5my+3ROlC/hZX2KACUwDfK49Ka5eDvg==
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
+  integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
   dependencies:
     ansi-regex "^4.1.0"
 

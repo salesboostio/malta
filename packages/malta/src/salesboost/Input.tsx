@@ -39,6 +39,14 @@ const InnerInput = styled.input<InnerInputProps>`
   ::placeholder {
     opacity: 0.4;
   }
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  [type=number] {
+    -moz-appearance: textfield;
+  }
 `;
 
 const Title = styled<any>(Text)`
