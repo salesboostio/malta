@@ -14,3 +14,4 @@ export { Card, CardProps } from "./Card";
 export { Message, MessageProps } from "./Message";
 export { default as message } from "./Message2";
 export { default as notify } from "./Notification";
+export { default as dialog } from "./Dialog";

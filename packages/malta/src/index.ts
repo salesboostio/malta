@@ -28,4 +28,5 @@ export {
   Switch,
   message,
   notify,
+  dialog,
 } from "./salesboost";
