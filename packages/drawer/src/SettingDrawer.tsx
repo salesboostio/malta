@@ -352,7 +352,7 @@ const ShopMenuPanel = (props: { userIndex: number, onClickStore: any, onClickMem
       {
         label: "자주 묻는 질문",
         image: "https://cdn.dev.salesboost.ai/static/img-settingdrawer-faq@2x.png",
-        handleClick: () => { window.open("http://bit.ly/salesboost-help-center/"); }
+        handleClick: () => { window.open("http://bit.ly/salesboost-help-center"); }
       },
       {
         label: "문의하기",
