@@ -11,3 +11,7 @@ export interface BrProps {
 export const Br = styled.br<BrProps>`
   ${display}
 `;
+
+Br.defaultProps = {
+  display: "inline",
+};
