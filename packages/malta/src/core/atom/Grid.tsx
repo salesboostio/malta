@@ -26,7 +26,7 @@ export type GridProps =
   & GridColumnGapProps & GridRowGapProps & GridTemplatesAreasProps
   & GridTemplatesColumnsProps & GridTemplatesRowsProps & GridGapProps;
 
-export const Grid = styled(Block) <GridProps>`
+export const Grid = styled(Block)<GridProps>`
   display: flex;
   ${gridAutoColumns}
   ${gridAutoFlow}

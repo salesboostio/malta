@@ -1,4 +1,4 @@
-import styled, { StyledProps, ThemedStyledProps } from "styled-components";
+import styled from "styled-components";
 import {
   fontFamily,
   FontFamilyProps,
@@ -20,9 +20,9 @@ interface Props {
   regular?: boolean;
   demiLight?: boolean;
   light?: boolean;
-  left?: boolean;
-  right?: boolean;
-  center?: boolean;
+  alignLeft?: boolean;
+  alignRight?: boolean;
+  alignCenter?: boolean;
   overflowWrap?: "break-word" | "normal";
   textOverflow?: "clip" | "ellipsis" | "initial";
   wordBreak?: "break-all" | "break-word" | "keep-all" | "normal";
@@ -33,9 +33,9 @@ const medium = ({ medium }: Props) => medium ? `font-weight: 500;` : "";
 const regular = ({ regular }: Props) => regular ? `font-weight: 400;` : "";
 const demiLight = ({ demiLight }: Props) => demiLight ? `font-weight: 300;` : "";
 const light = ({ light }: Props) => light ? `font-weight: 200;` : "";
-const left = ({ left }: Props) => left ? `text-align: left;` : "";
-const right = ({ right }: Props) => right ? `text-align: right;` : "";
-const center = ({ center }: Props) => center ? `text-align: center;` : "";
+const alignLeft = ({ alignLeft }: Props) => alignLeft ? `text-align: left;` : "";
+const alignRight = ({ alignRight }: Props) => alignRight ? `text-align: right;` : "";
+const alignCenter = ({ alignCenter }: Props) => alignCenter ? `text-align: center;` : "";
 const overflowWrap = ({ overflowWrap }: Props) => overflowWrap ? `overflow-wrap: ${overflowWrap};` : "";
 const textOverflow = ({ textOverflow }: Props) => textOverflow ? `text-overflow: ${textOverflow};` : "";
 const wordBreak = ({ wordBreak }: Props) => wordBreak ? `word-break: ${wordBreak};` : "";
@@ -45,15 +45,15 @@ type InnerProps = Props & FontFamilyProps & FontSizeProps & TextAlignProps & Fon
 
 export type TextProps = InnerProps & BlockProps;
 
-export const Text = styled(Block.withComponent("p")) <InnerProps>`
+export const Text = styled(Block.withComponent("p"))<InnerProps>`
   hyphens: auto;
   ${medium}
   ${regular}
   ${demiLight}
   ${light}
-  ${left}
-  ${right}
-  ${center}
+  ${alignLeft}
+  ${alignRight}
+  ${alignCenter}
   ${overflowWrap}
   ${textOverflow}
   ${whiteSpace}

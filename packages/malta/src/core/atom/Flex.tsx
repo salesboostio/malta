@@ -13,7 +13,7 @@ import {
 
 export type FlexProps = AlignItemsProps & JustifyContentProps & FlexDirectionProps & FlexWrapProps;
 
-export const Flex = styled(Block) <FlexProps>`
+export const Flex = styled(Block)<FlexProps>`
   ${alignItems}
   ${justifyContent}
   ${flexDirection}
