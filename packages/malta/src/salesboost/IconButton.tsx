@@ -39,9 +39,9 @@ interface Props {
 export type IconButtonProps = IconProps & Props & SpaceProps & WidthProps & HeightProps & ColorProps;
 
 export const IconButton: React.SFC<IconButtonProps> = (props) => {
-  const { name, size, disabled, color, hover, ...rest } = props;
+  const { name, size, disabled, color, hover, onClick, ...rest } = props;
   return (
-    <ButtonWrapper {...rest} disabled={disabled}>
+    <ButtonWrapper {...rest} disabled={disabled} onClick={disabled ? null : onClick}>
       <Icon name={name} size={size} color={color} hover={hover} />
     </ButtonWrapper>
   );
