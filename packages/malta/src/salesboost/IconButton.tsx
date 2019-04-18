@@ -31,8 +31,8 @@ const ButtonWrapper = styled.div<any>`
 `;
 
 interface Props {
-  disabled?: false;
-  onClick?: any;
+  disabled?: boolean;
+  onClick?: () => void;
   style?: any;
 }
 
