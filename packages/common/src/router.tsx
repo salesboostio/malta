@@ -64,5 +64,5 @@ export const useLink = () => {
       const qs = query ? createQueryString({ query }) : "";
       history.replace(`${path}${qs}`);
     },
-  }
+  };
 };
