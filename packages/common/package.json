@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "query-string": "^6.5.0",
     "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
