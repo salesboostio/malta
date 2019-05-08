@@ -9,3 +9,8 @@ export {
   isProduction,
   isStaging,
 } from "./env";
+export {
+  SalesboostRouter,
+  useLink,
+  createQueryString,
+} from "./router";
