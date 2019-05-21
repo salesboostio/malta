@@ -29,7 +29,7 @@ export const createQueryString = ({ include, query }: { include?: "all"; query: 
 
 const getUserIndexFromURL = () => {
   const query = queryString.parse(window.location.search);
-  return (query.userIndex || query.authUser || "0") as string;
+  return (query.userIndex || query.authUser || query.authuser || "0") as string;
 };
 
 export const useLink = () => {
