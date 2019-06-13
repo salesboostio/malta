@@ -24,5 +24,5 @@ export const Header = styled.div<SpaceProps & ColorProps>`
 `;
 
 Header.defaultProps = {
-  bg: "#FFF"
+  bg: "#FFF",
 };

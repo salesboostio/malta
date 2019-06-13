@@ -45,5 +45,5 @@ Image.defaultProps = {
   height: "100%",
   alt: "img",
   objectFit: "cover",
-  objectPosition: "50% 50%"
+  objectPosition: "50% 50%",
 };

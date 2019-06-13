@@ -87,5 +87,5 @@ export const RadioButton = (props: RadioButtonProps) => {
 
 RadioButton.defaultProps = {
   width: "20px",
-  height: "20px"
+  height: "20px",
 };

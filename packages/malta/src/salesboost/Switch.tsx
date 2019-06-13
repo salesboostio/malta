@@ -74,5 +74,5 @@ Switch.defaultProps = {
   disabled: false,
   checked: false,
   loading: false,
-  onClick: () => { }
+  onClick: () => { },
 };

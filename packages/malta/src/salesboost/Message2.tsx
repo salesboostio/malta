@@ -73,7 +73,7 @@ const getIconName = (type: MessageType) => ({
   "success": "circle-success",
   "error": "circle-error",
   "info": "circle-info",
-  "warning": "circle-warning"
+  "warning": "circle-warning",
 })[type];
 
 type MessageType = "success" | "error" | "info" | "warning";
@@ -105,7 +105,7 @@ class Message extends React.Component {
   static newInstance: any;
 
   state = {
-    messages: {}
+    messages: {},
   };
 
   open = (type: MessageType, text: string, duration: number = 3000, onClose?: any) => {
@@ -116,7 +116,7 @@ class Message extends React.Component {
       type,
       text,
       duration,
-      closing: false
+      closing: false,
     };
 
     this.setState({ messages: { ...this.state.messages, [id]: message } });

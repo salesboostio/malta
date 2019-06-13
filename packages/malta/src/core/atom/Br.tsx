@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
   ResponsiveValue,
-  display
+  display,
 } from "styled-system";
 
 export interface BrProps {

@@ -71,5 +71,5 @@ Input.defaultProps = {
   p: 0,
   m: 0,
   fontSize: "16px",
-  border: "none"
+  border: "none",
 };

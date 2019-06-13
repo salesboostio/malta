@@ -59,5 +59,5 @@ Spinner.defaultProps = {
   show: true,
   duration: 1.0,
   scale: 1.0,
-  bg: "rgba(22, 27, 72, 0.3)"
+  bg: "rgba(22, 27, 72, 0.3)",
 };

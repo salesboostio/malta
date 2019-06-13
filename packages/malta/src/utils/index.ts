@@ -3,7 +3,7 @@ import { css, ThemedCssFunction } from "styled-components";
 
 export const hover = style({
   prop: "hover",
-  cssProperty: ":hover"
+  cssProperty: ":hover",
 });
 
 export interface HoverProps {
@@ -26,7 +26,7 @@ export interface OfReducerProps {
 }
 
 export const cursor = (props: any) => ({
-  cursor: props.cursor
+  cursor: props.cursor,
 });
 
 export interface CursorProps {

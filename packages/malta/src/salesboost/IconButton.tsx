@@ -11,7 +11,7 @@ import {
   ColorProps,
 } from "styled-system";
 import {
-  Icon, IconProps
+  Icon, IconProps,
 } from "../core";
 
 const ButtonWrapper = styled.div<any>`

@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom";
 import { height } from "styled-system";
 import { Block, Flex, Icon, Text } from "../core";
 import {
-  IconButton
+  IconButton,
 } from "./IconButton";
 let increment = 0;
 let NotificationRootInstance: any = null;
@@ -77,7 +77,7 @@ const getIconName = (type: NotificationType) => ({
   "success": "circle-success",
   "error": "circle-error",
   "info": "circle-info",
-  "warning": "circle-warning"
+  "warning": "circle-warning",
 })[type];
 
 type NotificationType = "success" | "error" | "info" | "warning";
@@ -127,7 +127,7 @@ class Notification extends React.Component<any> {
   static newInstance: any;
 
   state = {
-    notifications: {}
+    notifications: {},
   };
 
   close = (id: number, onClose?: any) => {
@@ -153,12 +153,12 @@ class Notification extends React.Component<any> {
     {
       title,
       render,
-      onClose
+      onClose,
     }:
       {
         title: string,
         render: () => React.ReactNode,
-        onClose?: any
+        onClose?: any,
       }) => {
 
     const id = increment++;
@@ -169,7 +169,7 @@ class Notification extends React.Component<any> {
       title,
       render,
       onClose,
-      closing: false
+      closing: false,
     };
 
     this.setState({ notifications: { ...this.state.notifications, [id]: notification } });
@@ -220,28 +220,28 @@ const notify = {
   success: ({
     title,
     onClose,
-    render
+    render,
   }: { title: string, onClose: any, render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
     ref.open("success", { title, onClose, render });
   }),
   info: ({
     title,
     onClose,
-    render
+    render,
   }: { title: string, onClose: any, render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
     ref.open("info", { title, onClose, render });
   }),
   error: ({
     title,
     onClose,
-    render
+    render,
   }: { title: string, onClose: any, render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
     ref.open("error", { title, onClose, render });
   }),
   warning: ({
     title,
     onClose,
-    render
+    render,
   }: { title: string, onClose: any, render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
     ref.open("warning", { title, onClose, render });
   }),

@@ -77,7 +77,7 @@ const getIconName = (type: any) => ({
   "success": "circle-success",
   "error": "circle-error",
   "info": "circle-info",
-  "warning": "circle-warning"
+  "warning": "circle-warning",
 } as any)[type];
 
 const Modal = (props: any) => {
@@ -180,7 +180,7 @@ const dialog = {
           title={title}
           content={content}
           handleClose={handleClose(resolve)} />,
-        el
+        el,
       );
     });
   },

@@ -161,7 +161,7 @@ const ShopPanelPopup = (props: any) => {
         <PanelListItem key={i} height="72px" onClick={() => { props.switchShop(i); props.handleCloseAll(); }}>
           <Text fontSize="20px" demiLight color="#FFF" ml="24px">{store.name}</Text>
           <Divider />
-        </PanelListItem>
+        </PanelListItem>,
       )}
       <AddShopPanel addStoreLink={props.addStoreLink} handleCloseAll={props.handleCloseAll} />
     </PanelPopupWrapper>
@@ -287,7 +287,7 @@ const MenuGroup = (props: { title: string; menuList: any[], handleClose?: any })
           label={menu.label}
           handleClose={props.handleClose}
           handleClick={menu.handleClick}
-        />
+        />,
       )}
     </Block>
   );
@@ -352,12 +352,12 @@ const ShopMenuPanel = (props: { userIndex: number, onClickStore: any, onClickMem
       {
         label: "자주 묻는 질문",
         image: "https://cdn.dev.salesboost.ai/static/img-settingdrawer-faq@2x.png",
-        handleClick: () => { window.open("http://bit.ly/salesboost-help-center"); }
+        handleClick: () => { window.open("http://bit.ly/salesboost-help-center"); },
       },
       {
         label: "문의하기",
         image: "https://cdn.dev.salesboost.ai/static/img-settingdrawer-kakaotalk@2x.png",
-        handleClick: () => { window.open("https://pf.kakao.com/_hdZzC"); }
+        handleClick: () => { window.open("https://pf.kakao.com/_hdZzC"); },
       },
     ]} />
   );
@@ -395,7 +395,7 @@ class Contents extends React.Component<any> {
     fetch(`${getAPI()}/auth/signout`, {
       method: "DELETE",
       mode: "cors",
-      credentials: "include"
+      credentials: "include",
     }).then(() => {
       window.location.href = window.location.origin;
     }).catch(error => {

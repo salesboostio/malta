@@ -3,13 +3,13 @@ import {
   Block,
   Flex,
   Icon,
-  Text
+  Text,
 } from "../core";
 import styled from "styled-components";
 import {
   SpaceProps,
   width,
-  WidthProps
+  WidthProps,
 } from "styled-system";
 
 const SelectWrapper = styled<any>(Block)`
@@ -106,7 +106,7 @@ export class Select extends React.Component<SelectProps, State> {
   state = {
     index: this.props.initialSelection || -1,
     value: this.props.initialSelection > -1 ? this.getValueFromOptions(this.props.children, this.props.initialSelection) : "",
-    isOpened: false
+    isOpened: false,
   };
 
   getValueFromOptions (options: any, index: number) {
@@ -133,7 +133,7 @@ export class Select extends React.Component<SelectProps, State> {
     this.setState(state => {
       return {
         ...state,
-        isOpened: !state.isOpened
+        isOpened: !state.isOpened,
       };
     });
   };
@@ -148,7 +148,7 @@ export class Select extends React.Component<SelectProps, State> {
         {React.Children.map(children, (child, index) =>
           <DropdownItem key={`option-list-${index}`} onClick={() => this.handleOptionClick(index)}>
             <Text fontSize={["16px", "18px"]} color="rgba(22,35,72,0.9)">{child.props.children}</Text>
-          </DropdownItem>
+          </DropdownItem>,
         )}
       </DropdownWrapper>
     );
@@ -160,7 +160,7 @@ export class Select extends React.Component<SelectProps, State> {
     this.setState({
       index: index,
       value: this.getValueFromOptions(children, index),
-      isOpened: false
+      isOpened: false,
     }, () => {
       if (onValueChange) onValueChange(this.getValueFromOptions(children, index), index);
     });

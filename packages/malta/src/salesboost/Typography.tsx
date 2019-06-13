@@ -17,7 +17,7 @@ type TypoInfoType = {
     fontWeight: number;
     lineHeight: string | string[];
   };
-}
+};
 
 const TypoInfo: TypoInfoType = {
   title_1: {

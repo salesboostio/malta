@@ -9,7 +9,7 @@ import {
   ColorProps,
 } from "styled-system";
 import {
-  Flex, Text, Image
+  Flex, Text, Image,
 } from "../core";
 import { Portal } from "./Portal";
 
