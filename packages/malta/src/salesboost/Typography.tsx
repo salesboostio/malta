@@ -105,9 +105,9 @@ interface Props {
   color?: string;
 }
 
-export type TypoProps = Props & FontSizeProps & FontWeightProps & LineHeightProps & SpaceProps;
+export type TypoProps = Props & BlockProps & FontSizeProps & FontWeightProps & LineHeightProps & SpaceProps;
 
 export const Typo: React.FC<TypoProps> = (props) => {
-  const { color, name } = props;
-  return <Text {...TypoInfo[name]} color={color ? color : TypoInfo[name].color}>{props.children}</Text>;
+  const { color, name, ...styles } = props;
+  return <Text {...TypoInfo[name]} {...styles} color={color ? color : TypoInfo[name].color}>{props.children}</Text>;
 };
