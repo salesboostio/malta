@@ -1,12 +1,14 @@
 {
-  "name": "malta",
-  "version": "1.0.0",
+  "name": "@salesboost/malta",
+  "version": "0.5.0",
   "description": "Salesboost UI library built with Styled-component",
   "repository": "git@github.com:salesboostio/malta.git",
+  "author": "Salesboost, Inc.",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "NODE_ENV=localhost nodemon ./docs/server.ts",
-    "build": "cd docs && next build",
+    "build": "rm -rf dist && tsc",
     "test": "jest --coverage",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "coverage": "codecov --token=a6047fcd-bff1-49b8-9d1d-adb91e6f9859"
@@ -17,7 +19,8 @@
     "@salesboost/malta": "*",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "styled-system": "3.1.11"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -26,6 +29,7 @@
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
     "@types/styled-components": "^4.1.15",
+    "@types/styled-system": "3.1.1",
     "@zeit/next-typescript": "^1.1.1",
     "babel-plugin-styled-components": "^1.10.0",
     "codecov": "^3.5.0",
@@ -37,8 +41,7 @@
     "tslint": "^5.16.0",
     "typescript": "^3.4.5"
   },
-  "private": true,
-  "workspaces": [
-    "packages/*"
+  "files": [
+    "dist"
   ]
 }
