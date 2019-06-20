@@ -9,6 +9,7 @@
 ![dependencies](https://img.shields.io/david/salesboostio/malta.svg)
 ![devDependencies](https://img.shields.io/david/dev/salesboostio/malta.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![salesboost](https://res.cloudinary.com/salesboost/image/upload/v1561023244/logo/saelsboost-badge.png)](https://salesboost.ai)
 
 </div>
 
