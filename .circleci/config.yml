@@ -31,6 +31,17 @@ jobs:
       - run:
           name: Building @salesboost/malta
           command: yarn build
+  build_release:
+    working_directory: ~/app
+    docker:
+      - image: node:11
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Building @salesboost/malta
+          command: yarn build
   lint:
     working_directory: ~/app
     docker:
@@ -60,3 +71,11 @@ workflows:
           filters:
             tags:
               only: /.*/
+            branches:
+              ignore: release
+      - build_release:
+          requires:
+            - prepare
+          filters:
+            branches:
+              only: dev
