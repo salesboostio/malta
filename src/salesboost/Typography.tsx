@@ -103,6 +103,7 @@ const TypoInfo: TypoInfoType = {
 interface Props {
   name: TypoName;
   color?: string;
+  onClick?: () => void;
 }
 
 export type TypoProps = Props & BlockProps & FontSizeProps & FontWeightProps & LineHeightProps & SpaceProps;
