@@ -1,10 +1,10 @@
-import * as next from "next";
-import * as express from "express";
+import next from "next";
+import express from "express";
 
-const { join } = require("path");
-const { parse } = require("url");
+import { join } from "path";
+import { parse } from "url";
 
-export const app = next({ dir: "./docs", dev: true }); // TODO isLocalhost로 변경
+export const app = next({ dir: "./src", dev: true }); // TODO isLocalhost로 변경
 
 const handle = app.getRequestHandler();
 

@@ -14,19 +14,25 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "experimentalDecorators": true,
-    "module": "commonjs",
-    "outDir": "dist/",
+    "module": "esnext",
     "typeRoots": [
-      "./node_modules/@types",
+      "./node_modules/@types"
     ],
     "lib": [
       "dom",
       "esnext"
-    ]
+    ],
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "include": [
-    "src/**/*",
-    "docs/**/*",
-    "types/**/*"
+    "**/*"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
