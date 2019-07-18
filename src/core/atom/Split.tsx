@@ -7,22 +7,21 @@ import {
   HeightProps,
   space,
   SpaceProps,
-  backgroundColor,
-  BackgroundColorProps,
-  ColorStyleProps,
   alignSelf,
   AlignSelfProps,
   justifySelf,
   JustifySelfProps,
   ResponsiveValue,
   TLengthStyledSystem,
+  ColorProps,
+  color,
 } from "styled-system";
 
-const StyledSplit = styled.div<WidthProps & HeightProps & SpaceProps & ColorStyleProps & BackgroundColorProps & AlignSelfProps & JustifySelfProps>`
+const StyledSplit = styled.div<WidthProps & HeightProps & SpaceProps & ColorProps & AlignSelfProps & JustifySelfProps>`
   ${width}
   ${height}
   ${space}
-  ${backgroundColor}
+  ${color}
   ${alignSelf}
   ${justifySelf}
 `;
@@ -31,9 +30,10 @@ interface Props {
   horizontal?: boolean;
   vertical?: boolean;
   length?: ResponsiveValue<TLengthStyledSystem>;
+  color: string;
 }
 
-export type SplitProps = Props & ColorStyleProps & BackgroundColorProps & AlignSelfProps & JustifySelfProps & SpaceProps;
+export type SplitProps = Props & ColorProps & AlignSelfProps & JustifySelfProps & SpaceProps;
 
 export const Split: React.FC<SplitProps> = (props) => {
   const { horizontal, length, vertical, ...styles } = props;

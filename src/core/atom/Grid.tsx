@@ -14,17 +14,17 @@ import {
   gridRowGap,
   GridRowGapProps,
   gridTemplateAreas,
-  GridTemplateAreasProps,
+  GridTemplatesAreasProps,
   gridTemplateColumns,
-  GridTemplateColumnsProps,
+  GridTemplatesColumnsProps,
   gridTemplateRows,
-  GridTemplateRowsProps,
+  GridTemplatesRowsProps,
 } from "styled-system";
 
 export type GridProps =
   GridAutoColumnsProps & GridAutoFlowProps & GridAutoRowsProps
-  & GridColumnGapProps & GridRowGapProps & GridTemplateAreasProps
-  & GridTemplateColumnsProps & GridTemplateRowsProps & GridGapProps;
+  & GridColumnGapProps & GridRowGapProps & GridTemplatesAreasProps
+  & GridTemplatesColumnsProps & GridTemplatesRowsProps & GridGapProps;
 
 export const Grid = styled(Block)<GridProps>`
   display: flex;
