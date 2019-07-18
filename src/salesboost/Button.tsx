@@ -4,99 +4,112 @@ import {
   space,
   SpaceProps,
   color,
-  ColorProps,
   borderRadius,
   BorderRadiusProps,
-  fontSize,
   FontSizeProps,
   height,
   HeightProps,
   width,
   WidthProps,
 } from "styled-system";
+import { Text } from "../core/atom/Text";
 import { Spinner } from "./Spinner";
 
-const SolidStyle = css<any>`
+const SolidStyle = css<{ bg?: string; hoverBg?: string; disabledBg?: string; disabled?: boolean; }>`
   :hover {
-    background: ${props => props.hoverBg};
+    ${({ disabled, hoverBg }) => !disabled ? `background-color: ${hoverBg || "rgba(69, 78, 223, 0.7)"};` : ""}
   }
-  ${props => props.disabled ? `
-    background: ${props.disabledBg ? props.disabledBg : "rgba(22,27,72,0.3)"} !important;
-  ` : ""}
-  ${color}
+  background-color: ${({ bg, disabled, disabledBg }) => `
+    ${disabled
+      ? disabledBg || "rgba(22, 27, 72, 0.3)"
+      : bg || "rgba(69, 78, 223, 0.9)"}
+  `};
 `;
 
-const LineStyle = css<any>`
+const LineStyle = css<{ bg?: string; hoverBg?: string; disabled?: boolean; disabledBg?: string; }>`
   box-shadow: 0 2px 6px 2px rgba(22, 27, 72, 0.04);
-  border: 1px solid rgba(22,27,72,0.2);
+  border: 1px solid rgba(22, 27, 72, 0.2);
   :hover {
+    ${({ hoverBg }) => hoverBg ? `background-color: ${hoverBg};` : ""}
     box-shadow: 0 2px 6px 2px rgba(22, 27, 72, 0.08);
-    border: 1px solid rgba(22,27,72,0.4);
+    border: 1px solid rgba(22, 27, 72, 0.4);
   }
-  ${props => props.disabled ? `
-    background: ${props.disabledBg ? props.disabledBg : "rgba(22,27,72,0.1)"} !important;
+  background-color: ${({ bg, disabled, disabledBg }) => `
+    ${disabled
+      ? disabledBg || "rgba(22, 27, 72, 0.1)"
+      : bg || "#fff"}
+  `};
+  ${({ disabled, disabledBg }) => disabled ? `
     box-shadow: none !important;
     border: none !important;
   ` : ""}
 `;
 
-const Wrapper = styled.div<any>`
+interface WrapperProps extends WidthProps, HeightProps, SpaceProps, BorderRadiusProps {
+  loading?: boolean;
+  disabled?: boolean;
+  disabledBg?: string;
+  hoverBg?: string;
+  line?: boolean;
+  color?: string;
+  bg?: string;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: ${props => props.loading ? "progress" : props.disabled ? "not-allowed" : "pointer"};
+  cursor: ${({ loading, disabled }) => loading ? "progress" : disabled ? "not-allowed" : "pointer"};
   ${height}
   ${width}
   ${space}
   ${borderRadius}
   transition: all 0.15s ease-out;
-  ${props => props.line ? LineStyle : SolidStyle}
-  ${(props) => props.bg ? `background-color: ${props.bg};` : ""}
+  ${({ line }) => line ? LineStyle : SolidStyle}
 `;
 
-const Text = styled.p<any>`
-  ${fontSize}
-  font-weight: normal;
-  color: ${props => props.color ? props.color : props.line ? "rgba(22,27,72,0.9)" : "#FFF"};
-`;
 
 interface Props {
-  children?: any;
   label?: string;
   loading?: boolean;
   line?: boolean;
   disabled?: boolean;
   disabledBg?: string;
   hoverBg?: string;
+  color?: string;
   bg?: string;
-  onClick?: any;
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   style?: any;
 }
 
-export type ButtonProps = React.SFC<Props & SpaceProps & ColorProps & HeightProps & BorderRadiusProps & FontSizeProps & WidthProps>;
+export type ButtonProps = Props & SpaceProps & HeightProps & BorderRadiusProps & FontSizeProps & WidthProps;
 
-export const Button: ButtonProps = (props) => {
-  const { bg, children, color, fontSize, loading, label, line, onClick, disabled, ...rest } = props;
+export const Button: React.FC<ButtonProps> = (props) => {
+  const { bg, children, color, fontSize, loading, label, line, onClick, disabled, ...styles } = props;
   return (
-    <Wrapper disabled={disabled} line={line} loading={loading} onClick={(disabled || loading) ? null : onClick} bg={bg} {...rest} >
+    <Wrapper
+      bg={bg}
+      line={line}
+      loading={loading}
+      disabled={disabled}
+      onClick={disabled || loading ? null : onClick} {...styles}>
       {loading
         ? <Spinner />
-        : label ? <Text disabled={disabled} line={line} fontSize={fontSize} color={color}>{label}</Text>
+        : label ? <Text fontSize={fontSize} color={color ? color : line ? "rgba(22, 27, 72, 0.9)" : "#fff"}>{label}</Text>
           : children}
     </Wrapper>
   );
 };
 
 Button.defaultProps = {
+  disabled: false,
   line: false,
   loading: false,
   height: "60px",
   px: "32px",
   fontSize: "18px",
   borderRadius: "30px",
-  bg: "rgba(69, 78, 223, 0.9)",
-  hoverBg: "rgba(69, 78, 223, 0.7)",
   disabledBg: "rgba(22, 27, 72, 0.3)",
   width: "fit-content",
 };
