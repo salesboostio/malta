@@ -3,6 +3,7 @@ import {
   App,
   Button,
   Flex,
+  Split,
   Text,
   theme,
   Typo,
@@ -54,9 +55,12 @@ class Index extends React.Component<any, any> {
               <Button ml={1} loading line label="Line" />
             </Flex>
           </Flex>
+          <Typo mt={5} name="title_1">Split</Typo>
+          <Split vertical length="20px" bg="#f00" />
+          <Split horizontal length="20px" />
           <Typo mt={6} name="title_1">Custom</Typo>
           <Flex flexDirection="column">
-            <Text hover={{ cursor: "pointer", color: "#f00" }} >Hover Text</Text>
+            <Text hover={{ color: "#f00" }} >Of Text</Text>
           </Flex>
         </div>
       </App>
