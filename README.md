@@ -42,6 +42,7 @@ $ cd malta && yarn
 
 3. run playground local server
 
-$ yarn dev
+$ cd docs && yarn
+$ yarn start
 ```
 
