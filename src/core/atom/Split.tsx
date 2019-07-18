@@ -13,27 +13,25 @@ import {
   JustifySelfProps,
   ResponsiveValue,
   TLengthStyledSystem,
-  ColorProps,
-  color,
 } from "styled-system";
 
-const StyledSplit = styled.div<WidthProps & HeightProps & SpaceProps & ColorProps & AlignSelfProps & JustifySelfProps>`
+const StyledSplit = styled.div<{ bg?: string; } & WidthProps & HeightProps & SpaceProps & AlignSelfProps & JustifySelfProps>`
   ${width}
   ${height}
   ${space}
-  ${color}
   ${alignSelf}
   ${justifySelf}
+  background-color: ${({ bg }) => bg || "rgba(22, 27, 72, 0.2)"};
 `;
 
 interface Props {
   horizontal?: boolean;
   vertical?: boolean;
   length?: ResponsiveValue<TLengthStyledSystem>;
-  color: string;
+  bg?: string;
 }
 
-export type SplitProps = Props & ColorProps & AlignSelfProps & JustifySelfProps & SpaceProps;
+export type SplitProps = Props & AlignSelfProps & JustifySelfProps & SpaceProps;
 
 export const Split: React.FC<SplitProps> = (props) => {
   const { horizontal, length, vertical, ...styles } = props;
@@ -45,5 +43,5 @@ Split.defaultProps = {
   vertical: false,
   length: "100%",
   alignSelf: "center",
-  bg: "rgba(22,27,72,0.4)",
+  bg: "rgba(22,27,72,0.2)",
 };
