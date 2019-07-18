@@ -26,8 +26,6 @@ import {
   MinHeightProps,
   size,
   SizeProps,
-  ratio,
-  RatioProps,
   verticalAlign,
   VerticalAlignProps,
   flexBasis,
@@ -66,6 +64,8 @@ import {
   BottomProps,
   left,
   LeftProps,
+  colorStyle,
+  ColorStyleProps,
 } from "styled-system";
 import {
   hover,
@@ -80,10 +80,10 @@ import {
 
 export type BlockProps = SpaceProps & WidthProps & HeightProps & ColorProps
   & JustifySelfProps & AlignSelfProps & OrderProps & DisplayProps & MaxWidthProps & MaxHeightProps
-  & MinWidthProps & MinHeightProps & SizeProps & RatioProps & VerticalAlignProps & FlexBasisProps & OpacityProps
+  & MinWidthProps & MinHeightProps & SizeProps & VerticalAlignProps & FlexBasisProps & OpacityProps
   & FlexProps & GridColumnProps & GridRowProps & GridAreaProps & BordersProps & BorderRadiusProps & BoxShadowProps
   & BorderColorProps & OverflowProps & PositionProps & ZIndexProps & TopProps & RightProps & BottomProps & LeftProps
-  & HoverProps & OfReducerProps & TransitionProps & CursorProps & BorderProps;
+  & HoverProps & OfReducerProps & TransitionProps & CursorProps & BorderProps & ColorStyleProps;
 
 export const Block = styled.div<BlockProps>`
   box-sizing: border-box;
@@ -91,6 +91,7 @@ export const Block = styled.div<BlockProps>`
   ${width}
   ${height}
   ${color}
+  ${colorStyle}
   ${justifySelf}
   ${alignSelf}
   ${order}
@@ -100,13 +101,13 @@ export const Block = styled.div<BlockProps>`
   ${minWidth}
   ${minHeight}
   ${size}
-  ${ratio}
   ${verticalAlign}
   ${flexBasis}
   ${flex}
   ${gridColumn}
   ${gridRow}
   ${gridArea}
+  ${border}
   ${borders}
   ${borderRadius}
   ${boxShadow}

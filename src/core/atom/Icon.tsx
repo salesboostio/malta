@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { color, ColorProps, space, SpaceProps } from "styled-system";
-import { getValueFromTheme, hover, HoverProps, cursor, CursorProps } from "../../utils";
+import { hover, HoverProps, cursor, CursorProps } from "../../utils";
 
 type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "circle-success" | "circle-error" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder" | "hamburger" | "wand" | "download" | "statistics";
 

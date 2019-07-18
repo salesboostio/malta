@@ -8,9 +8,6 @@ import {
   color,
   ColorProps,
 } from "styled-system";
-import {
-  Flex, Text, Image,
-} from "../core";
 import { Portal } from "./Portal";
 
 const fadeIn = keyframes`

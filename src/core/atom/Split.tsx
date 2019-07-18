@@ -2,11 +2,14 @@ import * as React from "react";
 import styled from "styled-components";
 import {
   width,
+  WidthProps,
   height,
+  HeightProps,
   space,
   SpaceProps,
-  color,
-  ColorProps,
+  backgroundColor,
+  BackgroundColorProps,
+  ColorStyleProps,
   alignSelf,
   AlignSelfProps,
   justifySelf,
@@ -15,11 +18,11 @@ import {
   TLengthStyledSystem,
 } from "styled-system";
 
-const StyledSplit = styled.div<any>`
+const StyledSplit = styled.div<WidthProps & HeightProps & SpaceProps & ColorStyleProps & BackgroundColorProps & AlignSelfProps & JustifySelfProps>`
   ${width}
   ${height}
   ${space}
-  ${color}
+  ${backgroundColor}
   ${alignSelf}
   ${justifySelf}
 `;
@@ -30,9 +33,9 @@ interface Props {
   length?: ResponsiveValue<TLengthStyledSystem>;
 }
 
-export type SplitProps = Props & ColorProps & AlignSelfProps & JustifySelfProps & SpaceProps;
+export type SplitProps = Props & ColorStyleProps & BackgroundColorProps & AlignSelfProps & JustifySelfProps & SpaceProps;
 
-export const Split: React.SFC<SplitProps> = (props) => {
+export const Split: React.FC<SplitProps> = (props) => {
   const { horizontal, length, vertical, ...styles } = props;
   return <StyledSplit width={horizontal ? length : "1px"} height={vertical ? length : "1px"} {...styles} />;
 };
