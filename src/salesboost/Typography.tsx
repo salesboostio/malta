@@ -108,6 +108,9 @@ interface Props {
   left?: boolean;
   right?: boolean;
   onClick?: () => void;
+  style?: any;
+  hover?: any;
+  of?: any;
 }
 
 export type TypoProps = Props & BlockProps & FontSizeProps & FontWeightProps & LineHeightProps & TextAlignProps & SpaceProps;
