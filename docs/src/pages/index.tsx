@@ -60,7 +60,8 @@ class Index extends React.Component<any, any> {
           <Split horizontal length="20px" />
           <Typo mt={6} name="title_1">Custom</Typo>
           <Flex flexDirection="column">
-            <Text hover={{ color: "#f00" }} >Of Text</Text>
+            <Text of={{ color: "#ff0" }}>Of Text</Text>
+            <Typo name="body_1" of={{ color: "#f00", cursor: "pointer", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>Custom Typo Text</Typo>
           </Flex>
         </div>
       </App>
