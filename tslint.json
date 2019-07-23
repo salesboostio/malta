@@ -58,6 +58,13 @@
         "singleline": "never"
       }
     ],
+    "ordered-imports": {
+      "options": {
+        "import-sources-order": "any",
+        "module-source-path": "full",
+        "named-imports-order": "case-insensitive"
+      }
+    },
     "no-internal-module": true,
     "no-trailing-whitespace": true,
     "no-null-keyword": false,
