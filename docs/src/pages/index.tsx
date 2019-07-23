@@ -61,7 +61,7 @@ class Index extends React.Component<any, any> {
           <Typo mt={6} name="title_1">Custom</Typo>
           <Flex flexDirection="column">
             <Text of={{ color: "#ff0" }}>Of Text</Text>
-            <Typo name="body_1" of={{ color: "#f00", cursor: "pointer", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>Custom Typo Text</Typo>
+            <Typo name="body_1" hover={{ color: "#f00", cursor: "pointer", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>Custom Typo Text</Typo>
           </Flex>
         </div>
       </App>
