@@ -10,11 +10,13 @@ import {
   width,
   WidthProps,
 } from "styled-system";
-import {
-  Icon, IconProps,
-} from "../core";
+import { Icon, IconProps } from "../core";
 
-const ButtonWrapper = styled.div<any>`
+interface WrapperProps {
+  disabled?: boolean;
+}
+
+const ButtonWrapper = styled.div<WrapperProps>`
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -22,10 +24,10 @@ const ButtonWrapper = styled.div<any>`
   ${width}
   ${height}
   ${space}
-  cursor: ${props => props.disabled ? "not-allowed" : "pointer"};
+  cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer"};
   border-radius: 2px;
   :hover {
-    ${props => props.disabled ? "" : "background: rgba(22,27,72,0.1);"}
+    ${({ disabled }) => disabled ? "" : "background: rgba(22,27,72,0.1);"}
   }
   transition: all 0.15s ease-out;
 `;
@@ -38,7 +40,7 @@ interface Props {
 
 export type IconButtonProps = IconProps & Props & SpaceProps & WidthProps & HeightProps & ColorProps;
 
-export const IconButton: React.SFC<IconButtonProps> = (props) => {
+export const IconButton: React.FC<IconButtonProps> = (props) => {
   const { name, size, disabled, color, hover, onClick, ...rest } = props;
   return (
     <ButtonWrapper {...rest} disabled={disabled} onClick={disabled ? null : onClick}>
