@@ -1,18 +1,14 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 import {
-  space,
   SpaceProps,
-  color,
-  borderRadius,
   BorderRadiusProps,
   FontSizeProps,
-  height,
+  FontWeightProps,
   HeightProps,
-  width,
   WidthProps,
 } from "styled-system";
-import { Text } from "../core/atom/Text";
+import { Flex, Text } from "../core";
 import { Spinner } from "./Spinner";
 
 const SolidStyle = css<{ bg?: string; hoverBg?: string; disabledBg?: string; disabled?: boolean; }>`
@@ -39,38 +35,32 @@ const LineStyle = css<{ bg?: string; hoverBg?: string; disabled?: boolean; disab
       ? disabledBg || "rgba(22, 27, 72, 0.1)"
       : bg || "#fff"}
   `};
-  ${({ disabled, disabledBg }) => disabled ? `
+  ${({ disabled }) => disabled ? `
     box-shadow: none !important;
     border: none !important;
   ` : ""}
 `;
 
-interface WrapperProps extends WidthProps, HeightProps, SpaceProps, BorderRadiusProps {
-  loading?: boolean;
-  disabled?: boolean;
+interface WrapperProps {
+  disabled: boolean;
   disabledBg?: string;
   hoverBg?: string;
-  line?: boolean;
-  color?: string;
-  bg?: string;
+  line: boolean;
+  progress: boolean;
 }
 
-const Wrapper = styled.div<WrapperProps>`
+const Wrapper = styled(Flex)<WrapperProps>`
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: ${({ loading, disabled }) => loading ? "progress" : disabled ? "not-allowed" : "pointer"};
-  ${height}
-  ${width}
-  ${space}
-  ${borderRadius}
+  cursor: ${({ progress, disabled }) => progress ? "progress" : disabled ? "not-allowed" : "cursor"};
   transition: all 0.15s ease-out;
-  ${({ line }) => line ? LineStyle : SolidStyle}
+  ${(props) => props.line ? LineStyle : SolidStyle}
 `;
 
 
-interface Props {
+export interface ButtonProps extends SpaceProps, HeightProps, BorderRadiusProps, FontSizeProps, FontWeightProps, WidthProps {
   label?: string;
   loading?: boolean;
   line?: boolean;
@@ -83,33 +73,27 @@ interface Props {
   style?: any;
 }
 
-export type ButtonProps = Props & SpaceProps & HeightProps & BorderRadiusProps & FontSizeProps & WidthProps;
-
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { bg, children, color, fontSize, loading, label, line, onClick, disabled, ...styles } = props;
+  const { children, color, fontSize, fontWeight, loading, label, line, onClick, disabled, ...styles } = props;
   return (
     <Wrapper
-      bg={bg}
       line={line}
-      loading={loading}
+      progress={loading}
       disabled={disabled}
       onClick={disabled || loading ? null : onClick} {...styles}>
       {loading
         ? <Spinner />
-        : label ? <Text fontSize={fontSize} color={color ? color : line ? "rgba(22, 27, 72, 0.9)" : "#fff"}>{label}</Text>
+        : label ? <Text fontSize={fontSize} fontWeight={fontWeight} color={color ? color : line ? "rgba(22, 27, 72, 0.9)" : "#fff"}>{label}</Text>
           : children}
     </Wrapper>
   );
 };
 
 Button.defaultProps = {
-  disabled: false,
-  line: false,
-  loading: false,
   height: "60px",
   px: "32px",
   fontSize: "18px",
+  fontWeight: "normal",
   borderRadius: "30px",
   disabledBg: "rgba(22, 27, 72, 0.3)",
-  width: "fit-content",
 };
