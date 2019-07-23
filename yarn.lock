@@ -418,10 +418,10 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
-"@types/styled-system@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-3.2.0.tgz#0aaca42e6a66c94dc8f4709c8be3629fb355570f"
-  integrity sha512-8bKJ+lOvAMB1VxKPwszx7eF4juTqSGGIZV214WzE+kmqx5OOcvMXOh9E/d/jS2/0vWOp6OhMWqcP5LzfSfBZNA==
+"@types/styled-system@3":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-3.2.2.tgz#a40b30baf20a8d9820808688a370a973cb778e7c"
+  integrity sha512-QjjszVXRIeAT1fAQewWKh1Ewq3/i6xeYp2DH7DC151FfnLNtUbjT8CxUuqpnKrRiessoKdQVLw+3xu/RiMpNBQ==
   dependencies:
     csstype "^2.2.0"
 
@@ -3431,7 +3431,7 @@ styled-components@^4.3.2:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
-styled-system@v3:
+styled-system@3:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.2.1.tgz#491e1e6f88d7ee021f6f49376f12852cde8007cb"
   integrity sha512-ag0Yp7UeVHHc3t+1uM3jvlljaZYzwqpbJ8hMrFvpaKfUd8xsB9JeQXLwMpEsz8iLx8Lz/+9j0coWFZjmw8MogQ==
