@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { color, TextColorProps, space, SpaceProps } from "styled-system";
+import { space, SpaceProps, textColor, TextColorProps } from "styled-system";
 import { cursor, CursorProps, hover, HoverProps } from "../../utils";
 
 type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "circle-success" | "circle-error" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder" | "hamburger" | "wand" | "download" | "statistics";
@@ -16,7 +16,7 @@ const StyledSvg = styled.svg.attrs((props: { size?: number }) => ({
   height: props.size,
 }))<any>`
   box-sizing: border-box;
-  ${color}
+  ${textColor}
   ${hover}
   ${cursor}
   ${space}
