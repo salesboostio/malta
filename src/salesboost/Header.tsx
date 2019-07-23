@@ -1,10 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
 import {
-  space,
-  SpaceProps,
   color,
   ColorProps,
+  space,
+  SpaceProps,
 } from "styled-system";
 
 export type HeaderProps = React.SFC<SpaceProps & ColorProps>;

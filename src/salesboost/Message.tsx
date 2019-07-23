@@ -5,8 +5,8 @@ import {
   Block,
   Flex,
   Icon,
-  Text,
   Portal,
+  Text,
   theme,
 } from "../index";
 

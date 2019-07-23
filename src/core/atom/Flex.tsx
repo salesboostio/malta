@@ -3,12 +3,12 @@ import { Block } from "./Block";
 import {
   alignItems,
   AlignItemsProps,
-  justifyContent,
-  JustifyContentProps,
   flexDirection,
   FlexDirectionProps,
   flexWrap,
   FlexWrapProps,
+  justifyContent,
+  JustifyContentProps,
 } from "styled-system";
 
 export type FlexProps = AlignItemsProps & JustifyContentProps & FlexDirectionProps & FlexWrapProps;

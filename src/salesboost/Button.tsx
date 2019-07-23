@@ -1,11 +1,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 import {
-  SpaceProps,
   BorderRadiusProps,
   FontSizeProps,
   FontWeightProps,
   HeightProps,
+  SpaceProps,
   WidthProps,
 } from "styled-system";
 import { Flex, Text } from "../core";

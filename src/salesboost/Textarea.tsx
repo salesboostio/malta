@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import {
+  HeightProps,
   SpaceProps,
   WidthProps,
-  HeightProps,
 } from "styled-system";
 import {
   Textarea as InnerTextarea,

@@ -1,14 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
-import { color, ColorProps, space, SpaceProps } from "styled-system";
-import { hover, HoverProps, cursor, CursorProps } from "../../utils";
+import { color, ColorProps, ResponsiveValue, space, SpaceProps } from "styled-system";
+import { cursor, CursorProps, hover, HoverProps } from "../../utils";
 
 type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "circle-success" | "circle-error" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder" | "hamburger" | "wand" | "download" | "statistics";
 
 interface Props {
   name: IconName;
   theme?: any;
-  size?: number;
+  size?: ResponsiveValue<number>;
 }
 
 const StyledSvg = styled.svg.attrs((props: any) => ({

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import styled, { keyframes } from "styled-components";
 import {
-  Text, Icon, Flex,
+  Flex, Icon, Text,
 } from "../core";
 
 const fadeIn = keyframes`

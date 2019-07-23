@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import {
+  boxShadow,
+  BoxShadowProps,
+  height,
+  HeightProps,
   space,
   SpaceProps,
   width,
   WidthProps,
-  height,
-  HeightProps,
-  boxShadow,
-  BoxShadowProps,
 } from "styled-system";
 import { Block, BlockProps } from "../core/atom/Block";
 

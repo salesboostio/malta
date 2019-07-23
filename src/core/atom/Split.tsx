@@ -1,18 +1,18 @@
 import * as React from "react";
 import styled from "styled-components";
 import {
-  width,
-  WidthProps,
-  height,
-  HeightProps,
-  space,
-  SpaceProps,
   alignSelf,
   AlignSelfProps,
+  height,
+  HeightProps,
   justifySelf,
   JustifySelfProps,
   ResponsiveValue,
+  space,
+  SpaceProps,
   TLengthStyledSystem,
+  width,
+  WidthProps,
 } from "styled-system";
 
 const StyledSplit = styled.div<{ bg?: string; } & WidthProps & HeightProps & SpaceProps & AlignSelfProps & JustifySelfProps>`

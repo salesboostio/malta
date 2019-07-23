@@ -3,8 +3,8 @@ import {
   FontSizeProps,
   FontWeightProps,
   LineHeightProps,
-  TextAlignProps,
   SpaceProps,
+  TextAlignProps,
 } from "styled-system";
 import { BlockProps, Text } from "../index";
 

@@ -1,18 +1,18 @@
 import * as React from "react";
 import styled from "styled-components";
 import {
-  width,
-  WidthProps,
-  height,
-  HeightProps,
   flex,
   FlexProps,
-  maxWidth,
-  MaxWidthProps,
+  height,
+  HeightProps,
   maxHeight,
   MaxHeightProps,
+  maxWidth,
+  MaxWidthProps,
   space,
   SpaceProps,
+  width,
+  WidthProps,
 } from "styled-system";
 
 const objectFit = (props: any) => `object-fit: ${props.objectFit};`;

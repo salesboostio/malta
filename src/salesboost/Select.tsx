@@ -7,9 +7,9 @@ import {
 } from "../core";
 import styled from "styled-components";
 import {
+  HeightProps,
   SpaceProps,
   WidthProps,
-  HeightProps,
 } from "styled-system";
 
 const SelectWrapper = styled(Block)`

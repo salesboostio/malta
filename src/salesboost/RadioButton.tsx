@@ -5,10 +5,10 @@ import {
 } from "../core";
 import styled from "styled-components";
 import {
-  space,
-  SpaceProps,
   display,
   ResponsiveValue,
+  space,
+  SpaceProps,
 } from "styled-system";
 
 const Wrapper = styled<any>(Flex)`

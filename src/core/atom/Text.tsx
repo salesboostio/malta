@@ -6,12 +6,12 @@ import {
   FontSizeProps,
   fontWeight,
   FontWeightProps,
-  textAlign,
-  TextAlignProps,
   letterSpacing,
   LetterSpacingProps,
   lineHeight,
   LineHeightProps,
+  textAlign,
+  TextAlignProps,
 } from "styled-system";
 import { Block, BlockProps } from "./Block";
 

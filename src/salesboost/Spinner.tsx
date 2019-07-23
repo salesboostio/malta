@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
-import { space, SpaceProps, color, ColorProps } from "styled-system";
+import { color, ColorProps, space, SpaceProps } from "styled-system";
 
 const ballbeat = keyframes`
   0% {

@@ -1,12 +1,12 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
 import {
+  color,
+  ColorProps,
   space,
   SpaceProps,
   width,
   WidthProps,
-  color,
-  ColorProps,
 } from "styled-system";
 import { Portal } from "./Portal";
 

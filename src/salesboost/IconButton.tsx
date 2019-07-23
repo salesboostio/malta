@@ -1,14 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
 import {
+  color,
+  ColorProps,
+  height,
+  HeightProps,
   space,
   SpaceProps,
   width,
   WidthProps,
-  height,
-  HeightProps,
-  color,
-  ColorProps,
 } from "styled-system";
 import {
   Icon, IconProps,

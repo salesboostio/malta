@@ -1,10 +1,10 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 import {
-  space,
-  SpaceProps,
   display,
   DisplayProps,
+  space,
+  SpaceProps,
 } from "styled-system";
 import { Spinner } from "./Spinner";
 import { Flex } from "../core";
