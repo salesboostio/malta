@@ -62,6 +62,7 @@ class Index extends React.Component<any, any> {
           <Split horizontal length="20px" />
           <Typo mt={6} name="title_1">Icon and IconButton</Typo>
           <Flex flexDirection="column">
+            <Icon name="image" size={24} />
             <Icon name="arrow-right" size={32} color="#0f0" />
             <IconButton name="arrow-left" />
           </Flex>
