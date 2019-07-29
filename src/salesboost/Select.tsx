@@ -82,16 +82,13 @@ const DropdownItem = styled(Flex)`
   }
 `;
 
-interface Props {
+export interface SelectProps extends SpaceProps, WidthProps, HeightProps {
   children?: any;
   disabled?: boolean;
   initialSelection?: number;
   placeholder?: string;
   onValueChange?: (value: string, index: number) => void;
 }
-
-type SelectProps = Props & SpaceProps & WidthProps & HeightProps;
-
 
 interface State {
   index: number;
@@ -100,12 +97,21 @@ interface State {
 }
 
 export class Select extends React.Component<SelectProps, State> {
+  containerRef: React.RefObject<HTMLDivElement> = React.createRef();
 
   state = {
     index: this.props.initialSelection || -1,
     value: this.props.initialSelection > -1 ? this.getValueFromOptions(this.props.children, this.props.initialSelection) : "",
     isOpened: false,
   };
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleOutsideClick);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleOutsideClick);
+  }
 
   getValueFromOptions (options: any, index: number) {
     return options instanceof Array ? options[index].props.children : options.props.children;
@@ -115,7 +121,7 @@ export class Select extends React.Component<SelectProps, State> {
     const { children, disabled, onValueChange, placeholder, height, ...styles } = this.props;
     const { isOpened, value } = this.state;
     return (
-      <SelectWrapper {...styles}>
+      <SelectWrapper ref={this.containerRef} {...styles}>
         <Selected height={height} isOpened={isOpened} disabled={disabled} onClick={this.toggleDropdown}>
           <Text fontSize={["16px", "18px"]} color="rgba(22,35,72,0.9)">{value || placeholder}</Text>
           <Icon name={isOpened ? "arrow-up" : "arrow-down"} color="rgba(22,27,72,0.6)" size={16}/>
@@ -156,12 +162,18 @@ export class Select extends React.Component<SelectProps, State> {
     const { children, onValueChange } = this.props;
 
     this.setState({
-      index: index,
+      index,
       value: this.getValueFromOptions(children, index),
       isOpened: false,
     }, () => {
       if (onValueChange) onValueChange(this.getValueFromOptions(children, index), index);
     });
+  }
+
+  handleOutsideClick = (e: MouseEvent) => {
+    if (this.containerRef.current && !this.containerRef.current.contains(e.target as Node) && this.state.isOpened) {
+      this.setState({ isOpened: false });
+    }
   }
 
 }
