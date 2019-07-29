@@ -5,6 +5,7 @@ import {
   Flex,
   Icon,
   IconButton,
+  Spinner,
   Split,
   Text,
   theme,
@@ -64,7 +65,13 @@ class Index extends React.Component<any, any> {
           <Flex flexDirection="column">
             <Icon name="image" size={24} />
             <Icon name="arrow-right" size={32} color="#0f0" />
+            <Icon name="step" />
             <IconButton name="arrow-left" />
+          </Flex>
+          <Typo mt={6} name="title_1">Salesboost Kit</Typo>
+          <Flex flexDirection="column">
+            <Typo mt={2} name="body_2">Spinner</Typo>
+            <Spinner bg="#f00" />
           </Flex>
           <Typo mt={6} name="title_1">Custom</Typo>
           <Flex flexDirection="column">
