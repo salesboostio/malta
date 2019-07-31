@@ -54,7 +54,7 @@ const Wrapper = styled(Flex)<WrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: ${({ progress, disabled }) => progress ? "progress" : disabled ? "not-allowed" : "cursor"};
+  cursor: ${({ progress, disabled }) => progress ? "progress" : disabled ? "not-allowed" : "pointer"};
   transition: all 0.15s ease-out;
   ${(props) => props.line ? LineStyle : SolidStyle}
 `;
