@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
 import { color, ColorProps, space, SpaceProps } from "styled-system";
+import { theme } from "./theme";
 
 const ballbeat = keyframes`
   0% {
@@ -59,5 +60,5 @@ Spinner.defaultProps = {
   show: true,
   duration: 1.0,
   scale: 1.0,
-  bg: "rgba(22, 27, 72, 0.3)",
+  bg: theme.colors.navy._40,
 };
