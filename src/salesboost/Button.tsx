@@ -10,34 +10,37 @@ import {
 } from "styled-system";
 import { Flex, Text } from "../core";
 import { Spinner } from "./Spinner";
+import { theme } from "./theme";
 
 const SolidStyle = css<{ bg?: string; hoverBg?: string; disabledBg?: string; disabled?: boolean; }>`
   :hover {
-    ${({ disabled, hoverBg }) => !disabled ? `background-color: ${hoverBg || "rgba(69, 78, 223, 0.7)"};` : ""}
+    ${({ disabled, hoverBg }) => !disabled ? `background-color: ${hoverBg || "rgba(57, 67, 226, 0.8)"};` : ""}
   }
   background-color: ${({ bg, disabled, disabledBg }) => `
     ${disabled
-      ? disabledBg || "rgba(22, 27, 72, 0.3)"
-      : bg || "rgba(69, 78, 223, 0.9)"}
+      ? disabledBg || theme.colors.navy._20
+      : bg || theme.colors.blue._100}
   `};
 `;
 
 const LineStyle = css<{ bg?: string; hoverBg?: string; disabled?: boolean; disabledBg?: string; }>`
-  box-shadow: 0 2px 6px 2px rgba(22, 27, 72, 0.04);
-  border: 1px solid rgba(22, 27, 72, 0.2);
+  border: 1px solid ${theme.colors.navy._100};
   :hover {
     ${({ hoverBg }) => hoverBg ? `background-color: ${hoverBg};` : ""}
-    box-shadow: 0 2px 6px 2px rgba(22, 27, 72, 0.08);
-    border: 1px solid rgba(22, 27, 72, 0.4);
+    border: 1px solid #1620bd;
+    ${({ disabled }) => !disabled ? `
+      > p {
+        color: #1620bd;
+      }
+    ` : ""}
   }
   background-color: ${({ bg, disabled, disabledBg }) => `
     ${disabled
-      ? disabledBg || "rgba(22, 27, 72, 0.1)"
+      ? disabledBg || theme.colors.navy._5
       : bg || "#fff"}
   `};
   ${({ disabled }) => disabled ? `
-    box-shadow: none !important;
-    border: none !important;
+    border: 1px solid ${theme.colors.navy._20} !important;
   ` : ""}
 `;
 
@@ -57,6 +60,9 @@ const Wrapper = styled(Flex)<WrapperProps>`
   cursor: ${({ progress, disabled }) => progress ? "progress" : disabled ? "not-allowed" : "pointer"};
   transition: all 0.15s ease-out;
   ${(props) => props.line ? LineStyle : SolidStyle}
+  > p {
+    color: ${({ disabled, line }) => disabled ? theme.colors.navy._20 : line ? theme.colors.navy._100 : "#fff"};
+  }
 `;
 
 
@@ -82,18 +88,17 @@ export const Button: React.FC<ButtonProps> = (props) => {
       disabled={disabled}
       onClick={disabled || loading ? null : onClick} {...styles}>
       {loading
-        ? <Spinner />
-        : label ? <Text fontSize={fontSize} fontWeight={fontWeight} color={color ? color : line ? "rgba(22, 27, 72, 0.9)" : "#fff"}>{label}</Text>
+        ? <Spinner bg={line ? theme.colors.navy._40 : theme.colors.white._90} />
+        : label ? <Text fontSize={fontSize} fontWeight={fontWeight} color={color}>{label}</Text>
           : children}
     </Wrapper>
   );
 };
 
 Button.defaultProps = {
-  height: "60px",
-  px: "32px",
-  fontSize: "18px",
-  fontWeight: "normal",
-  borderRadius: "30px",
-  disabledBg: "rgba(22, 27, 72, 0.3)",
+  height: "52px",
+  px: "24px",
+  fontSize: "16px",
+  fontWeight: 500,
+  borderRadius: "2px",
 };
