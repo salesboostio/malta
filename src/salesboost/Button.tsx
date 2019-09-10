@@ -51,8 +51,6 @@ interface WrapperProps {
 }
 
 const Wrapper = styled(Flex)<WrapperProps>`
-  box-sizing: border-box;
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: ${({ progress, disabled }) => progress ? "progress" : disabled ? "not-allowed" : "pointer"};
