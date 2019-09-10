@@ -1,14 +1,12 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
+import { FontSizeProps, FontWeightProps } from "styled-system";
 import {
-  BorderRadiusProps,
-  FontSizeProps,
-  FontWeightProps,
-  HeightProps,
-  SpaceProps,
-  WidthProps,
-} from "styled-system";
-import { Flex, Text } from "../core";
+  BlockProps,
+  Flex,
+  FlexProps,
+  Text,
+} from "../core";
 import { Spinner } from "./Spinner";
 import { theme } from "./theme";
 
@@ -66,7 +64,7 @@ const Wrapper = styled(Flex)<WrapperProps>`
 `;
 
 
-export interface ButtonProps extends SpaceProps, HeightProps, BorderRadiusProps, FontSizeProps, FontWeightProps, WidthProps {
+interface ButtonProps {
   label?: string;
   loading?: boolean;
   line?: boolean;
@@ -79,7 +77,9 @@ export interface ButtonProps extends SpaceProps, HeightProps, BorderRadiusProps,
   style?: any;
 }
 
-export const Button: React.FC<ButtonProps> = (props) => {
+export type Props = ButtonProps & BlockProps & FlexProps & FontSizeProps & FontWeightProps;
+
+export const Button: React.FC<Props> = (props) => {
   const { children, color, fontSize, fontWeight, loading, label, line, onClick, disabled, ...styles } = props;
   return (
     <Wrapper
