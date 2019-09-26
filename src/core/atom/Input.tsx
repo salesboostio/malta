@@ -35,9 +35,11 @@ import {
   HoverProps,
   ofReducer,
   OfReducerProps,
+  parseNumberToUnit,
   transition,
   TransitionProps,
 } from "../../utils";
+import { theme } from "../../salesboost";
 
 export type InputProps = SpaceProps & WidthProps & HeightProps & ColorProps
   & MaxWidthProps & MaxHeightProps & MinWidthProps & MinHeightProps
@@ -70,6 +72,6 @@ export const Input = styled.input<InputProps>`
 Input.defaultProps = {
   p: 0,
   m: 0,
-  fontSize: "16px",
+  fontSize: parseNumberToUnit(theme.fontsizes.p, "px"),
   border: "none",
 };

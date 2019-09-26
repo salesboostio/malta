@@ -11,6 +11,7 @@ import {
   WidthProps,
 } from "styled-system";
 import { Icon, IconProps } from "../core";
+import { theme } from "./theme";
 
 interface WrapperProps {
   disabled?: boolean;
@@ -54,5 +55,5 @@ IconButton.defaultProps = {
   width: "40px",
   height: "40px",
   disabled: false,
-  color: "rgba(22,27,72,0.8)",
+  color: theme.colors.shadow._80,
 };

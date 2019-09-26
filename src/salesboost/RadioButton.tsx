@@ -10,6 +10,8 @@ import {
   space,
   SpaceProps,
 } from "styled-system";
+import { theme } from "./theme";
+import { setCssDeclaration } from "../utils";
 
 const Wrapper = styled<any>(Flex)`
   ${display}
@@ -34,9 +36,9 @@ const RadioButtonWrapper = styled.div<any>`
   background: ${(props) => {
     if (props.disabled) {
       if (props.checked) {
-        return "rgba(22, 27, 72, 0.6)";
+        return theme.colors.shadow._60;
       } else {
-        return "rgba(22, 27, 72, 0.2)";
+        return theme.colors.shadow._20;
       }
     } else {
       if (props.checked) {
@@ -47,7 +49,7 @@ const RadioButtonWrapper = styled.div<any>`
     }
   }};
   :hover {
-    ${({ disabled }) => !disabled ? "border-color: rgba(22, 27, 72, 0.8);" : ""}
+    ${({ disabled }) => !disabled ? setCssDeclaration("border-color", theme.colors.shadow._80) : ""}
   }
 `;
 

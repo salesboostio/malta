@@ -11,6 +11,7 @@ import {
   WidthProps,
 } from "styled-system";
 import { Block, BlockProps } from "../core/atom/Block";
+import { theme } from "./theme";
 
 interface Props {
   selected?: boolean;
@@ -26,11 +27,11 @@ export const Card = styled(Block)<CardProps>`
   ${space}
   ${({ cursor }) => cursor ? `cursor: ${cursor};` : ""}
   border-radius: 2px;
-  border: 1px solid ${(props) => props.disabled ? "rgba(22, 27, 72, 0.1)" : props.selected ? "#23C1A6" : "rgba(22, 27, 72, 0.2)"};
-  background-color: ${(props) => props.disabled ? "rgba(22, 27, 72, 0.1)" : props.selected ? "rgba(35, 193, 166, 0.1)" : "#fff"};
-  ${({ disabled }) => disabled ? "" : "box-shadow: 0 2px 4px 0 rgba(22, 27, 72, 0.1);"}
+  border: 1px solid ${(props) => props.disabled ? theme.colors.shadow._10 : props.selected ? "#23C1A6" : theme.colors.shadow._20};
+  background-color: ${(props) => props.disabled ? theme.colors.shadow._10 : props.selected ? theme.colors.mint._10 : "#fff"};
+  ${({ disabled }) => disabled ? "" : `box-shadow: 0 2px 4px 0 ${theme.colors.shadow._10};`}
   :hover {
-    border: ${({ disabled }) => disabled ? "1px solid rgba(22, 27, 72, 0.1)" : "1px solid rgba(35, 193, 166, 0.6)"};
-    ${({ disabled }) => disabled ? "" : "box-shadow: 0 4px 8px 0 rgba(22, 27, 72, 0.1);"}
+    border: ${({ disabled }) => disabled ? `1px solid ${theme.colors.shadow._10}` : `1px solid ${theme.colors.mint._60}`};
+    ${({ disabled }) => disabled ? "" : `box-shadow: 0 4px 8px 0 ${theme.colors.shadow._10};`}
   }
 `;

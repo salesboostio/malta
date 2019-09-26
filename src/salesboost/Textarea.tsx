@@ -8,16 +8,18 @@ import {
 import {
   Textarea as InnerTextarea,
 } from "../core/atom/Textarea";
+import { theme } from "./theme";
+import { parseNumberToUnit, setCssDeclaration  } from "../utils";
 
 const TextareaWrapper = styled(InnerTextarea)`
   box-sizing: border-box;
   border: 1px solid rgba(22, 27, 72, 0.2);
-  background-color: ${({ disabled }) => disabled ? "rgba(22, 27, 72, 0.05)" : "#fff"};
+  background-color: ${({ disabled }) => disabled ? theme.colors.shadow._5 : "#fff"};
   box-shadow: 0px 2px 6px 2px rgba(22, 27, 72, 0.08);
-  color: ${({ disabled }) => disabled ? "rgba(22, 27, 72, 0.4)" : "rgba(22, 27, 72, 0.8)"};
-  font-size: 16px;
-  font-family: Noto Sans KR, sans-serif;;
-  font-weight: 300;
+  color: ${({ disabled }) => disabled ? theme.colors.shadow._40 : theme.colors.shadow._80};
+  ${setCssDeclaration("font-size", parseNumberToUnit(theme.fontsizes.p, "px"))}
+  font-family: Noto Sans KR, sans-serif;
+  ${setCssDeclaration("font-weight", theme.fontweights.demilight)}
   line-height: 24px;
   padding: 16px;
   outline: none;

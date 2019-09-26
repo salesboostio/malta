@@ -14,6 +14,8 @@ import {
   TextAlignProps,
 } from "styled-system";
 import { Block, BlockProps } from "./Block";
+import { theme } from "../../salesboost";
+import { parseNumberToUnit } from "../../utils";
 
 interface Props {
   medium?: boolean;
@@ -67,8 +69,8 @@ export const Text = styled(Block.withComponent("p"))<InnerProps>`
 `;
 
 Text.defaultProps = {
-  color: "rgba(22, 27, 72, 0.8)",
-  fontSize: "16px",
+  color: theme.colors.shadow._80,
+  fontSize: parseNumberToUnit(theme.fontsizes.p, "px"),
   lineHeight: "normal",
   overflow: "hidden",
   overflowWrap: "break-word",

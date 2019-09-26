@@ -14,6 +14,7 @@ import {
   width,
   WidthProps,
 } from "styled-system";
+import { theme } from "../../salesboost";
 
 const StyledSplit = styled.div<{ bg?: string; } & WidthProps & HeightProps & SpaceProps & AlignSelfProps & JustifySelfProps>`
   ${width}
@@ -43,5 +44,5 @@ Split.defaultProps = {
   vertical: false,
   length: "100%",
   alignSelf: "center",
-  bg: "rgba(22,27,72,0.2)",
+  bg: theme.colors.shadow._20,
 };

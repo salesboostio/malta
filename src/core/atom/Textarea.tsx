@@ -31,6 +31,8 @@ import {
   width,
   WidthProps,
 } from "styled-system";
+import { theme } from "../../salesboost";
+import { parseNumberToUnit } from "../../utils";
 
 export type TextAreaProps = ColorProps & FlexProps & HeightProps & WidthProps & SpaceProps & BoxShadowProps
   & BorderProps & BorderRadiusProps & FontFamilyProps & FontSizeProps & FontWeightProps
@@ -57,6 +59,6 @@ export const Textarea = styled.textarea<TextAreaProps>`
 Textarea.defaultProps = {
   p: 0,
   m: 0,
-  fontSize: "16px",
+  fontSize: parseNumberToUnit(theme.fontsizes.p, "px"),
   border: "none",
 };

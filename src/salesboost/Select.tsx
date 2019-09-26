@@ -11,6 +11,8 @@ import {
   SpaceProps,
   WidthProps,
 } from "styled-system";
+import { theme } from "./theme";
+import { setCssDeclaration } from "../utils";
 
 const SelectWrapper = styled(Block)`
   width: ${({ width }) => width || "327px"};
@@ -31,12 +33,12 @@ const Selected = styled(Flex)<SelectedProps>`
   align-items: center;
   border-radius: 2px;
   border: solid 1px;
-  border-color: ${({ isOpened }) => isOpened ? "#454edf" : "rgba(22, 27, 72, 0.2)"};
-  background-color: ${({ disabled }) => disabled ? "rgba(22, 27, 72, 0.05)" : "#fff"};
+  border-color: ${({ isOpened }) => isOpened ? "#454edf" : theme.colors.shadow._20};
+  background-color: ${({ disabled }) => disabled ? theme.colors.shadow._5 : "#fff"};
   box-shadow: 0 2px 6px 2px rgba(22, 27, 72, 0.03);
   cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer"};
   :hover {
-    ${props => !props.isOpened ? "border-color: rgba(22, 27, 72, 0.5);" : ""}
+    ${props => !props.isOpened ? setCssDeclaration("border-color", theme.colors.shadow._5) : ""}
   }
   ::placeholder {
     color: rgba(22, 27, 72, 0.4);
@@ -64,7 +66,7 @@ const DropdownWrapper = styled(Flex)`
     border-radius: 10px;
     border-top-width: 10px;
     border-bottom-width: 10px;
-    background-color: rgba(22,27,72,0.2);
+    ${setCssDeclaration('background-color', theme.colors.shadow._20)}
     background-clip: padding-box;
   }
 `;
@@ -78,7 +80,7 @@ const DropdownItem = styled(Flex)`
   cursor: pointer;
   user-select: none;
   :hover {
-    background-color: rgba(22,27,72, 0.05);
+    ${setCssDeclaration('background-color', theme.colors.shadow._5)}
   }
 `;
 
@@ -124,7 +126,7 @@ export class Select extends React.Component<SelectProps, State> {
       <SelectWrapper ref={this.containerRef} {...styles}>
         <Selected height={height} isOpened={isOpened} disabled={disabled} onClick={this.toggleDropdown}>
           <Text fontSize={["16px", "18px"]} color="rgba(22,35,72,0.9)">{value || placeholder}</Text>
-          <Icon name={isOpened ? "arrow-up" : "arrow-down"} color="rgba(22,27,72,0.6)" size={16}/>
+          <Icon name={isOpened ? "arrow-up" : "arrow-down"} color={theme.colors.shadow._60} size={theme.fontsizes.btn}/>
         </Selected>
         {this.renderDropdown()}
       </SelectWrapper>

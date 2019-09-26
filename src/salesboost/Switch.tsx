@@ -8,15 +8,16 @@ import {
 } from "styled-system";
 import { Spinner } from "./Spinner";
 import { Flex } from "../core";
+import { theme } from "./theme";
 
 const Wrapper = styled.div<any>`
   display: flex;
   box-sizing: border-box;
   position: relative;
-  background: ${props => props.checked ? "#FFFFFF" : "rgba(27, 28, 37, 0.1)"};
+  background: ${props => props.checked ? "#FFFFFF" : theme.colors.navy._10};
   height: 24px;
   width: 44px;
-  border: ${props => props.checked ? "1px solid rgba(27, 28, 37, 0.2)" : null};
+  border: ${props => props.checked ? `1px solid ${theme.colors.navy._20}` : null};
   border-radius: 12px;
   align-items: center;
   padding-left: 2px;
@@ -24,8 +25,8 @@ const Wrapper = styled.div<any>`
   cursor: pointer;
   transition: background 0.1s ease-out;
   :hover {
-    background: ${props => props.checked ? "#FFFFFF" : "rgba(27, 28, 37, 0.1)"};
-    border: ${props => props.checked ? "1px solid rgb(57, 67, 226)" : "1px solid rgba(27, 28, 37, 0.6)"};
+    background: ${props => props.checked ? "#FFFFFF" : theme.colors.navy._10};
+    border: ${props => props.checked ? "1px solid rgb(57, 67, 226)" : `1px solid ${theme.colors.navy._60}`};
   }
   ${space}
 `;

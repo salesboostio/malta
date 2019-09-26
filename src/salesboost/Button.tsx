@@ -9,6 +9,7 @@ import {
 } from "../core";
 import { Spinner } from "./Spinner";
 import { theme } from "./theme";
+import { parseNumberToUnit } from "../utils";
 
 const SolidStyle = css<{ bg?: string; hoverBg?: string; disabledBg?: string; disabled?: boolean; }>`
   :hover {
@@ -96,7 +97,7 @@ export const Button: React.FC<Props> = (props) => {
 Button.defaultProps = {
   height: "52px",
   px: "24px",
-  fontSize: "16px",
-  fontWeight: 500,
+  fontSize: parseNumberToUnit(theme.fontsizes.p, "px"),
+  fontWeight: theme.fontweights.medium,
   borderRadius: "2px",
 };

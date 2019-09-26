@@ -7,9 +7,10 @@ import {
 import styled from "styled-components";
 import { SpaceProps, width, WidthProps } from "styled-system";
 import { theme } from "./theme";
+import { parseNumberToUnit, setCssDeclaration } from "../utils";
 
 const InputWrapper = styled<any>(Block)`
-  width: 327ox;
+  width: 327px;
   ${width}
 `;
 
@@ -27,7 +28,7 @@ const InnerInput = styled.input<InnerInputProps>`
   font-size: 16px;
   font-family: ${theme.fontfamilies.sans};
   font-weight: ${theme.fontweights.regular};
-  background: ${({ disabled }) => disabled ? "rgba(22, 27, 72, 0.05)" : "#fff"};
+  background: ${({ disabled }) => disabled ? theme.colors.shadow._5 : "#fff"};
   border-radius: 2px;
   box-shadow: 0 2px 6px 2px rgba(22, 27, 72, 0.03);
   border: ${({ valid }) => `${valid ? "rgba(22, 27, 72, 0.2)" : "#f51a1a"} solid 1px`};
@@ -53,7 +54,7 @@ const Title = styled<any>(Text)`
   margin-bottom: 8px;
   opacity: 0.8;
   color: #162348;
-  font-size: 14px;
+  ${setCssDeclaration("font-size", parseNumberToUnit(14, "px"))}
   line-height: 20px;
 `;
 
@@ -61,14 +62,14 @@ const Description = styled<any>(Text)`
   margin-top: 8px;
   opacity: 0.8;
   color: #161b48;
-  font-size: 14px;
+  ${setCssDeclaration("font-size", parseNumberToUnit(14, "px"))}
 `;
 
 const Error = styled<any>(Text)`
   margin-top: 8px;
   color: #f51a1a;
   opacity: 0.9;
-  font-size: 16px;
+  ${setCssDeclaration("font-size", parseNumberToUnit(16, "px"))}
 `;
 
 const HelpMark = styled(Flex)`
@@ -90,9 +91,18 @@ const Help = (props: HelpProps) => {
   return (
     <Flex width="100%" flexDirection="row" alignItems="center" mb={2}>
       <HelpMark>
-        <Text color="#fff" fontSize="14px">HELP</Text>
+        <Text
+          color="#fff"
+          fontSize={parseNumberToUnit(theme.fontsizes.sub, "px")}>
+          HELP
+        </Text>
       </HelpMark>
-      <Text color="#161fba" fontSize="14px" lineHeight="24px">{props.children}</Text>
+      <Text
+        color="#161fba"
+        fontSize={parseNumberToUnit(theme.fontsizes.sub, "px")}
+        lineHeight="24px">
+        {props.children}
+      </Text>
     </Flex>
   );
 };
