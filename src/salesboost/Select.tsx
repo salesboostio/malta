@@ -66,7 +66,7 @@ const DropdownWrapper = styled(Flex)`
     border-radius: 10px;
     border-top-width: 10px;
     border-bottom-width: 10px;
-    ${setCssDeclaration('background-color', theme.colors.shadow._20)}
+    ${setCssDeclaration("background-color", theme.colors.shadow._20)}
     background-clip: padding-box;
   }
 `;
@@ -80,7 +80,7 @@ const DropdownItem = styled(Flex)`
   cursor: pointer;
   user-select: none;
   :hover {
-    ${setCssDeclaration('background-color', theme.colors.shadow._5)}
+    ${setCssDeclaration("background-color", theme.colors.shadow._5)}
   }
 `;
 
