@@ -13,6 +13,7 @@ import {
 } from "styled-system";
 import { theme } from "./theme";
 import { setCssDeclaration } from "../utils";
+import { IconType } from "../core/atom/Icon";
 
 const SelectWrapper = styled(Block)`
   width: ${({ width }) => width || "327px"};
@@ -126,7 +127,7 @@ export class Select extends React.Component<SelectProps, State> {
       <SelectWrapper ref={this.containerRef} {...styles}>
         <Selected height={height} isOpened={isOpened} disabled={disabled} onClick={this.toggleDropdown}>
           <Text fontSize={["16px", "18px"]} color="rgba(22,35,72,0.9)">{value || placeholder}</Text>
-          <Icon name={isOpened ? "arrow-up" : "arrow-down"} color={theme.colors.shadow._60} size={theme.fontsizes.btn}/>
+          <Icon name={isOpened ? IconType.ARROW_UP : IconType.ARROW_DOWN} color={theme.colors.shadow._60} size={theme.fontsizes.btn}/>
         </Selected>
         {this.renderDropdown()}
       </SelectWrapper>

@@ -6,6 +6,7 @@ import { Block, Flex, Icon, Text } from "../core";
 import {
   IconButton,
 } from "./IconButton";
+import { IconType } from "../core/atom/Icon";
 let increment = 0;
 let NotificationRootInstance: any = null;
 
@@ -108,7 +109,7 @@ class NotificationContent extends React.Component<{
           </Block>
           <IconButton
             onClick={this.props.close}
-            name="close"
+            name={IconType.CLOSE}
             color="rgba(22, 27, 72, 0.8)"
             size={16}
             style={{ position: "absolute", top: "-8px", right: "-12px" }} />

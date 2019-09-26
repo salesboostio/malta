@@ -6,6 +6,7 @@ import {
   SpaceProps,
 } from "styled-system";
 import { theme } from "./theme";
+import { IconType } from "../core/atom/Icon";
 
 interface Props {
   checked?: boolean;
@@ -51,7 +52,7 @@ export const Checkbox: CheckboxProps = (props) => {
       disabled={disabled}
       onClick={disabled ? () => { } : onClick}
       {...rest}>
-      {checked ? <Icon name="check" color="#FFF" size={theme.fontsizes.btn} /> : null}
+      {checked ? <Icon name={IconType.CHECK} color="#FFF" size={theme.fontsizes.btn} /> : null}
     </Wrapper >
   );
 };

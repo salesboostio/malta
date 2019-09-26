@@ -9,6 +9,7 @@ import {
   Text,
   theme,
 } from "../index";
+import { IconType } from "../core/atom/Icon";
 
 const colors = {
   error: "#F34646",
@@ -102,12 +103,13 @@ export class Message extends React.Component<MessageProps, State> {
   getIconName(type: string) {
     switch (type) {
       case "info":
+        return IconType.CIRCLE_INFO;
       case "error":
-        return "circle-info";
+        return IconType.CIRCLE_ERROR;
       case "warning":
-        return "circle-warning";
+        return IconType.CIRCLE_WARNING;
       case "success":
-        return "circle-success";
+        return IconType.CIRCLE_SUCCESS;
     }
   }
 
