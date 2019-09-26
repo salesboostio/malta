@@ -42,3 +42,12 @@ const get = (from: object, selector: string) =>
 
 export const getValueFromTheme = (theme: object, value: string) =>
   get(theme, value) ? get(theme, value) : value;
+
+
+type UnitType = "px" | "em";
+
+export const parseNumberToUnit = (value: Number, type: UnitType) => {
+  return `${value}${type}`;
+};
+
+export const setCssDeclaration = (propertyName: String, value: any) => `${propertyName}: ${value};`;
