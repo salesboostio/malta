@@ -42,3 +42,8 @@ const get = (from: object, selector: string) =>
 
 export const getValueFromTheme = (theme: object, value: string) =>
   get(theme, value) ? get(theme, value) : value;
+
+
+  export const setCssDeclaration = (propertyName: String, value: any) => `${propertyName}: ${value};`;
+
+  export const isImageFile = (filename: string) => (/\.(gif|jpg|jpeg|tiff|png)$/i).test(filename);
