@@ -8,10 +8,21 @@ import {
   Select,
   Spinner,
   Split,
+  Switch,
   Text,
   theme,
   Typo,
 } from "@salesboost/malta";
+
+const SwitchDocs = () => {
+
+  const [checked, setChecked] = React.useState(false);
+
+  return <>
+    <Typo mt={6} name="title_1">Switch</Typo>
+    <Switch checked={checked} onClick={() => { setChecked(!checked); }} />
+  </>;
+};
 
 class Index extends React.Component<any, any> {
 
@@ -89,6 +100,7 @@ class Index extends React.Component<any, any> {
             <Text of={{ color: "#ff0" }}>Of Text</Text>
             <Typo name="body_1" hover={{ color: "#f00", cursor: "pointer", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>Custom Typo Text</Typo>
           </Flex>
+          <SwitchDocs />
         </div>
       </App>
     );
