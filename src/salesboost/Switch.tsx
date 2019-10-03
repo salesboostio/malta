@@ -37,7 +37,7 @@ const Circle = styled.div<any>`
   height: 20px;
   border-radius: 50%;
   background: ${props => props.checked ? "rgb(57, 67, 226)" : "#FFFFFF"};
-  transform: translateX(${ props => props.checked ? "20" : "0"}px);
+  transform: translateX(${ props => props.checked ? "19" : "0"}px);
   transition: transform 0.1s ease-out;
 `;
 
