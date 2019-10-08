@@ -1,0 +1,13 @@
+{
+  "name": "misc",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "parse-typo": "ts-node src/typography_parser.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^12.7.11",
+    "ts-node": "^8.4.1"
+  }
+}
