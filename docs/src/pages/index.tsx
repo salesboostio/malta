@@ -21,6 +21,7 @@ const SwitchDocs = () => {
   return <>
     <Typo mt={6} name="title_1">Switch</Typo>
     <Switch checked={checked} onClick={() => { setChecked(!checked); }} />
+    <Switch checked={checked} disabled onClick={() => { setChecked(!checked); }} />
   </>;
 };
 
