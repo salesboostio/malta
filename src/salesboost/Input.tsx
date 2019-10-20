@@ -100,6 +100,7 @@ const Help = (props: HelpProps) => {
 interface Props {
   type: string;
   value: string;
+  innerInputProps: any;
   placeholder?: string;
   disabled?: boolean;
   helpText?: string;
@@ -120,7 +121,10 @@ export class Input extends React.Component<InputProps> {
   };
 
   render() {
-    const { title, description, placeholder, helpText, errorText, disabled, value, type, onTextChange, onEnterPress, ...styles } = this.props;
+    const {
+      title, description, innerInputProps = {},
+      placeholder, helpText, errorText, disabled, value, type,
+      onTextChange, onEnterPress, ...styles } = this.props;
     return (
       <InputWrapper {...styles}>
         {title ? <Title>{title}</Title> : null}
@@ -132,7 +136,8 @@ export class Input extends React.Component<InputProps> {
           valid={!errorText}
           disabled={disabled}
           placeholder={placeholder}
-          value={value}/>
+          value={value}
+          {...innerInputProps} />
         {this.renderBottomText()}
       </InputWrapper>
     );
