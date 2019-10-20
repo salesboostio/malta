@@ -37,7 +37,7 @@ const Circle = styled.div<any>`
   height: 20px;
   border-radius: 50%;
   background: ${props => props.disabled ? "rgba(255, 255, 255, 0.5)" : props.checked ? "rgb(57, 67, 226)" : "#FFFFFF"};
-  transform: translateX(${ props => props.checked ? "19" : "0"}px);
+  transform: translateX(${ props => props.checked ? "13" : "0"}px);
   transition: transform 0.1s ease-out;
 `;
 
@@ -59,7 +59,7 @@ export const Switch: SwitchProps = (props) => {
   return (
     <Wrapper
       checked={disabled ? false : checked}
-      onClick={disabled ? () => {} : onClick}
+      onClick={onClick}
       {...rest}>
       {loading ?
         <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
