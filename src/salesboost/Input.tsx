@@ -100,7 +100,7 @@ const Help = (props: HelpProps) => {
 interface Props {
   type: string;
   value: string;
-  innerInputProps: any;
+  innerInputProps?: any;
   placeholder?: string;
   disabled?: boolean;
   helpText?: string;
