@@ -88,6 +88,7 @@ export interface SelectProps extends SpaceProps, WidthProps, HeightProps {
   initialSelection?: number;
   placeholder?: string;
   onValueChange?: (value: string, index: number) => void;
+  style?: any;
 }
 
 interface State {
