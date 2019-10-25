@@ -29,6 +29,7 @@ interface Props {
   vertical?: boolean;
   length?: ResponsiveValue<TLengthStyledSystem>;
   bg?: string;
+  style?: any;
 }
 
 export type SplitProps = Props & AlignSelfProps & JustifySelfProps & SpaceProps;
