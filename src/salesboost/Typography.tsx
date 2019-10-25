@@ -32,7 +32,9 @@ type TypoName = LegacyTypoName | "title_403224_nv90_300" | "title_403224_nv90_50
   "body_141414_bl_300" | "body_141414_bl_500" |
   "body_141414_rd_300" | "body_141414_rd_500" |
   "caption_121212_nv80_300" | "caption_121212_nv80_500" |
-  "caption_121212_nv40_300" | "caption_121212_nv40_500";
+  "caption_121212_nv40_300" | "caption_121212_nv40_500" |
+  "body_181414_nv90_300" | "body_181414_nv90_500" |
+  "caption_141212_nv80_300" | "caption_141212_nv80_500";
 
 type TypoInfoType = {
   [key in TypoName]: {
@@ -336,6 +338,30 @@ const TypoInfo: TypoInfoType = {
     fontSize: "14px",
     fontWeight: 500,
     lineHeight: "20px",
+  },
+  body_181414_nv90_300: {
+    color: theme.colors.navy._90,
+    fontSize: ["14px", "14px", "18px"],
+    fontWeight: 300,
+    lineHeight: ["20px", "20px", "28px"],
+  },
+  body_181414_nv90_500: {
+    color: theme.colors.navy._90,
+    fontSize: ["14px", "14px", "18px"],
+    fontWeight: 500,
+    lineHeight: ["20px", "20px", "28px"],
+  },
+  caption_141212_nv80_300: {
+    color: theme.colors.navy._80,
+    fontSize: ["12px", "12px", "14px"],
+    fontWeight: 300,
+    lineHeight: ["18px", "18px", "20px"],
+  },
+  caption_141212_nv80_500: {
+    color: theme.colors.navy._80,
+    fontSize: ["12px", "12px", "14px"],
+    fontWeight: 500,
+    lineHeight: ["18px", "18px", "20px"],
   },
 };
 

@@ -24,8 +24,8 @@ const Wrapper = styled.div<any>`
   cursor: pointer;
   transition: background 0.1s ease-out;
   :hover {
-    background: ${props => props.checked ? "#FFFFFF" : "rgba(27, 28, 37, 0.1)"};
-    border: ${props => props.checked ? "1px solid rgb(57, 67, 226)" : "1px solid rgba(27, 28, 37, 0.6)"};
+    background: ${props => props.disabled ? "rgba(27, 28, 37, 0.1)" : props.checked ? "#FFFFFF" : "rgba(27, 28, 37, 0.1)"};
+    border: ${props => props.disabled ? null : props.checked ? "1px solid rgb(57, 67, 226)" : "1px solid rgba(27, 28, 37, 0.6)"};
   }
   ${space}
 `;
@@ -55,10 +55,10 @@ export type SwitchProps = React.FC<Props & SpaceProps>;
 export const Switch: SwitchProps = (props) => {
 
   const { checked, onClick, loading, disabled, ...rest } = props;
-
   return (
     <Wrapper
       checked={disabled ? false : checked}
+      disabled={disabled}
       onClick={onClick}
       {...rest}>
       {loading ?
