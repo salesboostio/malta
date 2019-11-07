@@ -1,16 +1,12 @@
 import * as React from "react";
 import {
   Block,
+  BlockProps,
   Flex,
   Icon,
   Text,
 } from "../core";
 import styled from "styled-components";
-import {
-  HeightProps,
-  SpaceProps,
-  WidthProps,
-} from "styled-system";
 
 const SelectWrapper = styled(Block)`
   width: ${({ width }) => width || "327px"};
@@ -49,7 +45,6 @@ const DropdownWrapper = styled(Flex)`
   left: 0;
   right: 0;
   margin-top: 4px;
-  max-height: 330px;
   flex-direction: column;
   overflow-y: overlay;
   background-color: #ffffff;
@@ -82,11 +77,12 @@ const DropdownItem = styled(Flex)`
   }
 `;
 
-export interface SelectProps extends SpaceProps, WidthProps, HeightProps {
+export interface SelectProps extends BlockProps {
   children?: any;
   disabled?: boolean;
   initialSelection?: number;
   placeholder?: string;
+  dropdownHeight?: string | string[] | number | number[];
   onValueChange?: (value: string, index: number) => void;
   style?: any;
 }
@@ -119,7 +115,7 @@ export class Select extends React.Component<SelectProps, State> {
   }
 
   render() {
-    const { children, disabled, onValueChange, placeholder, height, ...styles } = this.props;
+    const { children, disabled, onValueChange, placeholder, dropdownHeight, height, color, ...styles } = this.props;
     const { isOpened, value } = this.state;
     return (
       <SelectWrapper ref={this.containerRef} {...styles}>
@@ -133,12 +129,12 @@ export class Select extends React.Component<SelectProps, State> {
   }
 
   renderDropdown = () => {
-    const { children } = this.props;
+    const { children, dropdownHeight } = this.props;
     if (!children || !this.state.isOpened) {
       return null;
     }
     return (
-      <DropdownWrapper>
+      <DropdownWrapper maxHeight={dropdownHeight || "330px"}>
         {React.Children.map(children, (child, index) =>
           <DropdownItem key={`option-list-${index}`} onClick={() => this.handleOptionClick(index)}>
             <Text fontSize={["16px", "18px"]} color="rgba(22,35,72,0.9)">{child.props.children}</Text>
