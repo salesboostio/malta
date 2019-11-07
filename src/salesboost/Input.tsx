@@ -18,13 +18,12 @@ const InnerInput = styled.input<InnerInputProps>`
   height: 52px;
   box-sizing: border-box;
   padding: 0 16px;
-  color: #162348;
+  color: rgba(22, 27, 72, 0.9);
   font-size: 16px;
   font-family: ${theme.fontfamilies.sans};
-  font-weight: ${theme.fontweights.regular};
+  font-weight: 300;
   background: ${({ disabled }) => disabled ? "rgba(22, 27, 72, 0.05)" : "#fff"};
   border-radius: 2px;
-  box-shadow: 0 2px 6px 2px rgba(22, 27, 72, 0.03);
   border: ${({ valid }) => `${valid ? "rgba(22, 27, 72, 0.2)" : "#f51a1a"} solid 1px`};
   outline: none;
   -webkit-appearance: none;
@@ -32,7 +31,7 @@ const InnerInput = styled.input<InnerInputProps>`
     border: #454edf solid 1px;
   }
   ::placeholder {
-    opacity: 0.4;
+    color: rgba(22, 27, 72, 0.4);
   }
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {

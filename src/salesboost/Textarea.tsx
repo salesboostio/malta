@@ -13,8 +13,7 @@ const TextareaWrapper = styled(InnerTextarea)`
   box-sizing: border-box;
   border: 1px solid rgba(22, 27, 72, 0.2);
   background-color: ${({ disabled }) => disabled ? "rgba(22, 27, 72, 0.05)" : "#fff"};
-  box-shadow: 0px 2px 6px 2px rgba(22, 27, 72, 0.08);
-  color: ${({ disabled }) => disabled ? "rgba(22, 27, 72, 0.4)" : "rgba(22, 27, 72, 0.8)"};
+  color: rgba(22, 27, 72, 0.8);
   font-size: 16px;
   font-family: Noto Sans KR, sans-serif;;
   font-weight: 300;
@@ -26,7 +25,7 @@ const TextareaWrapper = styled(InnerTextarea)`
     border: 1px solid rgb(69, 78, 223);
   }
   ::placeholder {
-    opacity: 0.4;
+    color: rgba(22, 27, 72, 0.4);
   }
 `;
 
