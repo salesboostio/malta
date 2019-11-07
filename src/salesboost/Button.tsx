@@ -16,7 +16,7 @@ const SolidStyle = css<{ bg?: string; hoverBg?: string; disabledBg?: string; dis
   }
   background-color: ${({ bg, disabled, disabledBg }) => `
     ${disabled
-      ? disabledBg || theme.colors.navy._20
+      ? disabledBg || theme.colors.navy._10
       : bg || theme.colors.blue._100}
   `};
 `;
@@ -55,10 +55,7 @@ const Wrapper = styled(Flex)<WrapperProps>`
   justify-content: center;
   cursor: ${({ progress, disabled }) => progress ? "progress" : disabled ? "not-allowed" : "pointer"};
   transition: all 0.15s ease-out;
-  ${(props) => props.line ? LineStyle : SolidStyle}
-  > p {
-    color: ${({ disabled, line }) => disabled ? theme.colors.navy._20 : line ? theme.colors.navy._100 : "#fff"};
-  }
+  ${({ line }) => line ? LineStyle : SolidStyle}
 `;
 
 
@@ -87,7 +84,7 @@ export const Button: React.FC<Props> = (props) => {
       onClick={disabled || loading ? null : onClick} {...styles}>
       {loading
         ? <Spinner bg={line ? theme.colors.navy._40 : theme.colors.white._90} />
-        : label ? <Text fontSize={fontSize} fontWeight={fontWeight} color={color}>{label}</Text>
+        : label ? <Text fontSize={fontSize} fontWeight={fontWeight} color={color || disabled ? theme.colors.navy._20 : line ? theme.colors.navy._100 : "#fff"}>{label}</Text>
           : children}
     </Wrapper>
   );
