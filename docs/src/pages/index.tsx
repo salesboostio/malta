@@ -103,7 +103,9 @@ class Index extends React.Component<{}, State> {
               placeholder="Input anything"
               value={this.state.value}
               onTextChange={this.handleInputChange} />
-            <Input flex={1} />
+            <Input disabled placeholder="placeholder" />
+            <Textarea value={this.state.value} />
+            <Textarea disabled placeholder="Placeholder" />
           </Flex>
           <Flex flexDirection="column">
             <Typo mt={2} name="body_2">Spinner</Typo>
