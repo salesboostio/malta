@@ -1,17 +1,12 @@
 import * as React from "react";
 import {
   Block,
+  BlockProps,
   Flex,
   Text,
 } from "../core";
 import styled from "styled-components";
-import { SpaceProps, width, WidthProps } from "styled-system";
 import { theme } from "./theme";
-
-const InputWrapper = styled<any>(Block)`
-  width: 327ox;
-  ${width}
-`;
 
 interface InnerInputProps {
   disabled?: boolean;
@@ -49,7 +44,7 @@ const InnerInput = styled.input<InnerInputProps>`
   }
 `;
 
-const Title = styled<any>(Text)`
+const Title = styled(Text)`
   margin-bottom: 8px;
   opacity: 0.8;
   color: #162348;
@@ -57,14 +52,14 @@ const Title = styled<any>(Text)`
   line-height: 20px;
 `;
 
-const Description = styled<any>(Text)`
+const Description = styled(Text)`
   margin-top: 8px;
   opacity: 0.8;
   color: #161b48;
   font-size: 14px;
 `;
 
-const Error = styled<any>(Text)`
+const Error = styled(Text)`
   margin-top: 8px;
   color: #f51a1a;
   opacity: 0.9;
@@ -82,17 +77,13 @@ const HelpMark = styled(Flex)`
   margin-right: 8px;
 `;
 
-interface HelpProps {
-  children: string;
-}
-
-const Help = (props: HelpProps) => {
+const Help: React.FC = ({ children }) => {
   return (
     <Flex width="100%" flexDirection="row" alignItems="center" mb={2}>
       <HelpMark>
         <Text color="#fff" fontSize="14px">HELP</Text>
       </HelpMark>
-      <Text color="#161fba" fontSize="14px" lineHeight="24px">{props.children}</Text>
+      <Text color="#161fba" fontSize="14px" lineHeight="24px">{children}</Text>
     </Flex>
   );
 };
@@ -111,11 +102,12 @@ interface Props {
   onEnterPress?: () => void;
 }
 
-type InputProps = Props & SpaceProps & WidthProps;
+type InputProps = Props & BlockProps;
 
 export class Input extends React.Component<InputProps> {
 
   static defaultProps = {
+    width: "327px",
     type: "text",
     value: "",
   };
@@ -124,9 +116,9 @@ export class Input extends React.Component<InputProps> {
     const {
       title, description, innerInputProps = {},
       placeholder, helpText, errorText, disabled, value, type,
-      onTextChange, onEnterPress, ...styles } = this.props;
+      onTextChange, onEnterPress, color, ...styles } = this.props;
     return (
-      <InputWrapper {...styles}>
+      <Block {...styles}>
         {title ? <Title>{title}</Title> : null}
         {helpText ? <Help>{helpText}</Help> : null}
         <InnerInput
@@ -139,7 +131,7 @@ export class Input extends React.Component<InputProps> {
           value={value}
           {...innerInputProps} />
         {this.renderBottomText()}
-      </InputWrapper>
+      </Block>
     );
   }
 
