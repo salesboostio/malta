@@ -5,11 +5,13 @@ import {
   Flex,
   Icon,
   IconButton,
+  Input,
   Select,
   Spinner,
   Split,
   Switch,
   Text,
+  Textarea,
   theme,
   Typo,
 } from "@salesboost/malta";
@@ -25,7 +27,15 @@ const SwitchDocs = () => {
   </>;
 };
 
-class Index extends React.Component<any, any> {
+interface State {
+  value: string;
+}
+
+class Index extends React.Component<{}, State> {
+
+  state = {
+    value: "",
+  };
 
   render() {
     return (
@@ -70,6 +80,11 @@ class Index extends React.Component<any, any> {
               <Button loading label="Solid" />
               <Button ml={1} loading line label="Line" />
             </Flex>
+            <Typo mt={3} name="body_1">Custom</Typo>
+            <Flex mt={2} flexDirection="row">
+              <Button color="#000">Solid Custom</Button>
+              <Button line><Text color="#f00">Line Custom</Text></Button>
+            </Flex>
           </Flex>
           <Typo mt={5} name="title_1">Split</Typo>
           <Split vertical length="20px" bg="#f00" />
@@ -83,10 +98,18 @@ class Index extends React.Component<any, any> {
           </Flex>
           <Typo mt={6} name="title_1">Salesboost Kit</Typo>
           <Flex flexDirection="column">
+            <Typo mt={2} name="body_2">Input</Typo>
+            <Input
+              placeholder="Input anything"
+              value={this.state.value}
+              onTextChange={this.handleInputChange} />
+            <Input flex={1} />
+          </Flex>
+          <Flex flexDirection="column">
             <Typo mt={2} name="body_2">Spinner</Typo>
             <Spinner bg="#f00" />
             <Typo mt={2} name="body_2">Select</Typo>
-            <Select>
+            <Select dropdownHeight="210px">
               <option>option 1</option>
               <option>option 2</option>
               <option>option 3</option>
@@ -105,6 +128,13 @@ class Index extends React.Component<any, any> {
         </div>
       </App>
     );
+  }
+
+  handleInputChange = (value: string) => {
+    this.setState((state) => ({
+      ...state,
+      value,
+    }));
   }
 }
 
