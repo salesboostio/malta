@@ -11,20 +11,24 @@
     "test": "jest --coverage",
     "lint": "tslint -c tslint.json -p tsconfig.json"
   },
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.4.1",
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8",
+    "styled-components": ">=4.4.1",
     "styled-system": "3"
   },
   "devDependencies": {
     "@types/react": "^16.8.18",
-    "@types/react-dom": "^16.8.4",
-    "@types/styled-components": "^4.1.21",
+    "@types/react-dom": "^16.9.4",
+    "@types/styled-components": "^4.4.0",
     "@types/styled-system": "3",
-    "jest": "^24.8.0",
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.2"
+    "jest": "^24.9.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "styled-components": "^4.4.1",
+    "styled-system": "3",
+    "tslint": "^5.20.1",
+    "typescript": "3.6"
   },
   "files": [
     "dist"
