@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { space, SpaceProps, textColor, TextColorProps } from "styled-system";
 import { cursor, CursorProps, hover, HoverProps } from "../../utils";
 
-type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "circle-success" | "circle-error" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder" | "hamburger" | "wand" | "download" | "statistics" | "image" | "ratio" | "product" | "time";
+type IconName = "arrow-down" | "arrow-left" | "arrow-right" | "arrow-up" | "back" | "check" | "circle-info" | "circle-question" | "circle-warning" | "circle-success" | "circle-error" | "close" | "crown" | "setting" | "giventake" | "gridview" | "helpbadge" | "listview" | "next" | "search" | "selectall" | "step" | "upload" | "reload" | "add" | "delete" | "doublearrow-left" | "doublearrow-right" | "edit" | "function" | "home" | "ascending" | "descending" | "logout" | "personal" | "support" | "link" | "global" | "guide" | "folder" | "hamburger" | "wand" | "download" | "statistics" | "image" | "ratio" | "product" | "time" | "trash";
 
 export interface IconProps extends HoverProps, TextColorProps, CursorProps, SpaceProps {
   name: IconName;
@@ -354,6 +354,10 @@ const getIcons = (name: string) => {
       width: 24,
       height: 24,
       path: <path fill="currentColor" d="M12,5 C16.418278,5 20,8.581722 20,13 C20,17.418278 16.418278,21 12,21 C7.581722,21 4,17.418278 4,13 C4,8.581722 7.581722,5 12,5 Z M12,6 C8.13400675,6 5,9.13400675 5,13 C5,16.8659932 8.13400675,20 12,20 C15.8659932,20 19,16.8659932 19,13 C19,9.13400675 15.8659932,6 12,6 Z M12,7 C12.2761424,7 12.5,7.22385763 12.5,7.5 L12.5,12.5 L16.5,12.5 C16.7761424,12.5 17,12.7238576 17,13 C17,13.2761424 16.7761424,13.5 16.5,13.5 L12,13.5 C11.7238576,13.5 11.5,13.2761424 11.5,13 L11.5,7.5 C11.5,7.22385763 11.7238576,7 12,7 Z M10.5,4 C10.2238576,4 10,3.77614237 10,3.5 C10,3.22385763 10.2238576,3 10.5,3 L13.5,3 C13.7761424,3 14,3.22385763 14,3.5 C14,3.77614237 13.7761424,4 13.5,4 L12.5,4 C12.7761424,4 13,4.22385763 13,4.5 C13,4.77614237 12.7761424,5 12.5,5 L11.5,5 C11.2238576,5 11,4.77614237 11,4.5 C11,4.22385763 11.2238576,4 11.5,4 L10.5,4 Z"></path>,
+    }, trash: {
+      width: 24,
+      height: 24,
+      path: <path fill="currentColor" d="M11.8404417,2 C13.9951432,2 15.3816627,3.33333333 16,6 L16,6 L21,6 L21,7 L20,7 L18.140422,21 L5.88310791,21 L4,7 L3,7 L3,6 L8,6 C8.40559288,3.33333333 9.6857401,2 11.8404417,2 Z M19,7 L5,7 L6.64771942,20 L17.3728693,20 L19,7 Z M11,9 L11,18 L10,18 L10,9 L11,9 Z M14,9 L14,18 L13,18 L13,9 L14,9 Z M11.8803312,3 C10.2643051,3 9.30419466,4 9,6 L15,6 C14.536247,4 13.4963574,3 11.8803312,3 Z"></path>,
     },
   };
   return icons[name];
