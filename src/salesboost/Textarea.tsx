@@ -34,6 +34,8 @@ interface Props {
   value?: string;
   placeholder?: string;
   onTextChange?: (text: string) => void;
+  onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
 }
 
 export type TextareaProps = Props & SpaceProps & WidthProps & HeightProps;
@@ -41,13 +43,19 @@ export type TextareaProps = Props & SpaceProps & WidthProps & HeightProps;
 export class Textarea extends React.Component<TextareaProps> {
 
   render() {
-    const { disabled, value, placeholder, onTextChange, ...styles } = this.props;
+    const {
+      disabled, value,
+      placeholder, onTextChange,
+      onFocus, onBlur,
+      ...styles } = this.props;
     return (
       <TextareaWrapper
         width={["320px", "440px"]}
         value={value}
         disabled={disabled}
         placeholder={placeholder}
+        onFocus={onFocus}
+        onBlur={onBlur}
         onChange={this.handleTextChange}
         {...styles} />
     );

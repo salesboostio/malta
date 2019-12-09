@@ -99,6 +99,8 @@ interface Props {
   description?: string;
   onTextChange?: (text: string) => void;
   onEnterPress?: () => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 type InputProps = Props & BlockProps;
@@ -115,7 +117,8 @@ export class Input extends React.Component<InputProps> {
     const {
       title, description, innerInputProps = {},
       placeholder, helpText, errorText, disabled, value, type,
-      onTextChange, onEnterPress, color, ...styles } = this.props;
+      onTextChange, onEnterPress, onFocus, onBlur, color,
+      ...styles } = this.props;
     return (
       <Block {...styles}>
         {title ? <Title>{title}</Title> : null}
@@ -127,6 +130,8 @@ export class Input extends React.Component<InputProps> {
           valid={!errorText}
           disabled={disabled}
           placeholder={placeholder}
+          onFocus={onFocus}
+          onBlur={onBlur}
           value={value}
           {...innerInputProps} />
         {this.renderBottomText()}
