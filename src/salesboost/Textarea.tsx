@@ -36,6 +36,7 @@ interface Props {
   onTextChange?: (text: string) => void;
   onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  style?: any;
 }
 
 export type TextareaProps = Props & SpaceProps & WidthProps & HeightProps;
