@@ -4,8 +4,8 @@ import {
   BlockProps,
   Flex,
   Icon,
-  Text,
 } from "../core";
+import { Typo } from "../salesboost";
 import styled from "styled-components";
 
 const SelectWrapper = styled(Block)`
@@ -47,7 +47,7 @@ const DropdownWrapper = styled(Flex)`
   margin-top: 4px;
   flex-direction: column;
   overflow-y: overlay;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 2px;
   border: solid 1px rgba(22, 27, 72, 0.4);
   z-index: 1;
@@ -65,10 +65,8 @@ const DropdownWrapper = styled(Flex)`
 `;
 
 const DropdownItem = styled(Flex)`
-  flex: none;
   width: 100%;
-  height: 60px;
-  padding: 0 20px;
+  padding: 14px 20px;
   align-items: center;
   cursor: pointer;
   user-select: none;
@@ -120,7 +118,9 @@ export class Select extends React.Component<SelectProps, State> {
     return (
       <SelectWrapper ref={this.containerRef} {...styles}>
         <Selected height={height} isOpened={isOpened} disabled={disabled} onClick={this.toggleDropdown}>
-          <Text fontSize={["16px", "18px"]} color="rgba(22,35,72,0.9)">{value || placeholder}</Text>
+          <Typo name="body_161616_nv80_300" lineHeight="24px" style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+            {value || placeholder}
+          </Typo>
           <Icon name={isOpened ? "arrow-up" : "arrow-down"} color="rgba(22,27,72,0.6)" size={16}/>
         </Selected>
         {this.renderDropdown()}
@@ -137,7 +137,7 @@ export class Select extends React.Component<SelectProps, State> {
       <DropdownWrapper maxHeight={dropdownHeight || "330px"}>
         {React.Children.map(children, (child, index) =>
           <DropdownItem key={`option-list-${index}`} onClick={() => this.handleOptionClick(index)}>
-            <Text fontSize={["16px", "18px"]} color="rgba(22,35,72,0.9)">{child.props.children}</Text>
+            <Typo name="body_161616_nv80_300" lineHeight="24px">{child.props.children}</Typo>
           </DropdownItem>,
         )}
       </DropdownWrapper>
