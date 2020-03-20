@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+coverage
+docs
+public
+scripts
+jest.config.js
+package.json
+/src/libs/**/*
