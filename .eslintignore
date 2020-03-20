@@ -7,4 +7,5 @@ public
 scripts
 jest.config.js
 package.json
+test
 /src/libs/**/*

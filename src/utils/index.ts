@@ -35,6 +35,7 @@ export interface CursorProps {
 
 const get = (from: object, selector: string) =>
   selector
+    // eslint-disable-next-line
     .replace(/\[([^\[\]]*)\]/g, ".$1.")
     .split(".")
     .filter((t: any) => t !== "")

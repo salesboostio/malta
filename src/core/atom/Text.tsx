@@ -29,13 +29,13 @@ interface Props {
   whiteSpace?: "normal" | "nowrap" | "pre" | "pre-wrap" | "pre-line";
 }
 
-const medium = ({ medium }: Props) => medium ? `font-weight: 500;` : "";
-const regular = ({ regular }: Props) => regular ? `font-weight: 400;` : "";
-const demiLight = ({ demiLight }: Props) => demiLight ? `font-weight: 300;` : "";
-const light = ({ light }: Props) => light ? `font-weight: 200;` : "";
-const alignLeft = ({ alignLeft }: Props) => alignLeft ? `text-align: left;` : "";
-const alignRight = ({ alignRight }: Props) => alignRight ? `text-align: right;` : "";
-const alignCenter = ({ alignCenter }: Props) => alignCenter ? `text-align: center;` : "";
+const medium = ({ medium }: Props) => medium ? "font-weight: 500;" : "";
+const regular = ({ regular }: Props) => regular ? "font-weight: 400;" : "";
+const demiLight = ({ demiLight }: Props) => demiLight ? "font-weight: 300;" : "";
+const light = ({ light }: Props) => light ? "font-weight: 200;" : "";
+const alignLeft = ({ alignLeft }: Props) => alignLeft ? "text-align: left;" : "";
+const alignRight = ({ alignRight }: Props) => alignRight ? "text-align: right;" : "";
+const alignCenter = ({ alignCenter }: Props) => alignCenter ? "text-align: center;" : "";
 const overflowWrap = ({ overflowWrap }: Props) => overflowWrap ? `overflow-wrap: ${overflowWrap};` : "";
 const textOverflow = ({ textOverflow }: Props) => textOverflow ? `text-overflow: ${textOverflow};` : "";
 const wordBreak = ({ wordBreak }: Props) => wordBreak ? `word-break: ${wordBreak};` : "";

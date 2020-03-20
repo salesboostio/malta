@@ -99,7 +99,7 @@ interface Props {
 
 export type DrawerProps = Props & ColorProps & WidthProps & SpaceProps;
 
-export class Drawer extends React.Component<DrawerProps, { open: boolean; closing: boolean; ios: boolean; }> {
+export class Drawer extends React.Component<DrawerProps, { open: boolean; closing: boolean; ios: boolean }> {
 
   static defaultProps: any;
 

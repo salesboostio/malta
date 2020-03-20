@@ -15,7 +15,7 @@ import {
   WidthProps,
 } from "styled-system";
 
-const StyledSplit = styled.div<{ bg?: string; } & WidthProps & HeightProps & SpaceProps & AlignSelfProps & JustifySelfProps>`
+const StyledSplit = styled.div<{ bg?: string } & WidthProps & HeightProps & SpaceProps & AlignSelfProps & JustifySelfProps>`
   ${width}
   ${height}
   ${space}

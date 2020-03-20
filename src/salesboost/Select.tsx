@@ -155,7 +155,7 @@ export class Select extends React.Component<SelectProps, State> {
     }));
   }
 
-  handleOptionClick = (index: number = 0) => {
+  handleOptionClick = (index = 0) => {
     const { children, onValueChange } = this.props;
 
     this.setState({

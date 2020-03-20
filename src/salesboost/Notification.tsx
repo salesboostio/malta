@@ -83,11 +83,11 @@ const getIconName = (type: NotificationType) => ({
 type NotificationType = "success" | "error" | "info" | "warning";
 
 class NotificationContent extends React.Component<{
-  type: NotificationType,
-  render: () => React.ReactNode,
-  closing: boolean,
-  title: string,
-  close: () => void,
+  type: NotificationType;
+  render: () => React.ReactNode;
+  closing: boolean;
+  title: string;
+  close: () => void;
 }> {
 
   render() {
@@ -156,9 +156,9 @@ class Notification extends React.Component<any> {
       onClose,
     }:
       {
-        title: string,
-        render: () => React.ReactNode,
-        onClose?: any,
+        title: string;
+        render: () => React.ReactNode;
+        onClose?: any;
       }) => {
 
     const id = increment++;
@@ -221,28 +221,28 @@ const notify = {
     title,
     onClose,
     render,
-  }: { title: string, onClose: any, render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
+  }: { title: string; onClose: any; render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
     ref.open("success", { title, onClose, render });
   }),
   info: ({
     title,
     onClose,
     render,
-  }: { title: string, onClose: any, render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
+  }: { title: string; onClose: any; render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
     ref.open("info", { title, onClose, render });
   }),
   error: ({
     title,
     onClose,
     render,
-  }: { title: string, onClose: any, render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
+  }: { title: string; onClose: any; render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
     ref.open("error", { title, onClose, render });
   }),
   warning: ({
     title,
     onClose,
     render,
-  }: { title: string, onClose: any, render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
+  }: { title: string; onClose: any; render: () => React.ReactNode }) => getNotificationRootInstance((ref: any) => {
     ref.open("warning", { title, onClose, render });
   }),
 };
