@@ -10,18 +10,18 @@ import {
 import { Spinner } from "./Spinner";
 import { theme } from "./theme";
 
-const SolidStyle = css<{ bg?: string; hoverBg?: string; disabledBg?: string; disabled?: boolean; }>`
+const SolidStyle = css<{ bg?: string; hoverBg?: string; disabledBg?: string; disabled?: boolean }>`
   :hover {
     ${({ disabled, hoverBg }) => !disabled ? `background-color: ${hoverBg || "rgba(57, 67, 226, 0.8)"};` : ""}
   }
   background-color: ${({ bg, disabled, disabledBg }) => `
     ${disabled
-      ? disabledBg || theme.colors.navy._10
-      : bg || theme.colors.blue._100}
+    ? disabledBg || theme.colors.navy._10
+    : bg || theme.colors.blue._100}
   `};
 `;
 
-const LineStyle = css<{ bg?: string; hoverBg?: string; disabled?: boolean; disabledBg?: string; }>`
+const LineStyle = css<{ bg?: string; hoverBg?: string; disabled?: boolean; disabledBg?: string }>`
   border: 1px solid ${theme.colors.navy._100};
   :hover {
     ${({ hoverBg }) => hoverBg ? `background-color: ${hoverBg};` : ""}
@@ -34,8 +34,8 @@ const LineStyle = css<{ bg?: string; hoverBg?: string; disabled?: boolean; disab
   }
   background-color: ${({ bg, disabled, disabledBg }) => `
     ${disabled
-      ? disabledBg || theme.colors.navy._5
-      : bg || "#fff"}
+    ? disabledBg || theme.colors.navy._5
+    : bg || "#fff"}
   `};
   ${({ disabled }) => disabled ? `
     border: 1px solid ${theme.colors.navy._20} !important;

@@ -78,7 +78,7 @@ const getIconName = (type: MessageType) => ({
 
 type MessageType = "success" | "error" | "info" | "warning";
 
-class MessageContent extends React.Component<{ type: MessageType, text: string, duration: number, closing: boolean }> {
+class MessageContent extends React.Component<{ type: MessageType; text: string; duration: number; closing: boolean }> {
 
   render() {
     const { type, text, duration, closing } = this.props;
@@ -108,7 +108,7 @@ class Message extends React.Component {
     messages: {},
   };
 
-  open = (type: MessageType, text: string, duration: number = 3000, onClose?: any) => {
+  open = (type: MessageType, text: string, duration = 3000, onClose?: any) => {
 
     const id = increment++;
 

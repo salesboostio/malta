@@ -64,6 +64,7 @@ export class Message extends React.Component<MessageProps, State> {
     showing: false,
   };
 
+  // eslint-disable-next-line
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps.show) {
       this.show();
